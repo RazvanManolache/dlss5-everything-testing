@@ -1,0 +1,29 @@
+{
+  "dgvoodoo": {
+    "version": "2.87.4",
+    "source": "E:/Games/Modding/DLSS5-Everything-v0.3.0-win-x64/Payload/.download-cache/dgVoodoo2.zip",
+    "upstream": "https://github.com/dege-diosg/dgVoodoo2"
+  },
+  "dxvk": {
+    "version": "3.1.1",
+    "source": "https://github.com/doitsujin/dxvk/releases/download/v3.1.1/dxvk-3.1.1.tar.gz",
+    "upstream": "https://github.com/doitsujin/dxvk"
+  },
+  "angle": {
+    "distribution": "Electron v43.8.0 Windows x86/x64 release",
+    "upstream": "https://github.com/google/angle",
+    "release": "https://github.com/electron/electron/releases/tag/v43.8.0"
+  },
+  "dxvk-3.1.1.tar.gz": {
+    "sha256": "40565b4a724aadc4433fa4e010b4b23916d9b1f1baeee64e17186db94f54e608",
+    "bytes": 18041512
+  },
+  "electron-x86.zip": {
+    "sha256": "c4a809a289e2a4b7ff1629e7dabf8a922014e6db4f1afd887190df2e63ac65cb",
+    "bytes": 24490866
+  },
+  "electron-x64.zip": {
+    "sha256": "5a0253de760e49b1a19eedefe9499fd356cd64234bb4ce4983faee06b5822141",
+    "bytes": 44956288
+  }
+}

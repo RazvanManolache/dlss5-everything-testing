@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "clean_suite": "clean",
+  "reshade_suite": ".",
+  "shared_assets": "shared-assets",
+  "validation": "state\\validation.json",
+  "matched_reference": "state/matched-reference.png",
+  "runtime_validation_current": false
+}

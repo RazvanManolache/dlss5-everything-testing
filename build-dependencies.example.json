@@ -1,0 +1,5 @@
+{
+  "gallery": "../dlss5-phoenix-gallery",
+  "vulkan_dependencies": "../dlss_phoenix/build/vulkan_deps242",
+  "vulkan_loader_definition": "../dlss5-phoenix-addon/third_party/vulkan-loader.def"
+}
