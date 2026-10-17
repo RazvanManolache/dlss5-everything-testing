@@ -12,3 +12,9 @@ These storage and testing rules were requested by the user. Follow them for all 
 - Do not create extra portable installer cases unless the user requests them. Select only the requested fixtures; portable cases copy assets and can consume substantial space. Remove temporary cases when finished.
 - Keep assets common and locate them through relative paths. Do not introduce filesystem symlinks/junctions or per-game asset copies for normal sets.
 - Preserve `games`, `clean`, `shared-assets`, `build/scene`, `dos`, `vendor`, `src`, `tools`, the current baseline and their configuration. Restrict cleanup to verified paths inside this project; reject links and never follow them during recursive deletion.
+
+# Public source publication
+
+- Keep dashboard code and UI checks, images, assets, builds, runtime binaries, generated results, machine-specific configuration and README files out of the public branch.
+- Local checkpoint commits can contain excluded files. Build public updates from the existing public branch using explicitly selected source changes; never push or merge a checkpoint that includes excluded files.
+- Check every outgoing commit tree and scan the exact staged contents before publication. A later deletion does not remove files from earlier commits.

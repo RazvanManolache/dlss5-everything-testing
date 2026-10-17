@@ -1,6 +1,6 @@
 {
   "schema": 2,
-  "fixture_version": 6,
+  "fixture_version": 7,
   "games": [
     {
       "id": "dx2-x86",
@@ -16,16 +16,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -45,7 +48,7 @@
       "directdraw_interface": "IDirectDraw",
       "direct3d_device_interface": "IDirect3DDevice",
       "submission": "execute_buffers",
-      "sha256": "68d21037ce600272d69c9665db35a534459ff3ddd55d6fcf7aa3dcdcf531f1cc"
+      "sha256": "b835ae27956959dabb957ebe47e31338fe041c8f2a70e11378f35b2870c819a2"
     },
     {
       "id": "dx3-x86",
@@ -61,16 +64,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -90,7 +96,7 @@
       "directdraw_interface": "IDirectDraw2",
       "direct3d_device_interface": "IDirect3DDevice",
       "submission": "execute_buffers",
-      "sha256": "323dd9eb01f2801a7e88a3b4687696b347637f8c4e0af21d4846d5f2fd6549ea"
+      "sha256": "4d91a9a51669bb497d142eacbe1437ec7f3497226f895d99ce65522b24bf96ad"
     },
     {
       "id": "dx5-x86",
@@ -106,16 +112,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -135,7 +144,7 @@
       "directdraw_interface": "IDirectDraw2",
       "direct3d_device_interface": "IDirect3DDevice2",
       "submission": "DrawPrimitive",
-      "sha256": "7e83464d8508b3bf5c2e3ce81865d66676af043f3f5910da36717d6a69fa2f34"
+      "sha256": "22dcbc96c20d2598dd1d65ed2ee62606c9a23d149d722d0a03a64bba3c6d64f9"
     },
     {
       "id": "dx6-x86",
@@ -151,16 +160,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -180,7 +192,7 @@
       "directdraw_interface": "IDirectDraw4",
       "direct3d_device_interface": "IDirect3DDevice3",
       "submission": "DrawPrimitive",
-      "sha256": "8480fa943c79ce6aa32abd6c287bc7c6d4c83e5d94e731e85fadad0c2f41f556"
+      "sha256": "a525e5c5485f91266d671b0f438e8365bcb5f49cbd1710c4f9c4fabd16dc936e"
     },
     {
       "id": "dx7-x86",
@@ -196,16 +208,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -225,7 +240,7 @@
       "directdraw_interface": "IDirectDraw7",
       "direct3d_device_interface": "IDirect3DDevice7",
       "submission": "DrawPrimitive",
-      "sha256": "565400b68e485c0223a9a217b9ff1d07c76d2a246c811c99877a5691beba3b07"
+      "sha256": "0605b853e123cec6b61a5a082e9ea25db6b1e361b79566a33ec7db1428b71eea"
     },
     {
       "id": "dx8-x86",
@@ -241,16 +256,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -267,7 +285,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "9b4ede39ab63117c66fa19fe353cf75331498bf6d77774242e9aff05bc518241"
+      "sha256": "c7596259547d5de0348af7510f9423de72e4e5385b6d688198508af13b44c825"
     },
     {
       "id": "dx9-x86",
@@ -283,16 +301,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -309,7 +330,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "9a6f81ee3ad4dd1fef0ab43fefa5e6991c0cbffab02db1a89f270b5a9173188c"
+      "sha256": "510a44f7f23f1b2d132672ed72c3f56d69f1e561ca0aed10eba0527441715d40"
     },
     {
       "id": "dx9-x64",
@@ -325,16 +346,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -351,7 +375,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "4d622144213cb3779351c3bbf06e448aba5a38354d250beee01300ea563d4909"
+      "sha256": "12ce628c814a653da9ad0f2658994fc7ada3a8b5e25fcca7af31687e3121f542"
     },
     {
       "id": "dx10-x86",
@@ -367,16 +391,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -393,7 +420,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "5b41fe295f37f242f09bc0429c603d25168dd02b0d7fa7098d640be1ea7ea338"
+      "sha256": "3a3fe0d7014a83273cb53e946ae06b0f18c43663c095dc297f87e31132e7cde1"
     },
     {
       "id": "dx10-x64",
@@ -409,16 +436,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -435,7 +465,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "7914af467f70ac3cd6124d12fa65d2b831dda8efcd4b455dd975bb56b640cbea"
+      "sha256": "c9bcd649c1fa8da18cb71cef1a873dbe1f5fcb08d5e08ddfc1e8deed1c990473"
     },
     {
       "id": "dx11-x86",
@@ -451,16 +481,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -477,7 +510,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "52c1385e35bd42fdcb9a037dcb8b5dd77a8e6a26bd540672397c3f3938aa6197"
+      "sha256": "f51187bef90609b327084372a62bc956b2b396ff5d442841cdd64a9d6e99733d"
     },
     {
       "id": "dx11-x64",
@@ -493,16 +526,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -519,7 +555,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "e0b1af3f75a95b9f6809326837f26195415e47fae4474227bdbea17cedd1dca2"
+      "sha256": "08906c329b860877bc32fcf8fc11d1920ade50760bc0f4835022fcd7ac98640b"
     },
     {
       "id": "dx12-x86",
@@ -535,16 +571,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -561,7 +600,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "7d5656512fb7d14b5f45f6b1e6345c9489aba24fb68cde8f3864c014de76701c"
+      "sha256": "a3ecac0199e4c2787354afda8eddc905df4146f27d86bf8040382da267d6fe3d"
     },
     {
       "id": "dx12-x64",
@@ -577,16 +616,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -603,7 +645,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "c2cea822913c30571023795024884653bb29d3a509f51eb6263374254e786fce"
+      "sha256": "9e7520e18bf7d000d2b8d27519c268d76f85ca558c3c6f9d76e6cde75108d60f"
     },
     {
       "id": "opengl-x86",
@@ -619,16 +661,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -645,7 +690,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "70dba92333ccb56c07cd94c1e272a1d2e0305cd5290364056e21129eb8753b0a"
+      "sha256": "a1c7b3c1910d13bc1b6dc8cd7e29e50aff27ad088ef3bbd161309f2403ea47ea"
     },
     {
       "id": "opengl-x64",
@@ -661,16 +706,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -687,7 +735,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "76779e77b69ae0527ebdd474f8dd7e8b0b570bbedf17bf981be630b8a823d510"
+      "sha256": "ec93fd9370da7f0a8464649c58809dc14900fd5f06182b9d323524b427ef7e60"
     },
     {
       "id": "vulkan-x86",
@@ -703,16 +751,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -729,7 +780,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "05967da3e3c6af10e2c5ce726a10aaff069300090ea3a28e81fb0a8f4ddeb94e"
+      "sha256": "70d7aae17ec95552e2eb0f651ca971bf2eea3a52d67006f81bb8433888207745"
     },
     {
       "id": "vulkan-x64",
@@ -745,16 +796,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -771,7 +825,7 @@
           "--camera-motion on|off"
         ]
       },
-      "sha256": "ac880cab7c895c50fe8c4b0b1cefe46ffadb27141e55ca810676bf451f231095"
+      "sha256": "94373bcdca16769e8654570052da92f9c03d506d1b9e405a0fdd79b919d6280a"
     },
     {
       "id": "dx9ex-x86",
@@ -787,16 +841,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -820,7 +877,7 @@
         "d3d9.dll"
       ],
       "runtime_files": {},
-      "sha256": "ac96fffb2348917064fd61355f7cd03fa302c31ad4958e8536b456f664e65b41"
+      "sha256": "1a8167ae1c551b6c0be8bfb5041ad8a20736e02fb377bb7f163b392d735aca61"
     },
     {
       "id": "dx9ex-x64",
@@ -836,16 +893,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -869,7 +929,7 @@
         "d3d9.dll"
       ],
       "runtime_files": {},
-      "sha256": "95968409938dfe631691fbb9033b53b9e082699563f0372de18bbc9cd7c0f1d3"
+      "sha256": "99ddec7de9c71f25d4190e1bbad85c9a44bdbea80c93f854949aeca55c274d26"
     },
     {
       "id": "dx10_1-x86",
@@ -885,16 +945,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -918,7 +981,7 @@
         "d3d10_1.dll"
       ],
       "runtime_files": {},
-      "sha256": "40aa6bd8343266eeb4d848fc3b1fb046337551303adfc1057bbc871fb2106b09"
+      "sha256": "a3e61b471c9d4c85944c3093230bc9ce8b12471777ed54fc1b87aaeb33d06148"
     },
     {
       "id": "dx10_1-x64",
@@ -934,16 +997,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -967,7 +1033,7 @@
         "d3d10_1.dll"
       ],
       "runtime_files": {},
-      "sha256": "f942f0aeaa567f73140f9e89255572af9a9e5bf5d3eb68a6171ca9e423e8043d"
+      "sha256": "cd620905139f95759988756974dd22c26df323961f302f6e8dd2d5dcd9c3b64e"
     },
     {
       "id": "glcore33-x86",
@@ -983,16 +1049,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1017,7 +1086,7 @@
         "opengl32.dll"
       ],
       "runtime_files": {},
-      "sha256": "2ec5f56ab92faea5e78d4b8f37c414fdcf1bfdcff3d8edc404fb07314c60237e"
+      "sha256": "52a5ac6d653e8d1cef3ed013a7216f63e4c0c50fc89673f3898f8ef16d44617c"
     },
     {
       "id": "glcore33-x64",
@@ -1033,16 +1102,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1067,7 +1139,7 @@
         "opengl32.dll"
       ],
       "runtime_files": {},
-      "sha256": "4da12954a74c73cee924a713ede093cf4fa27399e87e5f10a8968bf1d157c641"
+      "sha256": "b54d51fe803d1f7f455158619e0cfeee95000a9c67a331b82134f122b36b9646"
     },
     {
       "id": "glcore46-x86",
@@ -1083,16 +1155,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1117,7 +1192,7 @@
         "opengl32.dll"
       ],
       "runtime_files": {},
-      "sha256": "b70e4d9fb9045619e64accfc0dfb6b0f6890b3e40ba8d37f093ed1e4d2c5b9ff"
+      "sha256": "e265598c5301c6fd7672d49fddbd89e6e28851d8fd94cc5463b5cbed7b345d1c"
     },
     {
       "id": "glcore46-x64",
@@ -1133,16 +1208,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1167,7 +1245,7 @@
         "opengl32.dll"
       ],
       "runtime_files": {},
-      "sha256": "1cb5f702e79e571d7d422547cbea80d22a89b687c817e025210fdb74fb3e9ea0"
+      "sha256": "59278b3a19b7e02213eabac0158295751d937365398f0e9aad6541889045b493"
     },
     {
       "id": "gles2_angle_d3d11-x86",
@@ -1183,16 +1261,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1243,7 +1324,7 @@
           "sha256": "8ca61049867d9615040dda86a9dddc3dd12091ab988ddd0ca8593a7a8c4621c1"
         }
       },
-      "sha256": "0b96428651c19e741cc9c7efbb18f15956f819e98d3e79aff7c680597435a8f5"
+      "sha256": "5c0afa94f2a905e1aebc8aa2c9b87e72ea0a2f87a35ae1ca083d735cbe2bc45a"
     },
     {
       "id": "gles2_angle_d3d11-x64",
@@ -1259,16 +1340,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1319,7 +1403,7 @@
           "sha256": "8ca61049867d9615040dda86a9dddc3dd12091ab988ddd0ca8593a7a8c4621c1"
         }
       },
-      "sha256": "73c573303c237f03136b2a1d1a51906f04b58320a4cbe3172a317fd14e6d5763"
+      "sha256": "d2cb11b6664acc3b8eb6001af8ab2925e501be5d327fec8abcf498acb6cabf74"
     },
     {
       "id": "gles2_angle_vulkan-x86",
@@ -1335,16 +1419,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1399,7 +1486,7 @@
           "sha256": "ac87ea47e48424aa97c35c54199a2ec4e1bdd2b6365946a81edca37a33300490"
         }
       },
-      "sha256": "fa7b2898fe3d0215911370e86c9e9c2ea2d59f977e2fbf27bf6b3c7960e8df9f"
+      "sha256": "88cdca62d71f5372581c0e729a664d6c88470778a6d7cdd5dd2b0970c89d1d08"
     },
     {
       "id": "gles2_angle_vulkan-x64",
@@ -1415,16 +1502,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1479,7 +1569,7 @@
           "sha256": "ac87ea47e48424aa97c35c54199a2ec4e1bdd2b6365946a81edca37a33300490"
         }
       },
-      "sha256": "31f3762d686aac48d69601f205450b5aa9ea85d8911aac9b0395292c11e4bedd"
+      "sha256": "7ec1be3f128c6144f2adc4e3659b6d51e9603d3d078e1eaca2e9251b7e40bd2b"
     },
     {
       "id": "gles3_angle_d3d11-x86",
@@ -1495,16 +1585,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1555,7 +1648,7 @@
           "sha256": "66a886f2e7b0f36c91991f2e4114c4be9346767fd8f3bcfc3bb7c55f1d69fb8a"
         }
       },
-      "sha256": "11768aac531b9f2bc519cea6bd82103e872870adf2b596d776e83f5908e8596d"
+      "sha256": "1342ec072e68c6b49476c6e514509e3b96133350aa3510d9ebdd42409eaef92e"
     },
     {
       "id": "gles3_angle_d3d11-x64",
@@ -1571,16 +1664,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1631,7 +1727,7 @@
           "sha256": "66a886f2e7b0f36c91991f2e4114c4be9346767fd8f3bcfc3bb7c55f1d69fb8a"
         }
       },
-      "sha256": "55fe79d6694b6b135e72979b897bf3dab761b23d842e134669aa4ca3b391afa9"
+      "sha256": "2aefbff920c8ef96b1d0fb3afc7c748eacb765b1997702336d53f24472a8b8f1"
     },
     {
       "id": "gles3_angle_vulkan-x86",
@@ -1647,16 +1743,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1711,7 +1810,7 @@
           "sha256": "ad1e81ef1cb944855fd798f39db7e25cb32453a1b3e051ff0452b1666c0fa03e"
         }
       },
-      "sha256": "ce3ce0ffd2dae9ffb491e8761dddd66a988295fddba8a9e237e9f74f25e15460"
+      "sha256": "272b47e27185c2ee3c94ab9e827146e4886b09f3dd05fe3ee83535e08de712ac"
     },
     {
       "id": "gles3_angle_vulkan-x64",
@@ -1727,16 +1826,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1791,7 +1893,7 @@
           "sha256": "ad1e81ef1cb944855fd798f39db7e25cb32453a1b3e051ff0452b1666c0fa03e"
         }
       },
-      "sha256": "791621806763f20f3010ef4cc6bde3a2b7fe6d3617d174a9490e5b23799e7500"
+      "sha256": "750da6960fece96e417b8ff5dce30b5e4e3d893371a50fa3208691c8c6514e99"
     },
     {
       "id": "ddraw1_2d-x86",
@@ -1807,16 +1909,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1841,7 +1946,7 @@
         "ddraw.dll"
       ],
       "runtime_files": {},
-      "sha256": "4bcd84dc99e8b7020ae5c9ce42f75a8c546db760edb98d71a7ada5769f1acb90"
+      "sha256": "556c136bf5272a4c7afbc03489954d1fc5f0c599ad8f03ec15453f14c2be0aaa"
     },
     {
       "id": "ddraw1_2d-x64",
@@ -1857,16 +1962,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1891,7 +1999,7 @@
         "ddraw.dll"
       ],
       "runtime_files": {},
-      "sha256": "5954bc9cd3ea62a1d0d68578416dd904d5cc48d622f39da3acfd6651170d3c13"
+      "sha256": "fa0f6d192e9bc733bbcfda9709173bb0bdb3cb079360623c87ba2f9db95f9a0a"
     },
     {
       "id": "ddraw2_2d-x86",
@@ -1907,16 +2015,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1941,7 +2052,7 @@
         "ddraw.dll"
       ],
       "runtime_files": {},
-      "sha256": "8a34b7b8dac4980878bea7fd6854f7df49ec3159422c1fcc0fb15d2cfd1c1e9e"
+      "sha256": "c842b87f89c7dbfeb0218d559768bd50c17724521aafad261be4882cd2b941ba"
     },
     {
       "id": "ddraw2_2d-x64",
@@ -1957,16 +2068,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -1991,7 +2105,7 @@
         "ddraw.dll"
       ],
       "runtime_files": {},
-      "sha256": "01d6e7dcaa35801dd58d1fa4890e08a9d9039c25b91225551d4144d7b90f701f"
+      "sha256": "e67111a62840eb0b7edddab990a1c005d058e9475e47a4b585a0b3486cc230ff"
     },
     {
       "id": "ddraw4_2d-x86",
@@ -2007,16 +2121,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2041,7 +2158,7 @@
         "ddraw.dll"
       ],
       "runtime_files": {},
-      "sha256": "7e9531336b4ada46289c792947e2ecf510cf8ae4968cb8c248304ca96a59988b"
+      "sha256": "1feef3dbdf92ef3421eb43ea43b3c0518ae95a29677ba425391f59e5a58cffd4"
     },
     {
       "id": "ddraw4_2d-x64",
@@ -2057,16 +2174,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2091,7 +2211,7 @@
         "ddraw.dll"
       ],
       "runtime_files": {},
-      "sha256": "74cbcfaa985ed11c4ebd06273fa31e0d74e8bf50a902e39eecb3662bd33b5fec"
+      "sha256": "598a6c6b72c80a58d45835cceed2a38d162b09044caa4d3846c16d63745b4518"
     },
     {
       "id": "ddraw7_2d-x86",
@@ -2107,16 +2227,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2141,7 +2264,7 @@
         "ddraw.dll"
       ],
       "runtime_files": {},
-      "sha256": "8ee97dd98f735db1d0888252264d9498acca4c2798eaa85ca7eb60fc72d9ce04"
+      "sha256": "8a5b95635746d7429b77e809c27b53eb14bbda2165eed7d2258eebadcdda0652"
     },
     {
       "id": "ddraw7_2d-x64",
@@ -2157,16 +2280,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2191,7 +2317,7 @@
         "ddraw.dll"
       ],
       "runtime_files": {},
-      "sha256": "7b4ff3947f0f6e8a03fa194f212357c91d755e48eb618b3ad260876d5c5c9270"
+      "sha256": "eb6e0ce4244253564f3137ea80f09547c6eb647f299aebd2903c1f1b25afe807"
     },
     {
       "id": "glide1-x86",
@@ -2207,16 +2333,20 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 856,
+        "height": 480,
+        "vsync": false,
+        "native_legacy_mode": true
       },
       "controls": {
         "freeze": "F / Space",
@@ -2252,15 +2382,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1208,
           "sha256": "6f4b95402f862f4e1f6703750d1517bf0cdb6b8b8cbf5ebb071aa4748f18ffb9"
         }
       },
-      "sha256": "34362d64442f94eab7ac5e8136532fe8409d40f4b25f2759c8379cfd0485b2ef"
+      "sha256": "8f0ee8e11e393eeadbfd58e205bdc78ffa571d5b497dd9fbb8289ffa23675bcd"
     },
     {
       "id": "glide1-x64",
@@ -2276,16 +2406,20 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 856,
+        "height": 480,
+        "vsync": false,
+        "native_legacy_mode": true
       },
       "controls": {
         "freeze": "F / Space",
@@ -2321,15 +2455,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1208,
           "sha256": "6f4b95402f862f4e1f6703750d1517bf0cdb6b8b8cbf5ebb071aa4748f18ffb9"
         }
       },
-      "sha256": "5448eac98b16c5b3a6153e795485ece8c1771d9992279f0b82ae15ceb43b7c31"
+      "sha256": "3aadc5083907e1ccc4655b968ae79384b99cb396fbd4537d727dc3b1fccd5726"
     },
     {
       "id": "glide2-x86",
@@ -2345,16 +2479,20 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 856,
+        "height": 480,
+        "vsync": false,
+        "native_legacy_mode": true
       },
       "controls": {
         "freeze": "F / Space",
@@ -2390,15 +2528,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1208,
           "sha256": "c6ab14400239b089eda8183a7721ebb9a5ba5e269e2c0ed790afac945a5d0e70"
         }
       },
-      "sha256": "526089a230353a08133939641699b955ecd72d03560b4b88c2c1e21724967b66"
+      "sha256": "fb483d88e8750917edf1ee993e7175d472b142975058bfa4fd3fc3aaa2418359"
     },
     {
       "id": "glide2-x64",
@@ -2414,16 +2552,20 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 856,
+        "height": 480,
+        "vsync": false,
+        "native_legacy_mode": true
       },
       "controls": {
         "freeze": "F / Space",
@@ -2459,15 +2601,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1208,
           "sha256": "c6ab14400239b089eda8183a7721ebb9a5ba5e269e2c0ed790afac945a5d0e70"
         }
       },
-      "sha256": "6e42e2316121b0a3cb84939a382a8ab9e191524d0905b71579a09fdd5c0235e1"
+      "sha256": "b104cc8e2a526f8ec18edbdf0ddbd9c588d3648ecf6a759e341faf84711ea624"
     },
     {
       "id": "glide3-x86",
@@ -2483,16 +2625,20 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 856,
+        "height": 480,
+        "vsync": false,
+        "native_legacy_mode": true
       },
       "controls": {
         "freeze": "F / Space",
@@ -2528,15 +2674,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1208,
           "sha256": "42d951e4e2b07d0bef2e62fcb2f844f039751d60571a37316e66bfa3e582f718"
         }
       },
-      "sha256": "fc9a53007320271e741a3ab0a918629d610c3412b1172093f63e63aa4d48c331"
+      "sha256": "dbe601fdfe3fbc0c87b22da7fce128084d8c839734578d7c222950a81251bb39"
     },
     {
       "id": "glide3-x64",
@@ -2552,16 +2698,20 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 856,
+        "height": 480,
+        "vsync": false,
+        "native_legacy_mode": true
       },
       "controls": {
         "freeze": "F / Space",
@@ -2597,15 +2747,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1208,
           "sha256": "42d951e4e2b07d0bef2e62fcb2f844f039751d60571a37316e66bfa3e582f718"
         }
       },
-      "sha256": "7828170857d056ebeceda11c6f0d8687bcc31bca7f100060ec1b66de62247daf"
+      "sha256": "29f30b389b2ca3bf78045524f025640a2e91bb817c97b29be46d9ba7dcacd60c"
     },
     {
       "id": "d3d11on12-x86",
@@ -2621,16 +2771,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2654,7 +2807,7 @@
         "d3d11.dll"
       ],
       "runtime_files": {},
-      "sha256": "5ad8af4ee051ac42d183cdf02c3b27f59c8dfb876f74b92603863d2b247ef644"
+      "sha256": "d3a6f29faa33ea28b0ab47bde6b7e318c36ad853dc0e1cbb6c9a80320935219d"
     },
     {
       "id": "d3d11on12-x64",
@@ -2670,16 +2823,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2703,7 +2859,7 @@
         "d3d11.dll"
       ],
       "runtime_files": {},
-      "sha256": "afb38f90457b6b60615c05dae75027e43d6c11f8ee4314897a5b274757637e73"
+      "sha256": "efb95b3b79ffd1d60745bec67203d4f447b2095c1039905814ce2ca252527aac"
     },
     {
       "id": "warp_dx10-x86",
@@ -2719,16 +2875,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2753,7 +2912,7 @@
         "d3d10.dll"
       ],
       "runtime_files": {},
-      "sha256": "18c80a951ee10cbc0fd78676545e38699917bdcd636c027fc152d9f2298ffb77"
+      "sha256": "10e79af95bcf23631838ac4b7efaac7426851a78af7162e0b1dbea78c7445825"
     },
     {
       "id": "warp_dx10-x64",
@@ -2769,16 +2928,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2803,7 +2965,7 @@
         "d3d10.dll"
       ],
       "runtime_files": {},
-      "sha256": "9f15f431b1a4300f8f8aaaaeab5e726d1e57f107e39fb32d20a216bc6c79f2b5"
+      "sha256": "d69d873410da1bf80737e6925ed24fdc8764d6b28b23afc274344492734b661c"
     },
     {
       "id": "warp_dx10_1-x86",
@@ -2819,16 +2981,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2853,7 +3018,7 @@
         "d3d10_1.dll"
       ],
       "runtime_files": {},
-      "sha256": "8bb137a3ebed33eddacaef030d160bdd22b61f665261c02dbf0508cc62fb4ea5"
+      "sha256": "0353b3b857e15603dc0a420f5f9c20a3531842a948b9b51e3d2437df548ee955"
     },
     {
       "id": "warp_dx10_1-x64",
@@ -2869,16 +3034,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2903,7 +3071,7 @@
         "d3d10_1.dll"
       ],
       "runtime_files": {},
-      "sha256": "ffc43eedcc6c755fa707c2785af93de23340f058a97652e0438590da50a9f3d8"
+      "sha256": "3f52b57e42c0a2bf93f879a9865f8736e40cf435251269370128755bd6cec5cf"
     },
     {
       "id": "warp_dx11-x86",
@@ -2919,16 +3087,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -2953,7 +3124,7 @@
         "d3d11.dll"
       ],
       "runtime_files": {},
-      "sha256": "d457dbb00d4f91f863d875c4c225adcb4c8f95d941403be60aa5a609a6141fd6"
+      "sha256": "3311ea80f2d597444c65849fb69839b7559e67d037edd4d69e435410e42f6e68"
     },
     {
       "id": "warp_dx11-x64",
@@ -2969,16 +3140,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3003,7 +3177,7 @@
         "d3d11.dll"
       ],
       "runtime_files": {},
-      "sha256": "865223900a196196fbb77982aa9e1ebf1c83344c7d59a5403867527ac0bc5f9a"
+      "sha256": "b892ef1b6951fbd9279614769577f8b621b82ca2f0ce3d7fe471f0efa28ff751"
     },
     {
       "id": "warp_dx12-x86",
@@ -3019,16 +3193,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3053,7 +3230,7 @@
         "d3d12.dll"
       ],
       "runtime_files": {},
-      "sha256": "c30dbdae358878690d4b4e0cf75447a96a389fbcb4f7e3fc6dc36f1a83c7291f"
+      "sha256": "f4adb4147a4f6f6c6bb7b8d02c0b1334e96f340e3373506f8ef2ce3d2cfa6fe8"
     },
     {
       "id": "warp_dx12-x64",
@@ -3069,16 +3246,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3103,7 +3283,7 @@
         "d3d12.dll"
       ],
       "runtime_files": {},
-      "sha256": "dfc613225aa4d6da8b51f053a099e89869276f267912e5560db175910cf86997"
+      "sha256": "bf62fbfd302b603f69d6d2ca820eeb77713d0b643176993bba72eaa7c7e38d12"
     },
     {
       "id": "warp_d3d11on12-x86",
@@ -3119,16 +3299,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3153,7 +3336,7 @@
         "d3d11.dll"
       ],
       "runtime_files": {},
-      "sha256": "fa0320ee661f20c6aaae80613fbba87dda3e80828491c30c3404d7cf429faecd"
+      "sha256": "04be1eda4006b1e9bc86a72c9ebff92760ef3b6582d6f640cb9bfef15777de5a"
     },
     {
       "id": "warp_d3d11on12-x64",
@@ -3169,16 +3352,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3203,7 +3389,7 @@
         "d3d11.dll"
       ],
       "runtime_files": {},
-      "sha256": "deb880bb0cc0393c2073cd52c7786c753701159e0b08b4a579d88e88ddaa13fb"
+      "sha256": "d5e4b02a2f7a56576695c4e495c6c6be50f05a50e69a6430c3a298a9dfafc15c"
     },
     {
       "id": "dgvoodoo_dx2-x86",
@@ -3219,16 +3405,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3270,15 +3459,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1202,
           "sha256": "cdf167082eb74751325d6851f28c61dd5edef6cb4b21606981f6212f04f568a5"
         }
       },
-      "sha256": "af790cd1c02c3873e7b879e7ea2f5b8d128b75e143a5fa4730f4c23276d9c839"
+      "sha256": "48c9ddbbca7ce5c9982d710b2a4a1c45ac561f0af239d76224c9a2cfb6160622"
     },
     {
       "id": "dgvoodoo_dx3-x86",
@@ -3294,16 +3483,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3345,15 +3537,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1202,
           "sha256": "8337962401cb8e2772c1a73bd04d436b0c0fc60adfa3cb7787878e379f420d3a"
         }
       },
-      "sha256": "8dddc3c0973390c65dcbf3d38eedd691e56665a9365513cfb02471a4cd7f25f9"
+      "sha256": "b3a37b3159f46ca71683760c7cfc59bfe57fb2cdc2caedbf4b871272688a6acd"
     },
     {
       "id": "dgvoodoo_dx5-x86",
@@ -3369,16 +3561,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3420,15 +3615,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1202,
           "sha256": "d31ef6871e4b6514292262420e0e64199725428e827e019902ddec6494dcb3dc"
         }
       },
-      "sha256": "65d2937ac86e1b2746adf6c5fcc0bba3a014b6c1737b2bd1d26dce528a6d7443"
+      "sha256": "7742e9dfcaaff23c00105483c78c518be2e1ca165a9c5db1d2ed03ef3201c8bd"
     },
     {
       "id": "dgvoodoo_dx6-x86",
@@ -3444,16 +3639,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3495,15 +3693,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1202,
           "sha256": "a23c27467748d65e527c22bf47c314d88be3f851c3fc820b79b7d440da80808d"
         }
       },
-      "sha256": "0dd9e850ca7fa23481a1a811a069327008ee84ad9b9f65ce1c4468f6e7e0f45e"
+      "sha256": "a1192213d7fea63b326d2ca695c2158303af3e544b1ec4c847d94f812628060d"
     },
     {
       "id": "dgvoodoo_dx7-x86",
@@ -3519,16 +3717,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3570,15 +3771,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1202,
           "sha256": "9f722a06c98e4de3d7e7f79310cbe7c211df990afceee6dba314014dcdd5356d"
         }
       },
-      "sha256": "ad795460d500f356507274a2c8bc73d32c67a610c80b91e37bd1736ca9adc4c7"
+      "sha256": "4bf8be6ac26340635f059dc9ee321270ac140389014b0bc2775507d42c25071a"
     },
     {
       "id": "dgvoodoo_dx8-x86",
@@ -3594,16 +3795,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3638,15 +3842,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1202,
           "sha256": "4205ae5b8ead309e8babebc1dd88244ca2d0d6fb2f590a22646ba2f0c02ee168"
         }
       },
-      "sha256": "59f8a27275bdf460e0dc777e96040b52ae081390cabcd5d7231a1483530abf2b"
+      "sha256": "97aa7f3012fc2ff043d2dfd5569e8114cdecf8d92255de929b7a7811bfd43fd1"
     },
     {
       "id": "dgvoodoo_dx9-x86",
@@ -3662,16 +3866,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3706,15 +3913,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1202,
           "sha256": "7bb1f6cc80b7d53a9e795755becdfe0529e017375ef33dbd27cfa57726502af6"
         }
       },
-      "sha256": "6cccb2c32f2d013505dd4bc665706e3f99360bbd9487da76d02f9de8a3576cf0"
+      "sha256": "d85387626e010c1d2871a1a19a2d7cbd7d9253ada55f69f1e95ab858c6fa05f6"
     },
     {
       "id": "dgvoodoo_dx9-x64",
@@ -3730,16 +3937,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3774,15 +3984,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1202,
           "sha256": "7bb1f6cc80b7d53a9e795755becdfe0529e017375ef33dbd27cfa57726502af6"
         }
       },
-      "sha256": "4a6c0d3615c4969994bcb9054a282c32f9b1f5b409a6e07fc043d943cf423fe1"
+      "sha256": "1daa47b14eb19a861d74d7515cb94c17838c42e4aafc6533c74556e408cd9411"
     },
     {
       "id": "dgvoodoo_ddraw1_2d-x86",
@@ -3798,16 +4008,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3847,15 +4060,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1212,
           "sha256": "04c794ee586ef86754ac376faa9f74cec94e11eb9546f4c513941ad2e098afda"
         }
       },
-      "sha256": "aba27a371c8fb648b8c4561c95856fc609a83a0506b0bc740e828883621838d7"
+      "sha256": "280de0f8bb1f138604d0a1ede1554b99ad293f38fdddc982364b8dcaca6e599f"
     },
     {
       "id": "dgvoodoo_ddraw2_2d-x86",
@@ -3871,16 +4084,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3920,15 +4136,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1212,
           "sha256": "04c794ee586ef86754ac376faa9f74cec94e11eb9546f4c513941ad2e098afda"
         }
       },
-      "sha256": "2e5049394a6e03395209c0420803395b4e9525c26b9ab4e36963f5aa8dd5be23"
+      "sha256": "99050c33852abb2cb121722e0fd980b321169e13819d94b1b9172f057eb54193"
     },
     {
       "id": "dgvoodoo_ddraw4_2d-x86",
@@ -3944,16 +4160,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -3993,15 +4212,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1212,
           "sha256": "04c794ee586ef86754ac376faa9f74cec94e11eb9546f4c513941ad2e098afda"
         }
       },
-      "sha256": "70833c693c7ac2b79495d8f9e61bfad90f418dbbeb7ea0ce6749034b3ddc0a9f"
+      "sha256": "0e0eb03c44aebd39c0458c7bb707538e45cf1889710f0cdb5b31f6ee4c58c486"
     },
     {
       "id": "dgvoodoo_ddraw7_2d-x86",
@@ -4017,16 +4236,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4066,15 +4288,15 @@
           "sha256": "f916497c2dc4378353108c6588082f042795b62854cd3e54051c7bcba4b53d1f"
         },
         "dgVoodoo.conf": {
-          "bytes": 21819,
-          "sha256": "a0b7e9516ee6f67c08911e9a0d0571d4e02950f4f24f26eae84909d79d04b7c2"
+          "bytes": 21784,
+          "sha256": "54c91e6cb115c7dae4b4b5defa076ddc8d32464237dc76c91d41d6e5ba1fc912"
         },
         "runtime-provenance.json": {
           "bytes": 1212,
           "sha256": "04c794ee586ef86754ac376faa9f74cec94e11eb9546f4c513941ad2e098afda"
         }
       },
-      "sha256": "2c327c53b3eed5316115ff105eb3f378ce594c9f17e279655c3f69f8cdcda7d8"
+      "sha256": "4c1fc55c1e11330d07116515b04b2d75e4c70ce3d5ccfee3a20da1744d30ac4a"
     },
     {
       "id": "dxvk_dx8-x86",
@@ -4090,16 +4312,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4138,15 +4363,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1196,
           "sha256": "58e386958214a23e00d747724a90d0e1c1266d4e4659e66622021569cd601ea8"
         }
       },
-      "sha256": "9089668244a2f838d36aece70a116bb8c805afd1f9c11ac18872fa85c2f67283"
+      "sha256": "552dd5b829b0c2887c32e358139c77966ac3dcf7e2a9f97180f12f6c4cd0b6f4"
     },
     {
       "id": "dxvk_dx8-x64",
@@ -4162,16 +4387,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4210,15 +4438,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1196,
           "sha256": "58e386958214a23e00d747724a90d0e1c1266d4e4659e66622021569cd601ea8"
         }
       },
-      "sha256": "c5a67f7a2cff1783ef37273f6e7e5036b1ed8e4ab147b5fd35ea546be5135943"
+      "sha256": "b20295e4f63d405fffa3c5f2e8d73c221b97fdad5a10343306c08f34f4b9d85f"
     },
     {
       "id": "dxvk_dx9-x86",
@@ -4234,16 +4462,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4278,15 +4509,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1196,
           "sha256": "7966706ab8a26468bb7e9f102451717e868fadd4cef93ebf3d7a64565e6af48b"
         }
       },
-      "sha256": "1afffa4bd3a74261bda17d8146f1c8f7a3fd059252f3e0cf0630abe196de8dc7"
+      "sha256": "362d6a5b7f95ed63d7218e1603055d7653ce913958925dd7047a7e48a180844e"
     },
     {
       "id": "dxvk_dx9-x64",
@@ -4302,16 +4533,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4346,15 +4580,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1196,
           "sha256": "7966706ab8a26468bb7e9f102451717e868fadd4cef93ebf3d7a64565e6af48b"
         }
       },
-      "sha256": "cca64bddccb300f89bfd787aefc0392096686ff039ce6641abe830c10303ad9e"
+      "sha256": "c2d351b68df5656787a44cf60cce7ef28ed93752bc5cb89e11e8904a9fe4cfb0"
     },
     {
       "id": "dxvk_dx10-x86",
@@ -4370,16 +4604,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4422,15 +4659,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1197,
           "sha256": "eb3a2fa3c6287b20dbf0af4fcdd3ab31bb57fca604fdd4bfa9285b8e1ff54be9"
         }
       },
-      "sha256": "6105a72242b6b1f8c73ff1705dd87a7f1b66de6a674cd027b39101fc3c6bbc42"
+      "sha256": "0cd39ca06c62605bdb4cba23d9517574bdcbec10b947e0907c4f8e3e11d92330"
     },
     {
       "id": "dxvk_dx10-x64",
@@ -4446,16 +4683,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4498,15 +4738,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1197,
           "sha256": "eb3a2fa3c6287b20dbf0af4fcdd3ab31bb57fca604fdd4bfa9285b8e1ff54be9"
         }
       },
-      "sha256": "67a4e79f91aa90dff68dd1b7affe3fa03ef3e515be8d5faf8fa96abbfd2abf12"
+      "sha256": "2b298a7646db5baa4f7f87aa04da184f54b3ba12ee353bf4b3e4e8fe35bd65a6"
     },
     {
       "id": "dxvk_dx10_1-x86",
@@ -4522,16 +4762,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4570,15 +4813,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1199,
           "sha256": "773dd7a30c04855530471570a8b7f2f44a95f20bb0afa360656f6c669aeca908"
         }
       },
-      "sha256": "d8f56cac5206643f89081a54c4d3a52630b1762482825f25289d3f652bbb508e"
+      "sha256": "fad38e21144888f5e2546a8795982027540f6ce5b9c54b7d52a9f5ddc4dc21d6"
     },
     {
       "id": "dxvk_dx10_1-x64",
@@ -4594,16 +4837,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4642,15 +4888,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1199,
           "sha256": "773dd7a30c04855530471570a8b7f2f44a95f20bb0afa360656f6c669aeca908"
         }
       },
-      "sha256": "df8e9baf1e1eadc89f6ee59af5126f74e8d2c18ec7f002aa69d4732e8eae0afa"
+      "sha256": "177f9b0d84d82daecf2b7ed5c951126f706b9e6161f4029f15130ed92f207b5f"
     },
     {
       "id": "dxvk_dx11-x86",
@@ -4666,16 +4912,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4714,15 +4963,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1197,
           "sha256": "95dd17f902b1ae58dc7a19ebd687bc0e1c6ab9503dcc2c59288a27df6c95efb8"
         }
       },
-      "sha256": "f199d7d3462114cc1b87ff6b77edeee9744107942c2fb15922f836c4b341ada6"
+      "sha256": "c84ba8767fa3f15593afabff05705bd0067b176d4b71abaa6f58da98f5cdf355"
     },
     {
       "id": "dxvk_dx11-x64",
@@ -4738,16 +4987,19 @@
         "matched",
         "showcase"
       ],
-      "fixture_version": 6,
+      "fixture_version": 7,
       "background_test": {
-        "seconds": 30,
-        "capture_at_seconds": 15,
+        "seconds": 25,
+        "warmup_seconds": 5,
+        "measurement_seconds": 20,
+        "capture_at_seconds": 25,
         "capture_times_seconds": [
-          15
+          25
         ],
-        "multiple_screenshots": true,
-        "width": 1280,
-        "height": 720
+        "multiple_screenshots": false,
+        "width": 1920,
+        "height": 1080,
+        "vsync": false
       },
       "controls": {
         "freeze": "F / Space",
@@ -4786,15 +5038,15 @@
           "sha256": "a5cb1a6ded7d2d7e92d550ba28edd21be2d1d4044662b399887351023e30ce64"
         },
         "dxvk.conf": {
-          "bytes": 24,
-          "sha256": "09d4b0409ad959d6def4be8884de7459d3a4f3012021cbfdd863b3040e41a0b3"
+          "bytes": 119,
+          "sha256": "d400b6a2e7067def3f6ba6975de2a427f0de6b7a449f58d34985a0b42d91d3c6"
         },
         "runtime-provenance.json": {
           "bytes": 1197,
           "sha256": "95dd17f902b1ae58dc7a19ebd687bc0e1c6ab9503dcc2c59288a27df6c95efb8"
         }
       },
-      "sha256": "01e9c1269db430957669b85e2e254bfe340ccd3085d67b54197e9719600d883c"
+      "sha256": "72ae2097824cb086c4bfb39c030efe670457b35d38e6b57e3fef4c92e5104c8c"
     }
   ],
   "unsupported": [

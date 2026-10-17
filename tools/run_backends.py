@@ -1,4 +1,4 @@
-"""Installer-driven x64 sweep: 5s warmup, 20s measured, one final capture.
+"""Installer-driven x86/x64 sweep: 5s warmup, 20s measured, one final capture.
 
 Native runs use clean/games without modifying that baseline. Enhanced
 captures come from Phoenix's presented-output screenshot API, not fixture readback.
@@ -21,6 +21,7 @@ import uuid
 import numpy as np
 from PIL import Image
 import psutil
+from processing_fps import completed_fps, processed_metrics
 
 from storage_policy import latest_output
 
@@ -28,6 +29,18 @@ ROOT = Path(__file__).resolve().parents[1]
 WARMUP_SECONDS, MEASURE_SECONDS = 5, 20
 WIDTH, HEIGHT = 1920, 1080
 PROFILE = 'uncapped-1080p-warmup5-measure20-single-capture-v1'
+
+
+def desired_extent(game):
+    if game.get('glide_version') in (1, 2, 3):
+        settings = game.get('background_test') or {}
+        return settings.get('width', 856), settings.get('height', 480)
+    return WIDTH, HEIGHT
+
+
+def profile_for(game):
+    width, height = desired_extent(game)
+    return PROFILE if (width, height) == (WIDTH, HEIGHT) else PROFILE + f'-legacy-{width}x{height}'
 
 
 def read(path):
@@ -86,13 +99,13 @@ class Mailbox:
                 return True
         return False
 
-    def command(self, op='status', timeout=1.5):
+    def command(self, op='status', timeout=10):
         if not self.mail and not self.discover():
             return {}
         token = uuid.uuid4().hex
         request = dict(schema='phoenix-control/1', session=self.endpoint['session'],
                        pid=self.process.pid, id=token, op=op,
-                       expires_tick_ms=self.kernel.GetTickCount64() + 2500)
+                       expires_tick_ms=self.kernel.GetTickCount64() + int(timeout * 1000) + 1000)
         temp = self.mail / 'benchmark-request.tmp'
         temp.write_text(json.dumps(request), encoding='utf-8')
         os.replace(temp, self.mail / 'request.json')
@@ -132,7 +145,7 @@ class Mailbox:
 def compact(snapshot):
     info = snapshot.get('in_process') or snapshot.get('helper') or {}
     return {key: snapshot.get(key) for key in (
-        'enabled', 'phase', 'status', 'execution_mode', 'fallback_reason', 'helper_pid',
+        'enabled', 'phase', 'status', 'api', 'execution_mode', 'fallback_reason', 'helper_pid',
         'delivered', 'presented', 'selection_revision', 'presented_revision',
         'applied_settings')} | {'nvidia': info.get('nvidia'), 'error': info.get('error'),
                               'gpu_timing': info.get('gpu_timing')}
@@ -160,15 +173,28 @@ def close_fixture(process):
             user.PostMessageW(ctypes.c_void_p(hwnd), 0x10, 0, 0)
         return True
     user.EnumWindows(callback(close), 0)
+    # Wrapper fixtures deliberately create windows on their own non-input desktop.
+    # EnumWindows only sees the caller's desktop; never activate/switch desktops.
+    user.OpenDesktopW.argtypes = [ctypes.c_wchar_p, ctypes.c_ulong, ctypes.c_bool, ctypes.c_ulong]
+    user.OpenDesktopW.restype = ctypes.c_void_p
+    user.EnumDesktopWindows.argtypes = [ctypes.c_void_p, callback, ctypes.c_void_p]
+    user.CloseDesktop.argtypes = [ctypes.c_void_p]
+    desktop = user.OpenDesktopW(f'MuseumFixture_{process.pid}', 0, False, 0x00C1)
+    if desktop:
+        try:
+            user.EnumDesktopWindows(desktop, callback(close), None)
+        finally:
+            user.CloseDesktop(desktop)
     try:
-        process.wait(8)
+        process.wait(30)
     except subprocess.TimeoutExpired:
+        process.benchmark_forced_shutdown = True
         process.kill()
         process.wait(5)
 
 
-def fixture_command(exe, backend, output):
-    command = [str(exe), '--background', '--windowed', '--width', str(WIDTH), '--height', str(HEIGHT),
+def fixture_command(exe, backend, output, extent=(WIDTH, HEIGHT)):
+    command = [str(exe), '--background', '--windowed', '--width', str(extent[0]), '--height', str(extent[1]),
                '--mode', 'showcase', '--fixed-time', '--seconds', '0',
                '--warmup-seconds', str(WARMUP_SECONDS), '--measure-seconds', str(MEASURE_SECONDS),
                '--output', str(output)]
@@ -179,13 +205,16 @@ def fixture_command(exe, backend, output):
 def _run_case(game, backend, folder, output, seconds, environment, reference_folder):
     number = {'native': 0, 'nvidia': 1, 'phoenix': 3}[backend]
     exe = folder / Path(game['executable']).name
+    width, height = desired_extent(game)
     result = dict(id=game['id'], backend=backend, executable=str(exe),
                   executable_sha256=digest(exe), requested_seconds=seconds,
-                  passed=None, profile=PROFILE, warmup_seconds=WARMUP_SECONDS,
-                  width=WIDTH, height=HEIGHT, vsync=False,
+                  passed=None, profile=profile_for(game), warmup_seconds=WARMUP_SECONDS,
+                  width=width, height=height, vsync=False,
                   timing_scope='20 measured seconds after 5s warmup; capture excluded',
                   source_suite='clean' if backend == 'native' else 'working',
                   capture_source='fixture_readback' if number == 0 else 'phoenix_presented_output')
+    if number:
+        result['addon_sha256'] = game.get('addon_sha256')
     output.mkdir(parents=True, exist_ok=True)
     # A retry replaces this runner's own current case, not named historic output.
     for path in output.iterdir():
@@ -195,7 +224,7 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
     write(output / 'result.json', result)
     captures, snapshots, pending = [], [], None
     times = (WARMUP_SECONDS + seconds,)
-    command = fixture_command(exe, backend, output)
+    command = fixture_command(exe, backend, output, (width,height))
     environment = environment.copy()
     environment.update(DXVK_LOG_PATH=str(output), DXVK_STATE_CACHE_PATH=str(output),
                        VKD3D_SHADER_CACHE_PATH=str(output))
@@ -235,6 +264,8 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
                             result.setdefault('first_ready_render_seconds', elapsed)
                         if pending:
                             screenshot = snapshot.get('screenshot') or {}
+                            if screenshot.get('error'):
+                                raise RuntimeError('Presented screenshot failed: ' + screenshot['error'])
                             if screenshot.get('path') == str(pending[0]) and not screenshot.get('pending') and pending[0].is_file():
                                 destination = output / f'presented-{len(captures)+1:02}.png'
                                 with Image.open(pending[0]) as image:
@@ -251,7 +282,7 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
                                 if not path.resolve().is_relative_to((folder / 'PhoenixOutput').resolve()):
                                     raise RuntimeError('Screenshot API returned a path outside its output root')
                                 pending = (path, times[next_capture])
-                            next_capture += 1
+                                next_capture += 1
                         if measurement.get('complete') and len(captures) == 1:
                             break
                     if elapsed >= 12 and not mail.mail:
@@ -270,13 +301,22 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
                 result['error'] = result.get('error') or 'Fixture exceeded bounded startup/render deadline'
             close_fixture(process)
         result['exit_code'] = process.returncode
+        result['forced_shutdown'] = getattr(process, 'benchmark_forced_shutdown', False)
+        if process.returncode:
+            result['error'] = result.get('error') or f'Fixture process exited with code 0x{process.returncode & 0xffffffff:08X}'
         runtime = read(output / 'status.json')
         fps = read(output / 'fps.json')
+        if runtime.get('state') == 'error':
+            result['error'] = runtime.get('error') or result.get('error') or 'Fixture initialization failed'
+        modules = runtime.get('render_loaded_modules') or runtime.get('loaded_modules') or []
+        result['loaded_components'] = [Path(path).name for path in modules
+                                       if Path(path).suffix.lower() in ('.addon32', '.addon64')
+                                       or 'reshade' in Path(path).name.lower()]
         measurement = fps.get('measurement') or {}
         if runtime.get('renderer_details', {}).get('uncapped_available') is False:
-            result['error'] = 'This renderer could not disable refresh-synchronized presentation'
-        if (runtime.get('width'), runtime.get('height')) != (WIDTH, HEIGHT):
-            result['error'] = 'Fixture did not render at the requested 1920x1080 resolution'
+            result.setdefault('benchmark_warnings', []).append('Refresh-synchronized presentation could not be disabled; FPS is refresh-limited, not a compatibility failure')
+        if (runtime.get('width'), runtime.get('height')) != (width, height):
+            result['error'] = f'Fixture did not render at the requested {width}x{height} resolution'
         if number:
             # Do not let the dashboard substitute the fixture's unenhanced readback.
             write(output / 'captures.json', {'captures': captures})
@@ -286,10 +326,13 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
             live = [s for s in snapshots if ready(s, number) and
                     measurement.get('start_render_seconds', 0) <= s['seconds'] <= measurement.get('end_render_seconds', 0)]
             result['processing'] = snapshots[-1] if snapshots else {}
-            if len(live) > 1:
-                delta = live[-1]['seconds'] - live[0]['seconds']
-                if delta > 0:
-                    result['neural_fps'] = (live[-1]['delivered'] - live[0]['delivered']) / delta
+            try:
+                output_rate = completed_fps(snapshots, measurement)
+                result['neural_fps'] = output_rate['average_fps']
+            except (ValueError, KeyError) as error:
+                result['error'] = result.get('error') or str(error)
+                result['counter_diagnostics'] = [{key:s.get(key) for key in ('seconds','delivered','phase','execution_mode')}
+                                                 for s in snapshots[:80]]
             if not live:
                 result['error'] = result.get('error') or 'No verified enhanced presentation in the measured window'
             if len(captures) != len(times):
@@ -297,7 +340,7 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
         else:
             captures = read(output / 'captures.json').get('captures', [])
             modules = runtime.get('render_loaded_modules') or runtime.get('loaded_modules') or []
-            if any(Path(path).suffix.lower() == '.addon64' or Path(path).name.lower().startswith('reshade')
+            if any(Path(path).suffix.lower() in ('.addon32', '.addon64') or Path(path).name.lower().startswith('reshade')
                    and Path(path).suffix.lower() == '.dll' for path in modules):
                 result['error'] = 'Clean baseline unexpectedly loaded ReShade or an addon'
         result['passed'] = (process.returncode == 0 and runtime.get('state') == 'complete'
@@ -306,9 +349,16 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
                             and all(c.get('processing_ready', True) for c in captures))
         if not result['passed'] and not result.get('error'):
             result['error'] = runtime.get('error') or 'Incomplete fixture duration or screenshots'
-        result['average_fps'] = fps.get('average_fps')
+        result['game_fps'] = fps.get('average_fps')
+        result['average_fps'] = result.get('neural_fps') if number else fps.get('average_fps')
+        result['execution_mode'] = (result.get('processing') or {}).get('execution_mode') if number else 'native'
         result['elapsed_seconds'] = fps.get('elapsed_seconds')
         result['measurement'] = measurement
+        if number and 'neural_fps' in result:
+            fps = processed_metrics(fps, output_rate)
+            write(output / 'fps.json', fps)
+            result['fps_scope'] = output_rate['fps_scope']
+            result['measurement'] = output_rate['measurement']
         if measurement.get('complete'):
             # Publish measured samples, not the fixture's whole-lifetime CSV.
             with (output / 'fps.csv').open('w', newline='', encoding='utf-8') as stream:
@@ -357,17 +407,22 @@ def failure_record(result):
     """Failures carry identity and diagnostics, never images or timing samples."""
     fields = ('id', 'backend', 'executable', 'executable_sha256', 'requested_seconds',
               'source_suite', 'capture_source', 'exit_code', 'error', 'profile',
-              'width', 'height', 'warmup_seconds', 'vsync')
+              'width', 'height', 'warmup_seconds', 'vsync', 'addon_sha256', 'forced_shutdown')
     failure = {key:result[key] for key in fields if key in result}
     failure.update(passed=False, state='error')
     processing = result.get('processing') or {}
     failure['diagnostics'] = {key:processing[key] for key in
                               ('phase', 'status', 'execution_mode', 'fallback_reason', 'error')
                               if key in processing}
+    failure['diagnostics']['loaded_components'] = result.get('loaded_components', [])
+    if result.get('counter_diagnostics'):
+        failure['diagnostics']['counter_samples'] = result['counter_diagnostics']
+    failure['diagnostics']['reshade_messages'] = result.get('reshade_messages', [])
     return failure
 
 
 def run_case(game, backend, folder, output, seconds, environment):
+    width, height = desired_extent(game)
     output.mkdir(parents=True, exist_ok=True)
     if not output.resolve().is_relative_to(ROOT / 'runs/latest-x64-backends'):
         raise RuntimeError('Benchmark output escaped its owned current run')
@@ -377,28 +432,42 @@ def run_case(game, backend, folder, output, seconds, environment):
         path.unlink()
     write(output / 'result.json', dict(id=game['id'], backend=backend, passed=None, state='running',
                                        capture_source='pending', requested_seconds=seconds,
-                                       profile=PROFILE, width=WIDTH, height=HEIGHT,
+                                       profile=profile_for(game), width=width, height=height,
                                        warmup_seconds=WARMUP_SECONDS, vsync=False))
     (ROOT / 'build').mkdir(exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='backend-run-', dir=ROOT / 'build') as temporary:
         staged = Path(temporary)
         result = _run_case(game, backend, folder, staged, seconds, environment, output.parent / 'native')
         if result.get('passed'):
+            try:
+                records = read(staged / 'captures.json').get('captures') or []
+                if len(records) != 1:
+                    raise ValueError('Successful mode must have exactly one screenshot')
+                with Image.open(staged / records[0]['png']) as image:
+                    if image.size != (width, height) or np.asarray(image.convert('RGB')).std() < 15:
+                        raise ValueError(f'Screenshot is blank or is not {width}x{height}')
+            except (OSError, ValueError, KeyError) as error:
+                result.update(passed=False, error=str(error))
+        if result.get('passed'):
             records = read(staged / 'captures.json').get('captures') or []
             for record in records:
                 original = staged / record['png']
-                name = f"{game['id']}-{backend}-1920x1080.png"
+                name = f"{game['id']}-{backend}-{width}x{height}.png"
                 shutil.copyfile(original, output / name)
                 record.pop('ppm', None)
                 record.update(png=name, backend=backend, fixture_id=game['id'],
                               executable_sha256=result['executable_sha256'], source_suite=result['source_suite'],
-                              profile=PROFILE, after_measurement=True)
+                              profile=profile_for(game), after_measurement=True)
             write(output / 'captures.json', dict(captures=records))
             for name in ('fps.json', 'fps.csv', 'status.json', 'processing.json'):
                 path = staged / name
                 if path.is_file():
                     shutil.copyfile(path, output / name)
         else:
+            log = staged / 'ReShade.log'
+            if log.is_file():
+                result['reshade_messages'] = [line[-600:] for line in log.read_text(errors='replace').splitlines()
+                                              if 'ERROR' in line or 'WARN' in line][-8:]
             result = failure_record(result)
         write(output / 'result.json', result)
     emit({key: result[key] for key in ('id', 'backend', 'passed', 'average_fps', 'neural_fps', 'error') if key in result})
@@ -407,8 +476,10 @@ def run_case(game, backend, folder, output, seconds, environment):
 
 def current_pass(path, game):
     result = read(path)
-    return (result.get('passed') is True and result.get('profile') == PROFILE
-            and result.get('executable_sha256') == game['sha256'])
+    return (result.get('passed') is True and result.get('profile') == profile_for(game)
+            and result.get('executable_sha256') == game['sha256']
+            and (result.get('backend') == 'native' or not game.get('addon_sha256')
+                 or result.get('addon_sha256') == game['addon_sha256']))
 
 
 def clear_history():
@@ -449,15 +520,82 @@ def clear_history():
     emit({'cleared_generated_history_files': count})
 
 
+def execution_mode(result):
+    return (result.get('execution_mode') or result.get('processing', {}).get('execution_mode')
+            or result.get('diagnostics', {}).get('execution_mode'))
+
+
+def clear_enhanced_case(path):
+    path = Path(path).absolute()
+    owned = (ROOT / 'runs/latest-x64-backends').absolute()
+    if path.name not in ('nvidia','phoenix') or path.parent.parent != owned:
+        raise RuntimeError('Refusing cleanup outside one owned enhancement result')
+    for part in (path, *path.parents):
+        if part.is_symlink() or part.is_junction():
+            raise RuntimeError('Refusing result cleanup through a link')
+        if part == ROOT:
+            break
+    if not path.exists():
+        return
+    members = list(path.iterdir())
+    if any(not p.is_file() or p.is_symlink() or p.is_junction() for p in members):
+        raise RuntimeError('Unexpected directory or link in enhancement result')
+    for member in members:
+        member.unlink()
+
+
+def prepare_background_rerun():
+    output = ROOT / 'runs/latest-x64-backends'
+    games = {g['id']:g for g in read(ROOT / 'matrix.json')['games']}
+    targets = {}
+    for path in sorted(output.glob('*/*/result.json')):
+        if path.parent.parent.name in games and path.parent.name in ('nvidia','phoenix') and execution_mode(read(path)) == 'helper':
+            targets.setdefault(path.parent.parent.name, []).append(path.parent.name)
+    if not targets:
+        raise RuntimeError('No recorded background-host cases to rerun')
+    preserved = {}
+    for folder in output.glob('*/*'):
+        if not folder.is_dir() or folder.name not in ('native','nvidia','phoenix') or folder.name in targets.get(folder.parent.name, []):
+            continue
+        for path in folder.iterdir():
+            if path.is_file() and not path.is_symlink() and not path.is_junction():
+                preserved[path.relative_to(ROOT).as_posix()] = digest(path)
+    plan = dict(schema='background-rerun/1', targets=targets, preserved_sha256=preserved)
+    write(ROOT / 'state/background-rerun.json', plan)
+    for key,modes in targets.items():
+        for mode in modes:
+            target = output / key / mode
+            clear_enhanced_case(target)
+            write(target / 'result.json', dict(id=key, backend=mode, passed=None, state='queued',
+                    previous_execution_mode='helper', execution_mode='not_started',
+                    source_suite='working', capture_source='pending', profile=profile_for(games[key]),
+                    executable_sha256=games[key]['sha256'], width=desired_extent(games[key])[0],
+                    height=desired_extent(games[key])[1], requested_seconds=MEASURE_SECONDS,
+                    warmup_seconds=WARMUP_SECONDS, vsync=False))
+    emit(dict(background_rerun_cases=sum(map(len,targets.values())), fixtures=len(targets)))
+    return plan
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--installer', type=Path, required=True)
     parser.add_argument('--payload', type=Path, required=True)
     parser.add_argument('--only', nargs='+')
+    parser.add_argument('--architecture', choices=('all', 'x86', 'x64'), default='all')
     parser.add_argument('--resume', action='store_true')
     parser.add_argument('--clear-history', action='store_true', help='Explicitly clear previous generated image/result history')
+    parser.add_argument('--rerun-background', action='store_true', help='Clear and rerun only recorded helper-backed cases; preserve baselines and other modes')
+    parser.add_argument('--resume-background', action='store_true', help='Resume the saved background-only rerun plan')
     parser.add_argument('--seconds', type=float, default=MEASURE_SECONDS)
     args = parser.parse_args()
+    if args.rerun_background and args.resume_background or (args.rerun_background or args.resume_background) and args.clear_history:
+        parser.error('Background-only reruns cannot combine with full-history cleanup or each other')
+    background_plan = None
+    if args.rerun_background or args.resume_background:
+        background_plan = prepare_background_rerun() if args.rerun_background else read(ROOT / 'state/background-rerun.json')
+        if background_plan.get('schema') != 'background-rerun/1' or not background_plan.get('targets'):
+            parser.error('A valid saved background rerun plan is required')
+        args.resume = True
     if args.seconds != MEASURE_SECONDS:
         parser.error('Comparable backend sweep requires exactly 20 measured seconds after 5s warmup')
     if args.clear_history and args.resume:
@@ -473,8 +611,14 @@ def main():
     if args.clear_history:
         from dashboard import export_snapshot
         export_snapshot()
-    games = [g for g in read(ROOT / 'matrix.json')['games'] if g['architecture'] == 'x64'
-             and (not args.only or g['id'] in args.only)]
+    if background_plan:
+        from dashboard import export_snapshot
+        from summarize_backends import summarize
+        export_snapshot()
+        summarize()
+    games = [g for g in read(ROOT / 'matrix.json')['games'] if (args.architecture == 'all' or g['architecture'] == args.architecture)
+             and (not args.only or g['id'] in args.only)
+             and (not background_plan or g['id'] in background_plan['targets'])]
     # This is test order only; detection and installation always use the real CLI.
     games.sort(key=lambda g: (g['id'] != 'dx12-x64', g['id']))
     for game in games:
@@ -482,7 +626,7 @@ def main():
             break
         exe, folder = ROOT / game['executable'], ROOT / game['install_directory']
         if game.get('fixture_version', 0) < 7:
-            raise RuntimeError('Rebuild this x64 fixture for uncapped measurement first: ' + game['id'])
+            raise RuntimeError('Rebuild this fixture for uncapped measurement first: ' + game['id'])
         if not folder.resolve().is_relative_to(ROOT / 'games') or exe.resolve().parent != folder.resolve():
             raise RuntimeError('Fixture is outside the working games set')
         if digest(exe) != game['sha256']:
@@ -490,7 +634,7 @@ def main():
         clean = ROOT / 'clean' / game['executable']
         if not clean.resolve().is_relative_to(ROOT / 'clean/games') or digest(clean) != game['sha256']:
             raise RuntimeError('Clean/working fixture builds differ: ' + game['id'])
-        if any(clean.parent.glob('*.addon64')) or (clean.parent / 'Phoenix.json').exists():
+        if any(clean.parent.glob('*.addon64')) or any(clean.parent.glob('*.addon32')) or (clean.parent / 'Phoenix.json').exists():
             raise RuntimeError('Clean fixture contains Phoenix components: ' + game['id'])
         case = output / game['id']
         case.mkdir(exist_ok=True)
@@ -506,14 +650,21 @@ def main():
         inv = read(inventory)
         plan = (inv.get('Plans') or [{}])[0]
         candidate = (inv.get('Games') or [{}])[0]
+        addon_source = (plan.get('Plan') or {}).get('Addon')
+        if not addon_source:
+            raise RuntimeError('Installer did not resolve the addon payload: ' + game['id'])
+        game['addon_sha256'] = digest(Path(addon_source))
         root = Path(candidate.get('Root', folder))
         if not root.resolve().is_relative_to(folder.resolve()):
             raise RuntimeError('Installer root extends outside selected fixture: ' + str(root))
         manifest = root / '_DLSS5_Compat_Backup/manifest.json'
         native_result = case / 'native/result.json'
+        modes = background_plan['targets'][game['id']] if background_plan else ['nvidia','phoenix']
+        if background_plan and not current_pass(native_result, game):
+            raise RuntimeError('Background-only rerun requires the existing matching clean baseline: ' + game['id'])
         if not (args.resume and current_pass(native_result, game)):
             run_case(game, 'native', clean.parent, case / 'native', args.seconds, os.environ.copy())
-        if all(args.resume and current_pass(case / mode / 'result.json', game) for mode in ('nvidia', 'phoenix')):
+        if all(args.resume and current_pass(case / mode / 'result.json', game) for mode in modes):
             continue
         installed = cli(['--install', exe, '--offline', '--payload', args.payload.resolve()], 'install')
         environment = os.environ.copy()
@@ -522,6 +673,8 @@ def main():
             data = read(manifest)
             environment.update(data.get('VulkanLaunchEnvironment') or data.get('vulkanLaunchEnvironment') or {})
         for mode, number in (('nvidia', 1), ('phoenix', 3)):
+            if mode not in modes:
+                continue
             if (output / 'STOP').exists():
                 break
             if args.resume and current_pass(case / mode / 'result.json', game):
@@ -530,8 +683,8 @@ def main():
             if installed.returncode:
                 target.mkdir(exist_ok=True)
                 failure = dict(id=game['id'], backend=mode, passed=False, state='error', source_suite='working',
-                               profile=PROFILE, requested_seconds=MEASURE_SECONDS,
-                               width=WIDTH, height=HEIGHT, warmup_seconds=WARMUP_SECONDS, vsync=False,
+                               profile=profile_for(game), requested_seconds=MEASURE_SECONDS,
+                               width=desired_extent(game)[0], height=desired_extent(game)[1], warmup_seconds=WARMUP_SECONDS, vsync=False,
                                executable=str(exe), executable_sha256=game['sha256'],
                                error=installed.stderr.strip() or installed.stdout.strip() or plan.get('Preflight', {}).get('DisplayText') or 'Installer rejected this route')
                 write(target / 'result.json', failure)

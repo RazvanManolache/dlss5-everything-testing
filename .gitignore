@@ -16,6 +16,10 @@
 /Dashboard.cmd
 /tools/dashboard.py
 /tools/test_dashboard.py
+/tools/check_performance_ui.py
+/tools/check_background_ui.py
+/tools/test_performance.py
+/tests/dashboard-performance.cjs
 
 # No README files in this initial source upload.
 [rR][eE][aA][dD][mM][eE]*

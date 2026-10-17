@@ -212,7 +212,8 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE,LPWSTR,int){int code=0;try{
  ensure(W>=320&&H>=240&&W<=3840&&H<=2160,"Resolution range: 320x240 through 3840x2160");fs::create_directories(output);status("starting");
  isolateBackground();
  WNDCLASSW wc{};wc.style=CS_OWNDC;wc.lpfnWndProc=proc;wc.hInstance=instance;wc.hCursor=LoadCursor(nullptr,IDC_ARROW);wc.lpszClassName=L"MuseumGraphicsTest";RegisterClassW(&wc);
- DWORD style=WS_OVERLAPPED|WS_CAPTION|WS_SYSMENU|WS_MINIMIZEBOX|WS_MAXIMIZEBOX;RECT rect{0,0,LONG(W),LONG(H)};AdjustWindowRect(&rect,style,background?FALSE:TRUE);
+ // Hidden benchmark surfaces must not be clamped to the desktop work area.
+ DWORD style=background?WS_POPUP:WS_OVERLAPPED|WS_CAPTION|WS_SYSMENU|WS_MINIMIZEBOX|WS_MAXIMIZEBOX;RECT rect{0,0,LONG(W),LONG(H)};AdjustWindowRect(&rect,style,background?FALSE:TRUE);
  std::wstring title=L"Museum - ";for(const char* c=API_NAME;*c;c++)title+=wchar_t(*c);title+=sizeof(void*)==8?L" x64":L" x86";
  windowHandle=CreateWindowExW(background?WS_EX_NOACTIVATE|WS_EX_TOOLWINDOW:0,wc.lpszClassName,title.c_str(),style,80,60,rect.right-rect.left,rect.bottom-rect.top,nullptr,background?nullptr:createControlsMenu(),instance,nullptr);ensure(windowHandle!=nullptr,"CreateWindow");
  if(!background){ShowWindow(windowHandle,windowed?SW_SHOW:SW_MAXIMIZE);UpdateWindow(windowHandle);}

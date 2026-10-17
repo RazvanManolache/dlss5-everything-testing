@@ -19,8 +19,8 @@ def digest(path):
 
 def run_batch(text,path):
     path.write_text('@echo off\n'+text+'\nexit /b %errorlevel%\n')
-    with path.with_suffix('.log').open('w') as f:
-        p=subprocess.run(['cmd','/c',str(path)],cwd=path.parent,stdout=f,stderr=subprocess.STDOUT)
+    p=subprocess.run(['cmd','/c',str(path)],cwd=path.parent,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+    path.with_suffix('.log').write_bytes(p.stdout)
     if p.returncode:print(path.with_suffix('.log').read_text(errors='replace'));raise RuntimeError(f'Build failed: {path}')
 
 def main():
@@ -67,6 +67,8 @@ def main():
             if spec:
                 entry.update(spec);entry.update(fixture_version=7,import_dlls=import_dlls(spec))
                 entry.pop('backend',None);entry.pop('libraries',None);entry.pop('arches',None)
+                if spec.get('glide_version'):
+                    entry['background_test'].update(width=856,height=480,native_legacy_mode=True)
             if number<8:
                 dd,device={2:('IDirectDraw','IDirect3DDevice'),3:('IDirectDraw2','IDirect3DDevice'),5:('IDirectDraw2','IDirect3DDevice2'),6:('IDirectDraw4','IDirect3DDevice3'),7:('IDirectDraw7','IDirect3DDevice7')}[number]
                 entry.update(directdraw_interface=dd,direct3d_device_interface=device,submission='execute_buffers' if number<=3 else 'DrawPrimitive')

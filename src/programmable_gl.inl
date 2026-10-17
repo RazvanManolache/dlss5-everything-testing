@@ -7,6 +7,7 @@ EGLDisplay eglDisplay=EGL_NO_DISPLAY;EGLContext eglContext=EGL_NO_CONTEXT;EGLSur
 #else
 #include <GL/gl.h>
 #include "gl_functions.h"
+#include "gl_profile_policy.h"
 HDC dc{};HGLRC glContext{};GLuint glVao=0;
 #endif
 #include "fullbench_shaders.h"
@@ -30,7 +31,10 @@ void initRenderer(){
  const char* vertex=es3Vertex;const char* fragment=es3Fragment;
 #endif
 #else
- dc=GetDC(windowHandle);PIXELFORMATDESCRIPTOR p{sizeof(p),1};p.dwFlags=PFD_DRAW_TO_WINDOW|PFD_SUPPORT_OPENGL|PFD_DOUBLEBUFFER;p.iPixelType=PFD_TYPE_RGBA;p.cColorBits=32;p.cDepthBits=24;p.cStencilBits=8;int pf=ChoosePixelFormat(dc,&p);ensure(pf&&SetPixelFormat(dc,pf,&p),"Core pixel format");HGLRC bootstrap=wglCreateContext(dc);ensure(bootstrap&&wglMakeCurrent(dc,bootstrap),"WGL bootstrap");using Create=HGLRC(WINAPI*)(HDC,HGLRC,const int*);auto create=glFunction<Create>("wglCreateContextAttribsARB");int attrs[]={0x2091,GL_CORE_MAJOR,0x2092,GL_CORE_MINOR,0x9126,1,0};glContext=create(dc,nullptr,attrs);wglMakeCurrent(nullptr,nullptr);wglDeleteContext(bootstrap);ensure(glContext&&wglMakeCurrent(dc,glContext),"Core-profile context");loadGLFunctions();GLint profile=0;glGetIntegerv(0x9126,&profile);ensure(profile&1,"Expected GL core profile");rendererInfo={{"context_api","WGL core"},{"profile_mask",profile},{"requested_version",std::to_string(GL_CORE_MAJOR)+"."+std::to_string(GL_CORE_MINOR)}};glGenVertexArrays(1,&glVao);glBindVertexArray(glVao);
+ dc=GetDC(windowHandle);PIXELFORMATDESCRIPTOR p{sizeof(p),1};p.dwFlags=PFD_DRAW_TO_WINDOW|PFD_SUPPORT_OPENGL|PFD_DOUBLEBUFFER;p.iPixelType=PFD_TYPE_RGBA;p.cColorBits=32;p.cDepthBits=24;p.cStencilBits=8;int pf=ChoosePixelFormat(dc,&p);ensure(pf&&SetPixelFormat(dc,pf,&p),"Core pixel format");HGLRC bootstrap=wglCreateContext(dc);ensure(bootstrap&&wglMakeCurrent(dc,bootstrap),"WGL bootstrap");using Create=HGLRC(WINAPI*)(HDC,HGLRC,const int*);auto create=glFunction<Create>("wglCreateContextAttribsARB");int attrs[]={0x2091,GL_CORE_MAJOR,0x2092,GL_CORE_MINOR,0x9126,1,0};glContext=create(dc,nullptr,attrs);wglMakeCurrent(nullptr,nullptr);wglDeleteContext(bootstrap);ensure(glContext&&wglMakeCurrent(dc,glContext),"Core-profile context");loadGLFunctions();GLint profile=0;glGetIntegerv(0x9126,&profile);
+ auto proxy=GetModuleHandleW(L"opengl32.dll");bool reshadeLoaded=proxy&&GetProcAddress(proxy,"ReShadeRegisterAddon");
+ ensure(acceptedGLProfile(GL_CORE_MAJOR,GL_CORE_MINOR,profile,reshadeLoaded),"Expected GL core profile (or ReShade's pre-4.3 context upgrade)");
+ rendererInfo={{"context_api","WGL requested core"},{"profile_mask",profile},{"requested_profile","core"},{"actual_profile",profile&1?"core":"compatibility"},{"reshade_profile_upgrade",!(profile&1)&&reshadeLoaded},{"requested_version",std::to_string(GL_CORE_MAJOR)+"."+std::to_string(GL_CORE_MINOR)}};glGenVertexArrays(1,&glVao);glBindVertexArray(glVao);
 #if GL_CORE_MAJOR==4
  const char* vertex=core46Vertex;const char* fragment=core46Fragment;
 #else

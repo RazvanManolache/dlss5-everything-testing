@@ -6,6 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class UncappedSourceTests(unittest.TestCase):
+    def test_background_window_has_no_desktop_chrome_size_limit(self):
+        self.assertIn('style=background?WS_POPUP:', (ROOT / 'src/main.cpp').read_text())
+
     def test_dxgi_and_d3d9_do_not_request_vblank(self):
         for name in ('dx12.inl', 'dx10_11.inl'):
             text = (ROOT / 'src' / name).read_text()
