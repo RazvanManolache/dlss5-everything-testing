@@ -13,6 +13,25 @@
 
 These are **graphics API fixtures, not commercial game-engine benchmarks**. The scene and camera are shared, but shaders, CPU work, submission, presentation and wrapper paths differ. That makes the suite useful for studying implementations and compatibility; it does not isolate the intrinsic speed of an API or recreate the performance of historical games.
 
+## Performance at a Glance
+
+**Compare like-for-like execution paths, not one pooled compatibility average.** On the RTX 5080, these four matched **x64, in-process, 1920x1080** cases delivered:
+
+| Fixture | Phoenix DLSS5 output FPS | NVIDIA DLSS5 output FPS |
+| --- | ---: | ---: |
+| D3D11-on-12 | 187.2 | 187.8 |
+| Direct3D 12 | 174.5 | 174.3 |
+| GLES 2 via ANGLE, Vulkan configuration | 176.3 | 179.1 |
+| GLES 3 via ANGLE, Vulkan configuration | 178.4 | 176.8 |
+| **Mean, same four cases** | **179.1** | **179.5** |
+| **Median, same four cases** | **177.3** | **177.9** |
+
+These are **fresh completed enhanced outputs per second**, not the unprocessed game loop or isolated GPU inference. Both renderers use the same four successful cases. ANGLE's configured API and its observed presentation/capture path are recorded separately; these rows do not establish native Vulkan injection performance.
+
+By contrast, pooling **all 110 matched fixture/path cases** gives **16.7 output FPS for Phoenix DLSS5** and **15.9 for NVIDIA DLSS5**. That includes slow legacy/wrapper workloads, background transport and experimental x86 execution methods. It answers a compatibility-suite question, not "how fast is DLSS5 in a typical game?" The two sets are different workloads, not a before/after speedup, and four in-process cases do not predict performance in every x64 game.
+
+**No slow results are discarded.** The [dashboard](https://razvanmanolache.github.io/dlss5-everything-testing/dashboard/index.html#performance) leads with mean/median FPS split by architecture, resolution and observed processing path. Expand **Split further by technology** for API-family detail, or **Pooled compatibility averages** for the complete mixed selection. Failures and their reasons remain visible.
+
 ## Current Results
 
 Measured on **17-18 October 2026**, using an **NVIDIA GeForce RTX 5080, driver 616.64**, on an AMD Ryzen 9 9950X3D system. Enhanced runs use a locally fixed **0.81-derived Phoenix DLSS5 candidate**. Executable, add-on and model hashes identify the measured inputs; these are not necessarily the binaries from an earlier release bearing that version.
@@ -52,7 +71,7 @@ The same GPU does not produce the same throughput through every implementation. 
 
 ### Phoenix DLSS5 and NVIDIA DLSS5: Where Execution Matters
 
-Mean **fresh completed enhanced outputs per second**, using the same successful fixtures across all required paths *within each renderer*:
+**x86 compatibility-route comparison, including slow renderer families.** These are not the headline in-process results above. Mean **fresh completed enhanced outputs per second**, using the same successful fixtures across all required paths *within each renderer*:
 
 | Renderer | Execution path | Matched fixtures | Mean output FPS |
 | --- | --- | ---: | ---: |
@@ -68,7 +87,7 @@ For a modern example, **DX12 x86 / Phoenix DLSS5** delivers **58.15 output FPS**
 
 The dashboard provides properly paired Phoenix DLSS5/NVIDIA DLSS5 comparisons, FPS-loss bars, route rankings, sampled timelines, failure filters and per-fixture exports. Phoenix DLSS5 is not universally faster, and throughput is not a visual-quality score. Helper and in-process captures differ: this is **not a proven equal-quality comparison**. Frozen screenshots also do not establish temporal quality in motion.
 
-**Read performance by path, not as one universal average.** The dashboard leads with mean and median output FPS split by architecture, resolution and execution path, with a further technology breakdown. Slow legacy/wrapper cases and experimental x86 routes remain in the dataset, but are not blended into the headline for native in-process execution. Pooled compatibility averages remain available separately. In this snapshot, Phoenix DLSS5 averages **179.1 fresh outputs/s across four matched in-process cases**, versus **16.7 across all 110 matched fixture/path cases**. These are different workloads, not competing estimates of typical game FPS.
+See [Performance at a Glance](#performance-at-a-glance) for the separate x64 in-process results and an explanation of why a pooled average is not a universal performance score.
 
 ### Changes and Remaining Failures
 
