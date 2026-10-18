@@ -15,6 +15,7 @@ from pathlib import Path
 
 from PIL import Image
 import dashboard
+from renderer_labels import renderer_label, execution_label
 
 ROOT = Path(__file__).resolve().parents[1]
 FIXTURE_FIELDS = ('id', 'api', 'architecture', 'expected_proxy', 'application_api',
@@ -48,6 +49,9 @@ def public_data(data):
         runs=[], captures=[], groups=data['groups'], build={}, warnings=[], notes=data['notes'])
     for original in data['runs']:
         row = select(original, RUN_FIELDS)
+        row['renderer_label'] = renderer_label(row.get('mode'))
+        if row.get('execution_variant'):
+            row['execution_label'] = execution_label(row['execution_variant'], row.get('execution_label'))
         if row.get('timestamp'):
             row['timestamp'] = datetime.datetime.fromisoformat(row['timestamp']).astimezone(datetime.timezone.utc).isoformat()
         row['controls'] = select(original.get('controls') or {}, CONTROL_FIELDS)
@@ -130,7 +134,7 @@ def export(output, data=None, replace=False):
             capture.update(src=name, bytes=(stage / name).stat().st_size, pixel_sha256=digest)
         (stage / 'data.js').write_text('window.BENCH_DATA = ' +
             json.dumps(result, ensure_ascii=True).replace('<', '\\u003c') + ';\n', encoding='utf-8')
-        fields = ('fixture_id', 'architecture', 'mode', 'execution_variant', 'execution_mode',
+        fields = ('fixture_id', 'architecture', 'mode', 'renderer_label', 'execution_variant', 'execution_mode',
             'status', 'fps', 'game_fps', 'neural_fps', 'fps_scope', 'width', 'height',
             'warmup_seconds', 'requested_seconds', 'vsync', 'startup_in_measurement', 'error')
         with (stage / 'results.csv').open('w', encoding='utf-8', newline='') as stream:
@@ -144,6 +148,18 @@ def export(output, data=None, replace=False):
                 'matched_x86_rankings', 'previous_native_x64_comparison', 'failures',
                 'timing_note', 'regression_note', 'route_output_comparison'))
             public_summary['dos_results'] = [r for r in result['runs'] if r['fixture_id'] == 'dos-vga']
+            def add_display_names(value):
+                if isinstance(value, dict):
+                    if 'backend' in value:
+                        value['renderer_label'] = renderer_label(value['backend'])
+                    if value.get('variant') in ('x86-driver',):
+                        value['label'] = execution_label(value['variant'], value.get('label'))
+                    for child in list(value.values()):
+                        add_display_names(child)
+                elif isinstance(value, list):
+                    for child in value:
+                        add_display_names(child)
+            add_display_names(public_summary)
             assert_private_free(public_summary)
             (stage / 'summary.json').write_text(json.dumps(public_summary, indent=2) + '\n', encoding='utf-8')
         files = {p.relative_to(stage).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()

@@ -1,7 +1,7 @@
 # Screenshot Credits
 
 The published captures are rendered by the synthetic museum fixtures, not taken
-from commercial games. Native, NVIDIA DLSS5 and Phoenix labels identify how each
+from commercial games. Native, NVIDIA DLSS5 and Phoenix DLSS5 labels identify how each
 capture was produced; they do not imply sponsorship, certification or equal quality.
 
 - Human characters: [Microsoft Rocketbox](https://github.com/microsoft/Microsoft-Rocketbox),
@@ -20,6 +20,6 @@ capture IDs, fixture labels and execution-path identities remain separate.
 This is storage deduplication, not a claim that different rendering paths have
 identical output in general.
 
-No NVIDIA DLLs, neural-model weights, ReShade add-on binaries, game executables,
+No NVIDIA DLSS5 DLLs, neural-model weights, ReShade add-on binaries, game executables,
 download caches or original character/texture packages are included in the
 public dashboard. Source files and third-party headers retain their own notices.

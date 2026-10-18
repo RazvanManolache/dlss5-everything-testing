@@ -8,10 +8,11 @@ from pathlib import Path
 import statistics
 
 from run_backends import ROOT, read, write
+from renderer_labels import renderer_label
 
 OUTPUT=ROOT/'runs/latest-x64-backends'
 ROUTES={'helper':'External x64 helper','x64-library':'x64 library inside x86',
-        'x86-driver':'x86 Phoenix + native driver'}
+        'x86-driver':'x86 Phoenix DLSS5 + native driver'}
 EXPECTED={'helper':'helper','x64-library':'in_process_x64_library','x86-driver':'in_process_x86_driver'}
 
 
@@ -159,26 +160,26 @@ def summarize(images=False):
         '| --- | --- | --- | ---: | ---: | ---: | ---: |']
     def n(value):return f'{value:.2f}' if positive(value) else '-'
     for row in totals:
-        lines.append(f"| {row['architecture']} | {row['backend']} | {ROUTES.get(row['variant'],row['variant'])} | {row['passed']} | {row['failed']} | {row['not_applicable']} | {n(row['mean_processed_fps'])} |")
+        lines.append(f"| {row['architecture']} | {renderer_label(row['backend'])} | {ROUTES.get(row['variant'],row['variant'])} | {row['passed']} | {row['failed']} | {row['not_applicable']} | {n(row['mean_processed_fps'])} |")
     lines+=['','## Matched x86 Route Comparison','',
         'Failures are excluded, not zero-valued. These rows use the same passing fixtures for every route within each renderer.',
         '', '| Renderer | Route | Matched fixtures | Mean processed FPS | Geometric speed vs helper | Fastest or within 1% | Startup affected |',
         '| --- | --- | ---: | ---: | ---: | ---: | ---: |']
     for row in ranking:
-        lines.append(f"| {row['backend']} | {row['label']} | {row['matched_fixtures']} | {n(row['mean_processed_fps'])} | {n(row['geometric_speedup_vs_helper'])} | {row['wins']} | {row['startup_affected']} |")
+        lines.append(f"| {renderer_label(row['backend'])} | {row['label']} | {row['matched_fixtures']} | {n(row['mean_processed_fps'])} | {n(row['geometric_speedup_vs_helper'])} | {row['wins']} | {row['startup_affected']} |")
     if dos:
         lines+=['','## DOS Compatibility Check','',
             'Separate 320x200 emulation test, excluded from all Windows totals and route rankings. The native rate uses the DOS guest clock; enhanced rates use host wall time with VSync. Do not interpret these as a speedup over native DOS.',
             '', '| Renderer | Outcome | Rate | Measurement scope |', '| --- | --- | ---: | --- |']
         for row in dos:
-            lines.append(f"| {row['backend']} | {row['outcome']} | {n(row.get('average_fps'))} | {row.get('fps_scope') or row.get('error') or '-'} |")
+            lines.append(f"| {renderer_label(row['backend'])} | {row['outcome']} | {n(row.get('average_fps'))} | {row.get('fps_scope') or row.get('error') or '-'} |")
     lines+=['','## Changes From Previous Native/x64 Scores','',
         '| Fixture | Renderer | Previous FPS | Current FPS | Change |', '| --- | --- | ---: | ---: | ---: |']
     for row in comparisons:
         delta=f"{row['change_percent']:+.1f}%" if row['change_percent'] is not None else 'Not comparable / failed'
-        lines.append(f"| {row['id']} | {row['backend']} | {n(row['old_fps'])} | {n(row['new_fps'])} | {delta} |")
+        lines.append(f"| {row['id']} | {renderer_label(row['backend'])} | {n(row['old_fps'])} | {n(row['new_fps'])} | {delta} |")
     lines+=['','## Failures and Unavailable Combinations','']
-    lines += [f"- {r['id']}, {r['backend']}, {r['variant']} ({r['outcome']}): {str(r['error']).replace(chr(10),' ')}" for r in failures]
+    lines += [f"- {r['id']}, {renderer_label(r['backend'])}, {r['variant']} ({r['outcome']}): {str(r['error']).replace(chr(10),' ')}" for r in failures]
     (OUTPUT/'execution-comparison.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     # The older three-mode summary cannot represent separate x86 transports.
     write(OUTPUT/'summary.json',dict(schema='execution-summary-index/1',

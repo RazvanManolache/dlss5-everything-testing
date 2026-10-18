@@ -5,6 +5,8 @@
   else root.BenchPerformance = api;
 })(typeof globalThis === 'object' ? globalThis : this, function () {
   const MODES = ['native', 'nvidia', 'phoenix'];
+  const executionLabel = run => run.execution_variant === 'x86-driver'
+    ? 'x86 Phoenix DLSS5 + native driver' : run.execution_label || run.execution_variant;
   const finite = value => typeof value === 'number' && Number.isFinite(value);
   const mean = values => values.length ? values.reduce((a, b) => a + b, 0) / values.length : null;
   const geometricMean = values => values.length && values.every(v => finite(v) && v > 0)
@@ -38,7 +40,7 @@
       const key = cohortKey(run);
       if (!map.has(key)) map.set(key, {key, fixture: run.fixture_id || run.id,
         label: String(run.fixture_id || run.label || run.id || 'Unknown fixture')+
-          (run.mode !== 'native' && ![undefined, null, 'auto'].includes(run.execution_variant) ? ' / '+(run.execution_label || run.execution_variant) : ''),
+          (run.mode !== 'native' && ![undefined, null, 'auto'].includes(run.execution_variant) ? ' / '+executionLabel(run) : ''),
         execution_variant: run.mode === 'native' ? 'auto' : run.execution_variant || 'auto',
         base_key:baseKey(run),
         group: run.group, api: run.api, transport: run.transport, architecture: run.architecture,
@@ -80,7 +82,7 @@
   function executionRankings(runs) {
     const cohorts=collect(runs).filter(c=>c.architecture==='x86');
     const expected={helper:'helper','x64-library':'in_process_x64_library','x86-driver':'in_process_x86_driver'};
-    const labels={helper:'External x64 helper','x64-library':'x64 library inside x86','x86-driver':'x86 Phoenix + native driver'};
+    const labels={helper:'External x64 helper','x64-library':'x64 library inside x86','x86-driver':'x86 Phoenix DLSS5 + native driver'};
     const rows=[];
     for (const backend of ['phoenix','nvidia']) {
       const variants=backend==='phoenix'?Object.keys(expected):['helper','x64-library'];
@@ -128,7 +130,7 @@
       states: Object.fromEntries(backends.map(mode => [mode, cohort.runs[mode]?.status || 'missing']))}));
     const groups = new Map();
     for (const cohort of cohorts) {
-      const routeLabel = mode => ({helper:'Background process',in_process:'In process',in_process_x64_library:'x64 library inside x86',in_process_x86_driver:'x86 Phoenix + native driver',in_process_portable:'Portable in process',not_started:'Not started'})[mode] || mode;
+      const routeLabel = mode => ({helper:'Background process',in_process:'In process',in_process_x64_library:'x64 library inside x86',in_process_x86_driver:'x86 Phoenix DLSS5 + native driver',in_process_portable:'Portable in process',not_started:'Not started'})[mode] || mode;
       const label = group === 'execution' ? [...new Set(backends.filter(m => m !== 'native')
         .map(m => routeLabel(cohort.runs[m]?.execution_mode || 'not_started')))].sort().join(' / ') || 'Native' : cohort[group] || 'Unknown';
       if (!groups.has(label)) groups.set(label, []);

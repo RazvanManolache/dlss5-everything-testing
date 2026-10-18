@@ -24,6 +24,10 @@ class PublicSnapshotTests(unittest.TestCase):
             self.assertNotIn(word,encoded)
         self.assertTrue(result['public_snapshot'])
         self.assertEqual(result['runs'][0]['processing'],dict(api='Direct3D 12'))
+        self.assertEqual(result['runs'][0]['mode'], 'phoenix')
+        self.assertEqual(result['runs'][0]['renderer_label'], 'Phoenix DLSS5')
+        self.assertEqual(result['runs'][1]['execution_variant'], 'x86-driver')
+        self.assertEqual(result['runs'][1]['execution_label'], 'x86 Phoenix DLSS5 + native driver')
 
     def test_paths_in_allowed_strings_fail_closed(self):
         data=self.data();data['runs'][0]['error']='Failed to open C:/private/model'

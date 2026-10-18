@@ -38,6 +38,9 @@ def main():
                     assert page.evaluate('BENCH_DATA.captures.length')==351
                     ranking=page.evaluate('BenchPerformance.executionRankings(BENCH_DATA.runs)')
                     assert len(ranking)==5 and all(r['matched']==43 for r in ranking)
+                    labels=page.locator('.backend-choices').inner_text()
+                    assert 'Phoenix DLSS5' in labels and 'NVIDIA DLSS5' in labels
+                    assert 'x86 Phoenix + native driver' not in page.locator('body').inner_text()
                     assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+2')
                     if args.preview and name=='desktop':
                         page.screenshot(path=str(ROOT/'docs/dashboard-preview.png'))

@@ -19,8 +19,8 @@ the enhanced measurement. Failed modes retain neither images nor FPS.
 
 Native DOSBox Staging and DOSBox Enhanced use different emulator paths and
 clocks. Their benchmark profiles are deliberately separate: raw rates can be
-shown, but they cannot produce a matched native-loss percentage. NVIDIA and
-Phoenix enhanced runs can be paired with each other when their other metadata
+shown, but they cannot produce a matched native-loss percentage. NVIDIA DLSS5 and
+Phoenix DLSS5 enhanced runs can be paired with each other when their other metadata
 matches. These 320x200 results are not equivalent to 1920x1080 Windows results.
 
 The current DOSBox Enhanced renderer requests synchronized presentation. Its

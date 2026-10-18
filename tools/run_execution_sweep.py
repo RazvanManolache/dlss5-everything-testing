@@ -15,7 +15,7 @@ OUTPUT = ROOT/'runs/latest-x64-backends'
 VARIANTS = {
     'helper': ('External x64 helper', 'helper', 'helper'),
     'x64-library': ('x64 library inside x86', 'wow64_library', 'in_process_x64_library'),
-    'x86-driver': ('x86 Phoenix + native driver', 'wow64_driver', 'in_process_x86_driver'),
+    'x86-driver': ('x86 Phoenix DLSS5 + native driver', 'wow64_driver', 'in_process_x86_driver'),
 }
 
 
@@ -177,7 +177,7 @@ def main():
                         state='not_applicable',executable_sha256=game['sha256'],source_suite='working',
                         profile=runner.profile_for(game),width=desired_extent(game)[0],height=desired_extent(game)[1],
                         requested_seconds=20,warmup_seconds=5,vsync=False,
-                        error='NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.'))
+                        error='NVIDIA DLSS5 has no x86 graph host. This route is Phoenix DLSS5-only; no helper fallback is scored.'))
                     save(stage);continue
                 installation=report['installations'][game['id']]
                 if backend!='native' and not installation['passed']:

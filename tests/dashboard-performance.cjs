@@ -112,7 +112,7 @@ test('scene, motion, visibility and incomplete measurement mismatches cannot pai
     assert.equal(P.analyse(rows).matched.length,0);
   }
 });
-test('NVIDIA and Phoenix addon versions must match when recorded',()=>{
+test('NVIDIA DLSS5 and Phoenix DLSS5 addon versions must match when recorded',()=>{
   const rows=trio();rows[1].addon_sha256='old';rows[2].addon_sha256='new';
   assert.equal(P.analyse(rows).matched.length,0);
 });
@@ -173,7 +173,7 @@ test('fresh-output and repeated game-loop rates stay distinct in charts and rati
   close(P.analyse(rows,{metric:'nvidia_game'}).rows[0].values.phoenix,150);
   assert.equal(P.metricKey('game_fps'),'game_fps');
 });
-test('hidden NVIDIA series remains the reference, but missing reference is never invented',()=>{
+test('hidden NVIDIA DLSS5 series remains the reference, but missing reference is never invented',()=>{
   const rows=trio(),a=P.analyse(rows,{backends:['phoenix'],metric:'nvidia_game'});
   close(a.rows[0].values.phoenix,150);
   assert.equal(P.analyse(rows.filter(r=>r.mode!=='nvidia'),{metric:'nvidia_game'}).rows[0].values.phoenix,null);

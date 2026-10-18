@@ -7,7 +7,7 @@ The runner adds the separately hash-verified optional native x86 runtime after
 installation; that extra copy is explicitly recorded, not attributed to the
 installer's normal deployment capabilities.
 
-The sweep runs clean baselines first, automatic x64 NVIDIA/Phoenix cases next,
+The sweep runs clean baselines first, automatic x64 NVIDIA DLSS5/Phoenix DLSS5 cases next,
 then three x86 execution choices. Each launched case uses five seconds warmup
 and twenty measured seconds, without VSync, at 1920x1080 except native Glide
 856x480. The source scene and camera remain frozen. DOS is a separate VGA test
@@ -21,11 +21,11 @@ Readiness gets a bounded grace period of three measured clean frame times
 after nominal warmup (minimum twenty, maximum forty-five seconds). This does
 not lengthen the requested measurement or permit a missing ReShade endpoint.
 
-| x86 choice | Phoenix | NVIDIA | Required observed execution |
+| x86 choice | Phoenix DLSS5 | NVIDIA DLSS5 | Required observed execution |
 | --- | --- | --- | --- |
 | External x64 helper | Run | Run | `helper`, inference PID is helper PID |
 | x64 library inside x86 | Run | Run | `in_process_x64_library`, inference PID is fixture PID |
-| x86 Phoenix + native driver | Run | Not applicable | `in_process_x86_driver`, inference PID is fixture PID |
+| x86 Phoenix DLSS5 + native driver | Run | Not applicable | `in_process_x86_driver`, inference PID is fixture PID |
 
 Fallback is disabled for explicit native x86 choices. A different observed
 route fails the case instead of reporting the helper's performance under an
@@ -34,7 +34,7 @@ pass, 1:1 resolution and the same appearance controls/model source.
 
 Each passing case retains **one** screenshot after measurement and separate
 game-loop and fresh processed-output rates. Failed cases retain neither image
-nor FPS. Unsupported NVIDIA x86 graph-host cases are tagged **Not applicable**
+nor FPS. Unsupported NVIDIA DLSS5 x86 graph-host cases are tagged **Not applicable**
 without launching a redundant helper test. Staged diagnostics are discarded;
 only compact errors and relevant ReShade warnings survive a failure.
 
@@ -62,7 +62,7 @@ than saving duplicate baseline images. Each requested route remains a separate
 comparison case; it never overwrites another route for the same renderer.
 
 The x86 route ranking uses the **same passing fixture set across all required
-routes within each renderer**. Phoenix needs three successful routes; NVIDIA
+routes within each renderer**. Phoenix DLSS5 needs three successful routes; NVIDIA DLSS5
 needs two. It uses fresh output throughput, not repeated game presentations or
 helper swapchain FPS. Output interval (`1000 / processed FPS`) is not isolated
 GPU inference latency. Failure counts and per-fixture scores remain visible even
