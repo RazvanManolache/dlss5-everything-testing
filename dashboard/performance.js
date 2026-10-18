@@ -11,6 +11,11 @@
   const mean = values => values.length ? values.reduce((a, b) => a + b, 0) / values.length : null;
   const geometricMean = values => values.length && values.every(v => finite(v) && v > 0)
     ? Math.exp(mean(values.map(Math.log))) : null;
+  const median = values => {
+    if (!values.length) return null;
+    const sorted = [...values].sort((a,b) => a-b), mid = Math.floor(sorted.length/2);
+    return sorted.length % 2 ? sorted[mid] : (sorted[mid-1]+sorted[mid])/2;
+  };
   const measured = run => run && !run.reference && run.status === 'complete' && run.freshness === 'current';
   const rate = (run, metric) => measured(run) && finite(run[metric]) && run[metric] > 0 ? run[metric] : null;
   const isNeural = metric => ['neural_fps', 'nvidia_neural'].includes(metric);
@@ -141,6 +146,29 @@
       states: Object.fromEntries(backends.map(mode => [mode, 'complete']))}));
   }
 
+  function breakdown(cohorts, backends, metric, technology = false) {
+    const groups = new Map();
+    for (const cohort of cohorts) {
+      const routes = [...new Set(backends.filter(mode => mode !== 'native')
+        .map(mode => cohort.runs[mode]?.execution_mode || 'not_started'))].sort();
+      const route = routes.join(' / ') || 'native';
+      const key = JSON.stringify([technology ? cohort.group || 'Unknown' : null,
+        cohort.architecture || 'Unknown', cohort.width, cohort.height, route]);
+      if (!groups.has(key)) groups.set(key, {key, group:cohort.group || 'Unknown',
+        architecture:cohort.architecture || 'Unknown', width:cohort.width, height:cohort.height, route, members:[]});
+      groups.get(key).members.push(cohort);
+    }
+    const routeOrder = route => ({native:0,in_process:0,helper:1,in_process_x64_library:2,
+      in_process_x86_driver:3,in_process_portable:4})[route] ?? 5;
+    return [...groups.values()].map(({members,...row}) => ({...row, count:members.length,
+      values:Object.fromEntries(backends.map(mode => {
+        const rates=members.map(c => rate(c.runs[mode],metricKey(metric))).filter(finite);
+        return [mode,{mean:mean(rates),median:median(rates),count:rates.length}];
+      }))})).sort((a,b) => a.architecture.localeCompare(b.architecture) ||
+        routeOrder(a.route)-routeOrder(b.route) || a.route.localeCompare(b.route) ||
+        (a.group||'').localeCompare(b.group||'') || b.width-a.width || b.height-a.height);
+  }
+
   function analyse(runs, options = {}) {
     const metric = ['fps', 'game_fps', 'neural_fps', 'drop', 'retention', 'nvidia_game', 'nvidia_neural'].includes(options.metric) ? options.metric : 'fps';
     const backends = MODES.filter(m => (options.backends || MODES).includes(m) &&
@@ -193,6 +221,8 @@
       }
     }
     return {metric, backends, cohorts, rows, matched, summaries, failed, untimed, routeCounts,
+      pathBreakdown:breakdown(matched,backends,metric),
+      technologyBreakdown:breakdown(matched,backends,metric,true),
       excluded: cohorts.length - matched.length, pairCount: pairs.length,
       speedup: geometricMean(ratios), medianSpeedup: ratios.length ?
         (() => {const sorted = [...ratios].sort((a, b) => a - b), mid = Math.floor(sorted.length / 2);
@@ -203,5 +233,5 @@
   }
 
   return {analyse, collect, cohortKey, consistent, mean, geometricMean, rate, valueFor,
-    isNeural, metricKey, isNvidiaRelative, isPercentage, executionRankings};
+    isNeural, metricKey, isNvidiaRelative, isPercentage, executionRankings, median};
 });

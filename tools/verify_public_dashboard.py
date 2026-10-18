@@ -41,6 +41,12 @@ def main():
                     labels=page.locator('.backend-choices').inner_text()
                     assert 'Phoenix DLSS5' in labels and 'NVIDIA DLSS5' in labels
                     assert 'x86 Phoenix + native driver' not in page.locator('body').inner_text()
+                    assert page.locator('#pathSummary').count()==1
+                    assert 'Mean / median FPS' in page.locator('#pathSummary').inner_text()
+                    assert not page.locator('#pathSummary details').first.get_attribute('open')
+                    pooled=page.locator('#pathSummary details').nth(1)
+                    assert pooled.get_attribute('open') is None
+                    assert 'Pooled compatibility averages' in pooled.locator('summary').inner_text()
                     assert not page.evaluate('document.documentElement.scrollWidth>innerWidth+2')
                     if args.preview and name=='desktop':
                         page.screenshot(path=str(ROOT/'docs/dashboard-preview.png'))

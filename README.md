@@ -68,6 +68,8 @@ For a modern example, **DX12 x86 / Phoenix DLSS5** delivers **58.15 output FPS**
 
 The dashboard provides properly paired Phoenix DLSS5/NVIDIA DLSS5 comparisons, FPS-loss bars, route rankings, sampled timelines, failure filters and per-fixture exports. Phoenix DLSS5 is not universally faster, and throughput is not a visual-quality score. Helper and in-process captures differ: this is **not a proven equal-quality comparison**. Frozen screenshots also do not establish temporal quality in motion.
 
+**Read performance by path, not as one universal average.** The dashboard leads with mean and median output FPS split by architecture, resolution and execution path, with a further technology breakdown. Slow legacy/wrapper cases and experimental x86 routes remain in the dataset, but are not blended into the headline for native in-process execution. Pooled compatibility averages remain available separately. In this snapshot, Phoenix DLSS5 averages **179.1 fresh outputs/s across four matched in-process cases**, versus **16.7 across all 110 matched fixture/path cases**. These are different workloads, not competing estimates of typical game FPS.
+
 ### Changes and Remaining Failures
 
 - x64 compatibility stayed at the previous snapshot's 48 enhanced passes and 18 failures. In-process median output rates changed by about 1%; helper medians were approximately 7-11% lower. Clean Windows baseline median FPS changed by -2.8%. Single serial runs show differences, not statistically proven regressions.

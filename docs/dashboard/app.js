@@ -161,10 +161,16 @@
   function percent(value) {return value==null?'--':`${value>0?'+':''}${num(value)}%`;}
   function speed(value) {return value==null?'--':`${num(value,2)}x`;}
   const metricLabel = metric => ['game_fps','nvidia_game'].includes(metric)?'game-loop':window.BenchPerformance.isNeural(metric)?'processed':'output';
-  function perfSummary(analysis) {
+  function pooledSummary(analysis) {
     const neural=window.BenchPerformance.isNeural(analysis.metric);
     const delta=analysis.speedup==null?'':`${num(Math.abs(analysis.speedup-1)*100)}% ${analysis.speedup>=1?'higher':'lower'} ${metricLabel(analysis.metric)} FPS`;
     return `<div class="performance-summary">${analysis.summaries.map(s=>`<div class="performance-stat" data-backend="${s.mode}"><span><i class="dot" style="background:${backendColor(s.mode)}"></i>${E(modeName(s.mode))} average</span><strong>${num(s.meanFps)} <small>${metricLabel(analysis.metric)} FPS</small></strong><p>${s.count} matched cases${s.mode!=='native'&&!neural?`<br>${percent(s.meanDrop)} mean output FPS loss vs native`:''}</p></div>`).join('')}<div class="performance-stat" data-stat="speedup"><span>Phoenix DLSS5 / NVIDIA DLSS5</span><strong>${speed(analysis.speedup)}</strong><p>${delta}<br>${analysis.pairCount} pairs; geometric mean of FPS ratios</p></div></div>`;
+  }
+  function perfSummary(analysis) {
+    if (!analysis.matched.length) return empty('No matched timings','Select comparable completed runs to see the breakdown.');
+    const headers=analysis.backends.map(mode=>`<th>${E(modeName(mode))}<br>Mean / median FPS</th>`).join('');
+    const table=(rows,technology=false)=>`<div class="table-shell"><table><thead><tr>${technology?'<th>Technology</th>':''}<th>Architecture / resolution</th><th>Processing path</th><th>Matched cases</th>${headers}</tr></thead><tbody>${rows.map(row=>`<tr>${technology?`<td>${E(row.group)}</td>`:''}<td>${E(row.architecture)} / ${row.width} x ${row.height}</td><td>${E(row.route.split(' / ').map(routeName).join(' / '))}</td><td>${row.count}</td>${analysis.backends.map(mode=>`<td>${num(row.values[mode].mean)} / ${num(row.values[mode].median)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    return `<section class="performance-section" id="pathSummary">${heading('Performance by processing path','Matched cases split by architecture, resolution and observed execution. Each row uses the same cases for all selected renderers; FPS counts fresh outputs unless another metric is selected.')}${table(analysis.pathBreakdown)}<details class="performance-details"><summary>Split further by technology</summary>${table(analysis.technologyBreakdown,true)}</details><details class="performance-details"><summary>Pooled compatibility averages: all selected paths</summary><p>These mix APIs, wrappers and execution methods. Experimental routes can share the same clean baseline. They describe this test selection, not typical game performance or isolated model latency.</p>${pooledSummary(analysis)}</details></section>`;
   }
   function groupedBars(analysis) {
     if(!analysis.backends.length)return empty('No run types selected','No comparable series in this selection.');

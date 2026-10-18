@@ -8,8 +8,8 @@
   "pixel_deduplication": "SHA-256 of dimensions plus decoded RGBA; run identities are retained",
   "privacy": "Allowlisted metadata only; no logs, local paths, PIDs, tokens, model files or binaries",
   "files": {
-    "app.js": "3a90ad51bafade96b207ae1298aba3ee850a09e406fc744cd694f24899d55b55",
-    "data.js": "79dd9f380b0df0bb504df4cd760a067990bc1bf68971a8f2570e890addf2f6e2",
+    "app.js": "20d005051a50dc982dd333e738e74ff601d4da0a93eec8e57198f5b7b0f82397",
+    "data.js": "81ed70c3da8d02abf06baa80b8ac1af17a3923d6a15b00300445ce0d2c9c2a1c",
     "favicon.svg": "b9684164e2d47ae7b9b7639b6869cf1a3bcc2abf9caf5af12bdacb21215ae7ef",
     "images/066146460b720dc88cdf414841f38c3cfba281bd53b35d2f7de8560ab38c6f6b.webp": "bc917e7f766af1371ea3fe89a685de518d15c0008c544f848df2fc0a73fbd5ab",
     "images/0981224ae416a042178441f97e7dcbcb8414dd96f647ae0b82eef3e408786970.webp": "19eb9f326cde57a3886380d79de4df2bd42a7808f81248cdd96fd001fdbb3ebf",
@@ -100,7 +100,7 @@
     "images/fa8492668a0fd6b874317e340aa1e8ce5749b05804db006469e01619399e7940.webp": "3619263a570101a0d7abfe112b2923024f6129deea6092efdaee04a4b189329f",
     "images/ff0ce4e4e3f63a622f5587aeebd7ee93a0c87f932c84348fa29d69bb9c210b13.webp": "8a1c2771e3f5b281cc28cf058734cf6e20ac6d4a2bf667c26365294fedd56fc1",
     "index.html": "17acc3d79a3b07dc4b980f96a150e85e2584098973bd2e2e4b2725f7fb95d5b4",
-    "performance.js": "1708d053b8807f0a437767bc18ad2fffa8021efc4f5d32497ed7a4c6693a9df8",
+    "performance.js": "a3f38e316aac328f55d99662d7f6f5df492d49cf3729e49bf77f9b49d9d20874",
     "results.csv": "6d717ee91204c33aed26bcd1dfa6d2f2df1e677e71b28295f95f2ccb01469e0e",
     "styles.css": "cccca158b1404307492fd09d36b881c7f4df38d83872077b1725d64c628f661d",
     "summary.json": "faac2c2f0c1cf4d8ad345a49933ce9d330c132aa3bbc02ed11cc6818881089db"

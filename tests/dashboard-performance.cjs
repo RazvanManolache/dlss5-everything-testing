@@ -76,6 +76,38 @@ test('head-to-head overall ratio is geometric, not a ratio of pooled FPS',()=>{
   const a=P.analyse([...trio('a',[1000,100,200]),...trio('b',[1000,1000,500])]);
   close(a.speedup,1);assert.equal(a.phoenixWins,1);assert.equal(a.nvidiaWins,1);
 });
+
+test('headline path breakdown does not blend slow transport into native execution',()=>{
+  const fast=trio('direct',[2000,180,190]).map(r=>({...r,execution_mode:r.mode==='native'?'native':'in_process'}));
+  const slow=trio('slow',[1000,2,3]);
+  const analysis=P.analyse([...fast,...slow]);
+  assert.equal(analysis.pathBreakdown.length,2);
+  const direct=analysis.pathBreakdown.find(r=>r.route==='in_process');
+  close(direct.values.phoenix.mean,190);close(direct.values.nvidia.median,180);
+  assert.equal(direct.count,1);
+  close(analysis.summaries[2].meanFps,96.5);
+});
+
+test('technology breakdown preserves all slow cases without merging architectures or resolutions',()=>{
+  const rows=[...trio('modern',[2000,180,190]),
+    ...trio('legacy',[20,2,3]).map(r=>({...r,group:'Legacy DirectX'})),
+    ...trio('x86',[1000,30,40]).map(r=>({...r,architecture:'x86'})),
+    ...trio('small',[1000,50,60]).map(r=>({...r,width:1280,height:720}))];
+  const analysis=P.analyse(rows);
+  assert.equal(analysis.pathBreakdown.length,3);
+  assert.equal(analysis.technologyBreakdown.length,4);
+  assert.equal(analysis.technologyBreakdown.reduce((n,r)=>n+r.count,0),analysis.matched.length);
+  assert.equal(analysis.technologyBreakdown.find(r=>r.group==='Legacy DirectX').values.phoenix.mean,3);
+});
+
+test('breakdown means and medians use the same matched successful cases for each renderer',()=>{
+  const rows=[...trio('a',[100,10,20]),...trio('b',[200,20,30]),...trio('c',[300,300,300]),...trio('failure')];
+  rows.at(-1).status='failed';
+  const analysis=P.analyse(rows),row=analysis.pathBreakdown[0];
+  assert.equal(row.count,3);close(row.values.nvidia.mean,110);close(row.values.nvidia.median,20);
+  for(const backend of analysis.backends)assert.equal(row.values[backend].count,row.count);
+  assert.equal(analysis.failed,1);
+});
 test('mean per-fixture loss and loss in mean FPS are separately computed',()=>{
   const a=P.analyse([...trio('a',[1000,100,200]),...trio('b',[10,10,5])]);
   close(a.summaries[2].meanDrop,65);
