@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark"><meta name="description" content="Local museum benchmark gallery, visual comparisons and performance analysis.">
+  <title>Museum Lab — DLSS5 benchmark dashboard</title>
+  <link rel="icon" href="favicon.svg"><link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script><script src="performance.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="brand-mark">M<span>↗</span></span><span>MUSEUM<span class="brand-sub">RENDERING LAB</span></span></a>
+    <div class="sidebar-label">WORKSPACE</div>
+    <nav aria-label="Dashboard views">
+      <a href="#overview" data-view="overview"><span>◫</span> Overview</a>
+      <a href="#gallery" data-view="gallery"><span>▦</span> Capture gallery <b id="navCaptureCount">0</b></a>
+      <a href="#compare" data-view="compare"><span>◧</span> Compare <b id="navCompareCount">0</b></a>
+      <a href="#performance" data-view="performance"><span>▥</span> Performance</a>
+      <a href="#results" data-view="results"><span>≡</span> All results</a>
+    </nav>
+    <div class="sidebar-label groups-heading">TECHNOLOGY GROUPS <button id="clearGroup" class="text-button">Reset</button></div>
+    <div id="groupList" class="group-list"></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span> LOCAL WORKSPACE<span>Read-only · no tests launched</span></div>
+  </aside>
+  <main>
+    <header class="topbar"><div class="breadcrumb">DLSS5 Everything <span>/</span> Testing grounds</div><div class="top-actions"><span id="connection" class="connection">Offline snapshot</span><button id="refresh" class="button small">↻ Refresh data</button></div></header>
+    <div class="page-content">
+      <section class="page-heading"><div><div class="eyebrow">ONE SCENE. EVERY RENDERER.</div><h1 id="pageTitle">A clearer view of every frame.</h1><p id="pageSubtitle">Explore your captures, compare rendering paths, and see what the numbers actually say.</p></div><button id="exportCsv" class="button">↓ Export CSV</button></section>
+      <section id="summary" class="stat-grid" aria-label="Benchmark summary"></section>
+      <section class="filter-panel" aria-label="Search and filters">
+        <div class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Search APIs, fixtures, screenshots, renderers…" aria-label="Search benchmark screenshots and fixtures"><kbd>/</kbd></div>
+        <details id="filterDetails" open><summary>Filters</summary><div class="filter-row">
+          <label>Group<select id="groupSelect"><option value="all">All technologies</option></select></label>
+          <label>Set<select id="suite"><option value="all">All sets</option><option value="working">ReShade / working</option><option value="clean">Clean</option><option value="unknown">Unknown set</option><option value="reference">Reference</option></select></label>
+          <label>Architecture<select id="arch"><option value="all">All architectures</option><option>x64</option><option>x86</option><option>i386</option></select></label>
+          <label>Run type<select id="mode"><option value="all">All run types</option><option value="matched">Matched</option><option value="showcase">Showcase</option><option value="unknown">Unrecorded</option></select></label>
+          <label>Processing location<select id="execution"><option value="all">All processing locations</option><option value="helper">External x64 helper</option><option value="in_process">Native in process</option><option value="in_process_x64_library">x64 library inside x86</option><option value="in_process_x86_driver">x86 Phoenix + native driver</option><option value="in_process_portable">Portable in process</option><option value="native">Native baseline</option><option value="not_started">Not started</option></select></label>
+          <label>Build<select id="freshness"><option value="all">All build versions</option><option value="current">Current build only</option><option value="stale">Older builds</option><option value="unverified">Unverified</option></select></label>
+          <label>Outcome<select id="outcome"><option value="all">All outcomes</option><option value="complete">Complete</option><option value="incomplete">Incomplete</option><option value="failed">Failed</option><option value="not_applicable">Not applicable</option><option value="missing">Not run</option><option value="reference">Reference</option></select></label>
+          <label>Motion<select id="motion"><option value="all">All scene states</option><option value="frozen">Frozen</option><option value="live">Live</option><option value="unknown">Unrecorded</option></select></label>
+          <button id="resetFilters" class="text-button reset-filters">Clear filters</button>
+        </div>
+        <div id="activeGroup" class="active-group" hidden></div></details>
+      </section>
+      <div id="notice" class="notice"></div>
+      <section id="view-overview" class="view"></section>
+      <section id="view-gallery" class="view" hidden></section>
+      <section id="view-compare" class="view" hidden></section>
+      <section id="view-performance" class="view" hidden></section>
+      <section id="view-results" class="view" hidden></section>
+      <footer><span>MUSEUM LAB <span class="footer-separator">/</span> Local evidence, visible limits.</span><span id="updated"></span></footer>
+    </div>
+  </main>
+</div>
+<dialog id="lightbox"><button id="closeLightbox" class="icon-button close-dialog" aria-label="Close image">×</button><div id="lightboxContent"></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

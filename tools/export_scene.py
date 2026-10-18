@@ -5,11 +5,11 @@ import numpy as np
 from PIL import Image
 
 ROOT=Path(__file__).resolve().parents[1]
-from build_dependencies import dependency
+from build_dependencies import dependency,visual_studio_build
 GALLERY=dependency('gallery')
 BUILD=ROOT/'build'
 OUT=BUILD/'scene'
-VS=Path('E:/IDE/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build')
+VS=visual_studio_build()
 
 def export_layout():
     original=(GALLERY/'android/app/src/main/cpp/museum.cpp').read_text()

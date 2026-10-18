@@ -1,0 +1,2 @@
+# Snapshot receipts hash exact file bytes, including CSV line endings.
+/docs/dashboard/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

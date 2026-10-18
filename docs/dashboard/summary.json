@@ -1,0 +1,6148 @@
+{
+  "schema": "execution-comparison/1",
+  "hardware": {
+    "gpu_driver": "NVIDIA GeForce RTX 5080, 616.64",
+    "model_sha256": "e16bcf15e16e13f527491cdf7845b2fe6521a738d8f7c9c721866a8496e1fc8e",
+    "warmup_seconds": 5,
+    "measured_seconds": 20,
+    "target_extent": [
+      1920,
+      1080
+    ],
+    "legacy_glide_extent": [
+      856,
+      480
+    ],
+    "vsync_requested": false
+  },
+  "counts": {
+    "passed": 348,
+    "not_applicable": 49,
+    "failed": 45
+  },
+  "totals": [
+    {
+      "architecture": "x64",
+      "backend": "native",
+      "variant": "baseline",
+      "passed": 33,
+      "failed": 0,
+      "not_applicable": 0,
+      "mean_processed_fps": null,
+      "mean_output_interval_ms": null
+    },
+    {
+      "architecture": "x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "passed": 24,
+      "failed": 9,
+      "not_applicable": 0,
+      "mean_processed_fps": 45.69477149230702,
+      "mean_output_interval_ms": 734.2537489177928
+    },
+    {
+      "architecture": "x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "passed": 24,
+      "failed": 9,
+      "not_applicable": 0,
+      "mean_processed_fps": 47.011602903729944,
+      "mean_output_interval_ms": 601.1737582963534
+    },
+    {
+      "architecture": "x86",
+      "backend": "native",
+      "variant": "baseline",
+      "passed": 49,
+      "failed": 0,
+      "not_applicable": 0,
+      "mean_processed_fps": null,
+      "mean_output_interval_ms": null
+    },
+    {
+      "architecture": "x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "passed": 44,
+      "failed": 5,
+      "not_applicable": 0,
+      "mean_processed_fps": 12.20051954830051,
+      "mean_output_interval_ms": 963.8938642104166
+    },
+    {
+      "architecture": "x86",
+      "backend": "nvidia",
+      "variant": "x64-library",
+      "passed": 43,
+      "failed": 6,
+      "not_applicable": 0,
+      "mean_processed_fps": 2.591020460172484,
+      "mean_output_interval_ms": 1147.6736358793821
+    },
+    {
+      "architecture": "x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "passed": 0,
+      "failed": 0,
+      "not_applicable": 49,
+      "mean_processed_fps": null,
+      "mean_output_interval_ms": null
+    },
+    {
+      "architecture": "x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "passed": 44,
+      "failed": 5,
+      "not_applicable": 0,
+      "mean_processed_fps": 13.57423983037229,
+      "mean_output_interval_ms": 924.5061930839191
+    },
+    {
+      "architecture": "x86",
+      "backend": "phoenix",
+      "variant": "x64-library",
+      "passed": 43,
+      "failed": 6,
+      "not_applicable": 0,
+      "mean_processed_fps": 2.7075807873885913,
+      "mean_output_interval_ms": 1101.5944254796395
+    },
+    {
+      "architecture": "x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "passed": 44,
+      "failed": 5,
+      "not_applicable": 0,
+      "mean_processed_fps": 2.6464215395584603,
+      "mean_output_interval_ms": 1128.6630505400926
+    }
+  ],
+  "matched_x86_rankings": [
+    {
+      "backend": "phoenix",
+      "variant": "helper",
+      "label": "External x64 helper",
+      "matched_fixtures": 43,
+      "mean_processed_fps": 13.841796691991565,
+      "geometric_speedup_vs_helper": 1.0,
+      "startup_affected": 43,
+      "wins": 37
+    },
+    {
+      "backend": "phoenix",
+      "variant": "x64-library",
+      "label": "x64 library inside x86",
+      "matched_fixtures": 43,
+      "mean_processed_fps": 2.7075807873885913,
+      "geometric_speedup_vs_helper": 0.409004070139171,
+      "startup_affected": 0,
+      "wins": 2
+    },
+    {
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "label": "x86 Phoenix + native driver",
+      "matched_fixtures": 43,
+      "mean_processed_fps": 2.682959375735908,
+      "geometric_speedup_vs_helper": 0.40583304776122925,
+      "startup_affected": 0,
+      "wins": 5
+    },
+    {
+      "backend": "nvidia",
+      "variant": "helper",
+      "label": "External x64 helper",
+      "matched_fixtures": 43,
+      "mean_processed_fps": 12.218260861176852,
+      "geometric_speedup_vs_helper": 1.0,
+      "startup_affected": 43,
+      "wins": 37
+    },
+    {
+      "backend": "nvidia",
+      "variant": "x64-library",
+      "label": "x64 library inside x86",
+      "matched_fixtures": 43,
+      "mean_processed_fps": 2.591020460172484,
+      "geometric_speedup_vs_helper": 0.450398799044066,
+      "startup_affected": 0,
+      "wins": 6
+    }
+  ],
+  "previous_native_x64_comparison": [
+    {
+      "id": "d3d11on12-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2018.7835570079283,
+      "new_fps": 1926.4674619645673,
+      "change_percent": -4.572857487515114,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "d3d11on12-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 186.02597402597402,
+      "new_fps": 187.78593280387534,
+      "change_percent": 0.946082280776328,
+      "old_execution": "in_process",
+      "execution": "in_process"
+    },
+    {
+      "id": "d3d11on12-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 186.1818181818182,
+      "new_fps": 187.15965119765687,
+      "change_percent": 0.5252032799914819,
+      "old_execution": "in_process",
+      "execution": "in_process"
+    },
+    {
+      "id": "d3d11on12-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1995.2906221340759,
+      "new_fps": 1916.8753777357729,
+      "change_percent": -3.9300161855335913,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "ddraw1_2d-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.8279535819545847,
+      "new_fps": 2.224787484591493,
+      "change_percent": 21.709189257015126,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "ddraw1_2d-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "ddraw1_2d-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "ddraw1_2d-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.1664466319001738,
+      "new_fps": 1.3319336190922917,
+      "change_percent": 14.187274639606517,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "ddraw2_2d-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.833505654784166,
+      "new_fps": 2.234564522107093,
+      "change_percent": 21.87388221445863,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "ddraw2_2d-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "ddraw2_2d-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "ddraw2_2d-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.1813829871753199,
+      "new_fps": 1.3582098983688882,
+      "change_percent": 14.967788863826502,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "ddraw4_2d-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.8672449661913433,
+      "new_fps": 2.143126201315686,
+      "change_percent": 14.774774607482977,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "ddraw4_2d-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "ddraw4_2d-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "ddraw4_2d-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.187542260113903,
+      "new_fps": 1.3388927266898987,
+      "change_percent": 12.744848891649463,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "ddraw7_2d-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.844195597219268,
+      "new_fps": 2.2042600931489944,
+      "change_percent": 19.52420320667949,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "ddraw7_2d-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "ddraw7_2d-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "ddraw7_2d-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.190762646859362,
+      "new_fps": 1.340982382933343,
+      "change_percent": 12.615422264897692,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_ddraw1_2d-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.194880117926702,
+      "new_fps": 1.3362968702477172,
+      "change_percent": 11.83522515768316,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_ddraw2_2d-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.17597062778163,
+      "new_fps": 1.234203722761272,
+      "change_percent": 4.951917471739398,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_ddraw4_2d-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.171486887766919,
+      "new_fps": 1.237060691543449,
+      "change_percent": 5.597485081674836,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_ddraw7_2d-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.164755166741084,
+      "new_fps": 1.2387571638565544,
+      "change_percent": 6.353437978088006,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_dx2-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.0718221619679333,
+      "new_fps": 2.084551751764232,
+      "change_percent": 0.6144151766485306,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_dx3-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.152348889650168,
+      "new_fps": 2.163748450276642,
+      "change_percent": 0.5296334939604908,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_dx5-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.0655403730742625,
+      "new_fps": 2.1349193672482287,
+      "change_percent": 3.358878629455475,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_dx6-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.063266581828747,
+      "new_fps": 2.1754769469924127,
+      "change_percent": 5.438481200243617,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_dx7-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.0663716711189024,
+      "new_fps": 2.1324104816187432,
+      "change_percent": 3.1958824940762964,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_dx8-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.1966857394072408,
+      "new_fps": 2.2777607751738853,
+      "change_percent": 3.690789006010564,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_dx9-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1578.3454839469844,
+      "new_fps": 1534.4959642756141,
+      "change_percent": -2.778195275835005,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dgvoodoo_dx9-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 14.027949345980934,
+      "new_fps": 11.925351533323838,
+      "change_percent": -14.988632770188183,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dgvoodoo_dx9-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 14.55989311255314,
+      "new_fps": 13.088069945983824,
+      "change_percent": -10.108749804628381,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dgvoodoo_dx9-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1572.5377420683003,
+      "new_fps": 1533.7457820866032,
+      "change_percent": -2.4668380887746144,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx10-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2525.02298225409,
+      "new_fps": 2461.0734819332324,
+      "change_percent": -2.5326304263484256,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx10-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 18.80335093557787,
+      "new_fps": 16.40333762067755,
+      "change_percent": -12.763753243360732,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx10-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 19.154240080453185,
+      "new_fps": 17.77523928144782,
+      "change_percent": -7.199454497871871,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx10-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2514.4010697551826,
+      "new_fps": 2432.0536085774165,
+      "change_percent": -3.275032856464055,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx10_1-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2506.6527621286978,
+      "new_fps": 2418.560202591866,
+      "change_percent": -3.5143503267689002,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx10_1-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 19.054332996600984,
+      "new_fps": 16.800571383188636,
+      "change_percent": -11.828079281570158,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx10_1-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 18.87052097842687,
+      "new_fps": 17.469623560119224,
+      "change_percent": -7.423734723112196,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx10_1-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2510.19298401061,
+      "new_fps": 2441.091175455401,
+      "change_percent": -2.7528484461303515,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx11-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2505.2078248262687,
+      "new_fps": 2437.52456443117,
+      "change_percent": -2.701702418632379,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx11-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 18.838202265168288,
+      "new_fps": 17.269474246639227,
+      "change_percent": -8.327376447324964,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx11-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 20.325238938921753,
+      "new_fps": 16.319492002373117,
+      "change_percent": -19.708240324190452,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx11-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2509.2138924120877,
+      "new_fps": 2432.184567788918,
+      "change_percent": -3.069858845278517,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx12-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1498.6655981311949,
+      "new_fps": 1536.8725591404566,
+      "change_percent": 2.5493986821946812,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx12-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 173.4025974025974,
+      "new_fps": 174.34036416519302,
+      "change_percent": 0.5408031809456482,
+      "old_execution": "in_process",
+      "execution": "in_process"
+    },
+    {
+      "id": "dx12-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 171.33333333333334,
+      "new_fps": 174.4726146362923,
+      "change_percent": 1.8322653519215581,
+      "old_execution": "in_process",
+      "execution": "in_process"
+    },
+    {
+      "id": "dx12-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1451.1562621502587,
+      "new_fps": 1522.5126223151221,
+      "change_percent": 4.917207197185691,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx2-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1.9880734578629746,
+      "new_fps": 2.022212125958266,
+      "change_percent": 1.7171733750717566,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx3-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.1257549148936716,
+      "new_fps": 2.0220687398618526,
+      "change_percent": -4.87761662011753,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx5-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.2753589546929733,
+      "new_fps": 2.1307839827699455,
+      "change_percent": -6.353941281433373,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx6-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.2764244604817114,
+      "new_fps": 2.133695292741183,
+      "change_percent": -6.269883768088025,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx7-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.234222934210044,
+      "new_fps": 2.1363985545107504,
+      "change_percent": -4.378452042606096,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx8-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.442987709154336,
+      "new_fps": 2.252634275819681,
+      "change_percent": -7.791829349831147,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx9-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1953.349677697303,
+      "new_fps": 1901.792478410748,
+      "change_percent": -2.6394249772694556,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx9-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 19.027749172217863,
+      "new_fps": 17.375128176006893,
+      "change_percent": -8.685320482487423,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx9-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 19.600474261624473,
+      "new_fps": 18.75184849917072,
+      "change_percent": -4.329618513952327,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx9-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1934.8480299819146,
+      "new_fps": 1901.6171305478983,
+      "change_percent": -1.717494031524891,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx9ex-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1931.578116320401,
+      "new_fps": 1891.8540657832827,
+      "change_percent": -2.056559359493648,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dx9ex-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 19.251574882511687,
+      "new_fps": 17.050607547926617,
+      "change_percent": -11.432661213522067,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx9ex-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 20.549905138614065,
+      "new_fps": 18.784051331481145,
+      "change_percent": -8.593002231503311,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dx9ex-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1926.8681755429254,
+      "new_fps": 1919.0152946083972,
+      "change_percent": -0.40754635081954316,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx10-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1043.525518891327,
+      "new_fps": 989.7884590665673,
+      "change_percent": -5.149568348060296,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx10-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 45.998796361455554,
+      "new_fps": 42.803272125439584,
+      "change_percent": -6.946973592321304,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx10-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 48.17962768813487,
+      "new_fps": 46.821876005434895,
+      "change_percent": -2.8181033101556063,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx10-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1030.7607537842996,
+      "new_fps": 962.0388644001445,
+      "change_percent": -6.667103799970264,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx10_1-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1024.6154858273599,
+      "new_fps": 977.2301866579655,
+      "change_percent": -4.624690903547246,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx10_1-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 47.67760951217096,
+      "new_fps": 37.7208789894909,
+      "change_percent": -20.883451633912863,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx10_1-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 50.65957734105632,
+      "new_fps": 46.35679774630076,
+      "change_percent": -8.493516568027971,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx10_1-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1015.5927131222834,
+      "new_fps": 960.7152893565956,
+      "change_percent": -5.403487348483981,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx11-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1006.9335769133605,
+      "new_fps": 959.7928447443423,
+      "change_percent": -4.681612893823905,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx11-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 47.64425445293231,
+      "new_fps": 43.73358517930114,
+      "change_percent": -8.20806059100897,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx11-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 49.96647381175521,
+      "new_fps": 47.54884839149923,
+      "change_percent": -4.838495166507439,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx11-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1007.6685960082053,
+      "new_fps": 965.339820491593,
+      "change_percent": -4.200664353766137,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx8-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.685249897841387,
+      "new_fps": 3.7193863078053324,
+      "change_percent": 0.9262983762360566,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx8-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 0.13706302568737846,
+      "new_fps": 0.1358715992628019,
+      "change_percent": -0.8692544313840256,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx8-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 0.12595300460568737,
+      "new_fps": 0.19820968264999803,
+      "change_percent": 57.367966941733386,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx8-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.2490743484704,
+      "new_fps": 2.274207001693053,
+      "change_percent": 1.117466536388445,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx9-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 577.5177658458994,
+      "new_fps": 558.6867510729111,
+      "change_percent": -3.26068146932349,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "dxvk_dx9-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 0.22758926940408716,
+      "new_fps": 0.2256771024710379,
+      "change_percent": -0.840183255588467,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx9-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 0.26337862479652663,
+      "new_fps": 0.28528942897914367,
+      "change_percent": 8.319127719473919,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "dxvk_dx9-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 573.4140125365732,
+      "new_fps": 549.8704582096326,
+      "change_percent": -4.105856120047113,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glcore33-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1074.4096236863418,
+      "new_fps": 1044.160008671668,
+      "change_percent": -2.8154638927084585,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glcore33-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 53.426057964982206,
+      "new_fps": 47.024260934226945,
+      "change_percent": -11.982536751918483,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glcore33-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 56.34481159740504,
+      "new_fps": 49.67922076165683,
+      "change_percent": -11.829999332281371,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glcore33-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1049.0783732493355,
+      "new_fps": 1000.8464970372603,
+      "change_percent": -4.5975474704225805,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glcore46-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1049.4348933847098,
+      "new_fps": 1032.8994267408182,
+      "change_percent": -1.5756543591342043,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glcore46-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 53.346654156911534,
+      "new_fps": 47.576200877210155,
+      "change_percent": -10.816898212076087,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glcore46-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 54.09936994330982,
+      "new_fps": 50.00233294211799,
+      "change_percent": -7.573169531336632,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glcore46-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1044.6053274531716,
+      "new_fps": 995.0666304405481,
+      "change_percent": -4.742336240367706,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "gles2_angle_d3d11-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2503.3086578575153,
+      "new_fps": 2432.6325458614833,
+      "change_percent": -2.8233079358468305,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "gles2_angle_d3d11-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 21.1336282072058,
+      "new_fps": 17.15023046154814,
+      "change_percent": -18.84862223657112,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "gles2_angle_d3d11-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 21.799945172137953,
+      "new_fps": 18.750217667379783,
+      "change_percent": -13.989610894324455,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "gles2_angle_d3d11-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2074.4480661926627,
+      "new_fps": 2140.8405910056026,
+      "change_percent": 3.2004910556663546,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "gles2_angle_vulkan-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1643.202322484613,
+      "new_fps": 1585.1972417567993,
+      "change_percent": -3.530002357841533,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "gles2_angle_vulkan-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 181.9240506329114,
+      "new_fps": 179.1182970474967,
+      "change_percent": -1.542266443416096,
+      "old_execution": "in_process",
+      "execution": "in_process"
+    },
+    {
+      "id": "gles2_angle_vulkan-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 182.07792207792207,
+      "new_fps": 176.26057277924994,
+      "change_percent": -3.19497786018369,
+      "old_execution": "in_process",
+      "execution": "in_process"
+    },
+    {
+      "id": "gles2_angle_vulkan-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1637.493712024146,
+      "new_fps": 1581.118654322678,
+      "change_percent": -3.4427648355230267,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "gles3_angle_d3d11-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2508.903949068015,
+      "new_fps": 2410.348035566351,
+      "change_percent": -3.9282457799261317,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "gles3_angle_d3d11-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 20.15876744718511,
+      "new_fps": 17.600212551446308,
+      "change_percent": -12.692020494021161,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "gles3_angle_d3d11-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 20.325322514778907,
+      "new_fps": 18.250522298419536,
+      "change_percent": -10.207957166980975,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "gles3_angle_d3d11-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2339.7974379218053,
+      "new_fps": 2120.743203018034,
+      "change_percent": -9.362102520222182,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "gles3_angle_vulkan-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1671.0389126568143,
+      "new_fps": 1602.3030845656838,
+      "change_percent": -4.1133589152538725,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "gles3_angle_vulkan-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 181.5897435897436,
+      "new_fps": 176.7723134999868,
+      "change_percent": -2.6529197048928865,
+      "old_execution": "in_process",
+      "execution": "in_process"
+    },
+    {
+      "id": "gles3_angle_vulkan-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 183.13924050632912,
+      "new_fps": 178.35008103636423,
+      "change_percent": -2.615037310804713,
+      "old_execution": "in_process",
+      "execution": "in_process"
+    },
+    {
+      "id": "gles3_angle_vulkan-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 1658.250504969702,
+      "new_fps": 1600.9707536310593,
+      "change_percent": -3.4542278845673735,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glide1-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.787002382966267,
+      "new_fps": 3.342892208869813,
+      "change_percent": -11.727221934003463,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glide1-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 3.465686819204825,
+      "new_fps": 3.261554392487319,
+      "change_percent": -5.890100212931038,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glide1-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 3.5720604245241603,
+      "new_fps": 3.3303900117473444,
+      "change_percent": -6.765574599959612,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glide1-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.2095334770394266,
+      "new_fps": 2.0333655145662295,
+      "change_percent": -7.9730841059374224,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glide2-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.614255894694169,
+      "new_fps": 3.2557596472339037,
+      "change_percent": -9.91895034290594,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glide2-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 3.5247353105330483,
+      "new_fps": 3.2739369580085063,
+      "change_percent": -7.115381168483081,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glide2-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 3.7579701907770238,
+      "new_fps": 3.609616102417561,
+      "change_percent": -3.947718604143269,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glide2-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.1658633085861787,
+      "new_fps": 2.023991246958595,
+      "change_percent": -6.550370056372312,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glide3-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.688425021481836,
+      "new_fps": 3.2444399383887843,
+      "change_percent": -12.037253855161179,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "glide3-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 3.4735901299840943,
+      "new_fps": 3.096485617300666,
+      "change_percent": -10.856333032163324,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glide3-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 3.5752008113518263,
+      "new_fps": 3.615018903629852,
+      "change_percent": 1.1137302316445163,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "glide3-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 2.115881964038598,
+      "new_fps": 1.9439950963471384,
+      "change_percent": -8.123651064323933,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "opengl-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 141.0703096372822,
+      "new_fps": 128.7452074596523,
+      "change_percent": -8.736850588419355,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "opengl-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 23.127162730630648,
+      "new_fps": 17.993420128248964,
+      "change_percent": -22.197891986042563,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "opengl-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 25.154855553571796,
+      "new_fps": 21.17079984258224,
+      "change_percent": -15.838118022601211,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "opengl-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 136.63006430731693,
+      "new_fps": 131.097742473384,
+      "change_percent": -4.0491248115709695,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "vulkan-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 143.3249854902824,
+      "new_fps": 140.09493136538322,
+      "change_percent": -2.253657388381991,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "vulkan-x64",
+      "backend": "nvidia",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 0.2351508755780259,
+      "new_fps": 0.23755087461135038,
+      "change_percent": 1.0206209215360307,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "vulkan-x64",
+      "backend": "phoenix",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": 0.24116960862270292,
+      "new_fps": 0.2280856345642755,
+      "change_percent": -5.425216773020769,
+      "old_execution": "helper",
+      "execution": "helper"
+    },
+    {
+      "id": "vulkan-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 143.08397173348644,
+      "new_fps": 140.01068919879364,
+      "change_percent": -2.147887354159561,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_d3d11on12-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 0.140485242865807,
+      "new_fps": 0.1363712359606949,
+      "change_percent": -2.928426375033455,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_d3d11on12-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_d3d11on12-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_d3d11on12-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 0.09655910378397457,
+      "new_fps": 0.09531631452912111,
+      "change_percent": -1.287076211512772,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_dx10-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.579285902933256,
+      "new_fps": 3.4698986809908843,
+      "change_percent": -3.056118592055701,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_dx10-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_dx10-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_dx10-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.4392787363950355,
+      "new_fps": 3.320294717684657,
+      "change_percent": -3.459563118605924,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_dx10_1-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.530684893991534,
+      "new_fps": 3.4682371557974045,
+      "change_percent": -1.7687145715099661,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_dx10_1-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_dx10_1-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_dx10_1-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.423737842269708,
+      "new_fps": 3.2601524605358545,
+      "change_percent": -4.777976272429996,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_dx11-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.526595011620428,
+      "new_fps": 3.4438563153070265,
+      "change_percent": -2.3461354661017397,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_dx11-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_dx11-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_dx11-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 3.435124365690595,
+      "new_fps": 3.302543620575318,
+      "change_percent": -3.859561721824978,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_dx12-x64",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 0.1415615125730594,
+      "new_fps": 0.14076465019006112,
+      "change_percent": -0.5629089210155369,
+      "old_execution": "native",
+      "execution": "native"
+    },
+    {
+      "id": "warp_dx12-x64",
+      "backend": "nvidia",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_dx12-x64",
+      "backend": "phoenix",
+      "old_passed": false,
+      "passed": false,
+      "comparable_profile": true,
+      "metric": "neural_fps",
+      "old_fps": null,
+      "new_fps": null,
+      "change_percent": null,
+      "old_execution": null,
+      "execution": null
+    },
+    {
+      "id": "warp_dx12-x86",
+      "backend": "native",
+      "old_passed": true,
+      "passed": true,
+      "comparable_profile": true,
+      "metric": "game_fps",
+      "old_fps": 0.09239639995906841,
+      "new_fps": 0.09083223238990662,
+      "change_percent": -1.6928880019727144,
+      "old_execution": "native",
+      "execution": "native"
+    }
+  ],
+  "failures": [
+    {
+      "id": "d3d11on12-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "ddraw1_2d-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "Install failed: [Error] This executable/API combination is not supported.\n",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "ddraw1_2d-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "Install failed: [Error] This executable/API combination is not supported.\n",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "ddraw1_2d-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "ddraw2_2d-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "Install failed: [Error] This executable/API combination is not supported.\n",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "ddraw2_2d-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "Install failed: [Error] This executable/API combination is not supported.\n",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "ddraw2_2d-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "ddraw4_2d-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "Install failed: [Error] This executable/API combination is not supported.\n",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "ddraw4_2d-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "Install failed: [Error] This executable/API combination is not supported.\n",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "ddraw4_2d-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "ddraw7_2d-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "Install failed: [Error] This executable/API combination is not supported.\n",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "ddraw7_2d-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "Install failed: [Error] This executable/API combination is not supported.\n",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "ddraw7_2d-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_ddraw1_2d-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_ddraw2_2d-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_ddraw4_2d-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_ddraw7_2d-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_dx2-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_dx3-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_dx5-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_dx6-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_dx7-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_dx8-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dgvoodoo_dx8-x86",
+      "backend": "phoenix",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "[DLSS5 Phoenix reconstructed NR] Native x86 processing: bad allocation",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "dgvoodoo_dx9-x86",
+      "backend": "nvidia",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "[DLSS5 Phoenix reconstructed NR] Native x86 processing: bad allocation",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "dgvoodoo_dx9-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx10-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx10_1-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx11-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx12-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx2-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx3-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx5-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx6-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx7-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx8-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx9-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dx9ex-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dxvk_dx10-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dxvk_dx10_1-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dxvk_dx11-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dxvk_dx8-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "dxvk_dx9-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "glcore33-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "glcore46-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "gles2_angle_d3d11-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "gles2_angle_vulkan-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "gles3_angle_d3d11-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "gles3_angle_vulkan-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "glide1-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "glide2-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "glide3-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "opengl-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "vulkan-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_d3d11on12-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 27.0217 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_d3d11on12-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 27.0217 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_d3d11on12-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 36.5025 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_d3d11on12-x86",
+      "backend": "nvidia",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "[DLSS5 Phoenix reconstructed NR] Native x86 processing: Native model D3D12 failure 2147942414 at line 40",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_d3d11on12-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_d3d11on12-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 36.5025 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_d3d11on12-x86",
+      "backend": "phoenix",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "[DLSS5 Phoenix reconstructed NR] Native x86 processing: Native model D3D12 failure 2147942414 at line 40",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_d3d11on12-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "outcome": "failed",
+      "error": "[DLSS5 Phoenix reconstructed NR] Native x86 processing: Driver D3D12 failure 2289696772 at line 124",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_dx10-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_dx10-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_dx10-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_dx10-x86",
+      "backend": "nvidia",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_dx10-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_dx10-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_dx10-x86",
+      "backend": "phoenix",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_dx10-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_dx10_1-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_dx10_1-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_dx10_1-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_dx10_1-x86",
+      "backend": "nvidia",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_dx10_1-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_dx10_1-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_dx10_1-x86",
+      "backend": "phoenix",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_dx10_1-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_dx11-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_dx11-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_dx11-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_dx11-x86",
+      "backend": "nvidia",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_dx11-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_dx11-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_dx11-x86",
+      "backend": "phoenix",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_dx11-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "outcome": "failed",
+      "error": "ReShade/Phoenix control endpoint did not load",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_dx12-x64",
+      "backend": "nvidia",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 26.3358 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_dx12-x64",
+      "backend": "phoenix",
+      "variant": "auto",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 26.3358 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": null
+    },
+    {
+      "id": "warp_dx12-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 38.1143 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_dx12-x86",
+      "backend": "nvidia",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "[DLSS5 Phoenix reconstructed NR] Native x86 processing: bad allocation",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_dx12-x86",
+      "backend": "nvidia",
+      "variant": "x86-driver",
+      "outcome": "not_applicable",
+      "error": "NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    },
+    {
+      "id": "warp_dx12-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 38.1143 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": "helper"
+    },
+    {
+      "id": "warp_dx12-x86",
+      "backend": "phoenix",
+      "variant": "x64-library",
+      "outcome": "failed",
+      "error": "[DLSS5 Phoenix reconstructed NR] Native x86 processing: phoenix D3D12 failure",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x64_library"
+    },
+    {
+      "id": "warp_dx12-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "outcome": "failed",
+      "error": "No enhanced presentation within 38.1143 render seconds",
+      "execution_mode": null,
+      "requested_execution_mode": "in_process_x86_driver"
+    }
+  ],
+  "timing_note": "Processed FPS counts fresh completed outputs. Output interval is 1000/FPS, not isolated GPU inference latency. Rankings use the same successful fixture set across each backend's required routes. The window starts after 5 fixture seconds, not 5 seconds after renderer readiness; startup_in_measurement flags initialization extending into that window.",
+  "regression_note": "Single serial 20s measurement per case; changes versus previous scores are observations, not statistical regressions or proof of equal visual quality.",
+  "route_output_comparison": [
+    {
+      "id": "d3d11on12-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.77167695473251,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.9011631944444445,
+      "identical_file": false
+    },
+    {
+      "id": "d3d11on12-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "ddraw1_2d-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.118483153292181,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8711844135802469,
+      "identical_file": false
+    },
+    {
+      "id": "ddraw1_2d-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "ddraw2_2d-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.118483153292181,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8711844135802469,
+      "identical_file": false
+    },
+    {
+      "id": "ddraw2_2d-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "ddraw4_2d-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.118483153292181,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8711844135802469,
+      "identical_file": false
+    },
+    {
+      "id": "ddraw4_2d-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "ddraw7_2d-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.118483153292181,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8711844135802469,
+      "identical_file": false
+    },
+    {
+      "id": "ddraw7_2d-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_ddraw1_2d-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.118483153292181,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8711844135802469,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_ddraw1_2d-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_ddraw2_2d-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.118483153292181,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8711844135802469,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_ddraw2_2d-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_ddraw4_2d-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.118483153292181,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8711844135802469,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_ddraw4_2d-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_ddraw7_2d-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.118483153292181,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8711844135802469,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_ddraw7_2d-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_dx2-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.739701646090535,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8698167438271605,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx2-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_dx3-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.739701646090535,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8698167438271605,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx3-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_dx5-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.801855709876543,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8798148148148148,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx5-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_dx6-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.661625514403292,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9106423611111111,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx6-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_dx7-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.661625514403292,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9106423611111111,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx7-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dgvoodoo_dx9-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.8964081790123455,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9297897376543209,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx9-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx10-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.916281507201646,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9152121913580247,
+      "identical_file": false
+    },
+    {
+      "id": "dx10-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.44639596193415637,
+      "central_p99": 2.0,
+      "central_changed_fraction_gt2": 0.012829861111111111,
+      "identical_file": false
+    },
+    {
+      "id": "dx10_1-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.976558641975308,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.916863425925926,
+      "identical_file": false
+    },
+    {
+      "id": "dx10_1-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx11-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.976558641975308,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.916863425925926,
+      "identical_file": false
+    },
+    {
+      "id": "dx11-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx12-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.743642618312757,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9111207561728395,
+      "identical_file": false
+    },
+    {
+      "id": "dx12-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx2-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.739701646090535,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8698167438271605,
+      "identical_file": false
+    },
+    {
+      "id": "dx2-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx3-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.739701646090535,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8698167438271605,
+      "identical_file": false
+    },
+    {
+      "id": "dx3-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx5-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.801855709876543,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8798148148148148,
+      "identical_file": false
+    },
+    {
+      "id": "dx5-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx6-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.661625514403292,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9106423611111111,
+      "identical_file": false
+    },
+    {
+      "id": "dx6-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx7-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.661625514403292,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9106423611111111,
+      "identical_file": false
+    },
+    {
+      "id": "dx7-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx8-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.171761188271605,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8852334104938272,
+      "identical_file": false
+    },
+    {
+      "id": "dx8-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx9-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.9880709876543206,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9362345679012346,
+      "identical_file": false
+    },
+    {
+      "id": "dx9-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dx9ex-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.9880709876543206,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9362345679012346,
+      "identical_file": false
+    },
+    {
+      "id": "dx9ex-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dxvk_dx10-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.77167695473251,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.9011631944444445,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx10-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dxvk_dx10_1-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.77167695473251,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.9011631944444445,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx10_1-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dxvk_dx11-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.77167695473251,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.9011631944444445,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx11-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dxvk_dx8-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.2724736368312755,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.9025443672839506,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx8-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "dxvk_dx9-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.956541280864197,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9196277006172839,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx9-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "glcore33-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.949349279835391,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9242534722222222,
+      "identical_file": false
+    },
+    {
+      "id": "glcore33-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "glcore46-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.949349279835391,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9242534722222222,
+      "identical_file": false
+    },
+    {
+      "id": "glcore46-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "gles2_angle_d3d11-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.774247685185185,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9036226851851852,
+      "identical_file": false
+    },
+    {
+      "id": "gles2_angle_d3d11-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "gles2_angle_vulkan-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.978852237654321,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.9305902777777778,
+      "identical_file": false
+    },
+    {
+      "id": "gles2_angle_vulkan-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "gles3_angle_d3d11-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.774247685185185,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9036226851851852,
+      "identical_file": false
+    },
+    {
+      "id": "gles3_angle_d3d11-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "gles3_angle_vulkan-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.978852237654321,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.9305902777777778,
+      "identical_file": false
+    },
+    {
+      "id": "gles3_angle_vulkan-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "glide1-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.927401349948079,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.8138726635514019,
+      "identical_file": false
+    },
+    {
+      "id": "glide1-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "glide2-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.927401349948079,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.8138726635514019,
+      "identical_file": false
+    },
+    {
+      "id": "glide2-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "glide3-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.899441848390446,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.7988123052959502,
+      "identical_file": false
+    },
+    {
+      "id": "glide3-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "opengl-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.949349279835391,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9242534722222222,
+      "identical_file": false
+    },
+    {
+      "id": "opengl-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "vulkan-x86",
+      "backend": "phoenix",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.7777752057613165,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9051253858024692,
+      "identical_file": false
+    },
+    {
+      "id": "vulkan-x86",
+      "backend": "phoenix",
+      "variant": "x86-driver",
+      "reference_variant": "x64-library",
+      "central_mae": 0.0,
+      "central_p99": 0.0,
+      "central_changed_fraction_gt2": 0.0,
+      "identical_file": true
+    },
+    {
+      "id": "d3d11on12-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.938663194444445,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9222916666666666,
+      "identical_file": false
+    },
+    {
+      "id": "ddraw1_2d-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.173562242798354,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026311728395062,
+      "identical_file": false
+    },
+    {
+      "id": "ddraw2_2d-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.173562242798354,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026311728395062,
+      "identical_file": false
+    },
+    {
+      "id": "ddraw4_2d-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.173562242798354,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026311728395062,
+      "identical_file": false
+    },
+    {
+      "id": "ddraw7_2d-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.173562242798354,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026311728395062,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_ddraw1_2d-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.173562242798354,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026311728395062,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_ddraw2_2d-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.173562242798354,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026311728395062,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_ddraw4_2d-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.173562242798354,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026311728395062,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_ddraw7_2d-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.173562242798354,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026311728395062,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx2-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.455963863168725,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.871712962962963,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx3-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.455963863168725,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.871712962962963,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx5-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.5711766975308645,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8845138888888889,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx6-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.621053883744856,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026176697530864,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx7-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.621053883744856,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026176697530864,
+      "identical_file": false
+    },
+    {
+      "id": "dgvoodoo_dx8-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 4.982419624485597,
+      "central_p99": 17.0,
+      "central_changed_fraction_gt2": 0.8816087962962963,
+      "identical_file": false
+    },
+    {
+      "id": "dx10-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 6.145108667695474,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.9247048611111112,
+      "identical_file": false
+    },
+    {
+      "id": "dx10_1-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 6.037160493827161,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9196836419753086,
+      "identical_file": false
+    },
+    {
+      "id": "dx11-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 6.1057632458847735,
+      "central_p99": 20.0,
+      "central_changed_fraction_gt2": 0.9229456018518518,
+      "identical_file": false
+    },
+    {
+      "id": "dx12-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.759765303497942,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9108912037037037,
+      "identical_file": false
+    },
+    {
+      "id": "dx2-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.455963863168725,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.871712962962963,
+      "identical_file": false
+    },
+    {
+      "id": "dx3-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.455963863168725,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.871712962962963,
+      "identical_file": false
+    },
+    {
+      "id": "dx5-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.5711766975308645,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8845138888888889,
+      "identical_file": false
+    },
+    {
+      "id": "dx6-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.621053883744856,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026176697530864,
+      "identical_file": false
+    },
+    {
+      "id": "dx7-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.621053883744856,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.9026176697530864,
+      "identical_file": false
+    },
+    {
+      "id": "dx8-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.069474022633745,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8609567901234568,
+      "identical_file": false
+    },
+    {
+      "id": "dx9-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.768968621399177,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9125790895061728,
+      "identical_file": false
+    },
+    {
+      "id": "dx9ex-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.768968621399177,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9125790895061728,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx10-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.938663194444445,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9222916666666666,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx10_1-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.938663194444445,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9222916666666666,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx11-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.938663194444445,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9222916666666666,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx8-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.31078125,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8966801697530864,
+      "identical_file": false
+    },
+    {
+      "id": "dxvk_dx9-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.459123585390946,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.8845158179012346,
+      "identical_file": false
+    },
+    {
+      "id": "glcore33-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.853187371399177,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9288425925925926,
+      "identical_file": false
+    },
+    {
+      "id": "glcore46-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.853187371399177,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9288425925925926,
+      "identical_file": false
+    },
+    {
+      "id": "gles2_angle_d3d11-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.857174639917695,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9301427469135802,
+      "identical_file": false
+    },
+    {
+      "id": "gles2_angle_vulkan-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.8006455761316875,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9149729938271605,
+      "identical_file": false
+    },
+    {
+      "id": "gles3_angle_d3d11-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.857174639917695,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9301427469135802,
+      "identical_file": false
+    },
+    {
+      "id": "gles3_angle_vulkan-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.8006455761316875,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9149729938271605,
+      "identical_file": false
+    },
+    {
+      "id": "glide1-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.055571780893042,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.733868769470405,
+      "identical_file": false
+    },
+    {
+      "id": "glide2-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.055571780893042,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.733868769470405,
+      "identical_file": false
+    },
+    {
+      "id": "glide3-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.200240134994808,
+      "central_p99": 18.0,
+      "central_changed_fraction_gt2": 0.7934190031152648,
+      "identical_file": false
+    },
+    {
+      "id": "opengl-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.853187371399177,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.9288425925925926,
+      "identical_file": false
+    },
+    {
+      "id": "vulkan-x86",
+      "backend": "nvidia",
+      "variant": "helper",
+      "reference_variant": "x64-library",
+      "central_mae": 5.674338991769547,
+      "central_p99": 19.0,
+      "central_changed_fraction_gt2": 0.8921469907407408,
+      "identical_file": false
+    }
+  ],
+  "dos_results": [
+    {
+      "id": "runs/latest-x64-backends/dos-vga/native",
+      "fixture_id": "dos-vga",
+      "label": "DOS VGA",
+      "group": "DOS / VGA",
+      "api": "vga",
+      "transport": "CPU / VGA",
+      "architecture": "i386",
+      "suite": "clean",
+      "mode": "native",
+      "status": "complete",
+      "freshness": "current",
+      "timestamp": "2026-10-18T02:16:57.343257+00:00",
+      "fps": 6.810703692287649,
+      "game_fps": 6.810703692287649,
+      "game_samples": [
+        {
+          "seconds": 0.1496262089542233,
+          "fps": 6.683321103897917
+        },
+        {
+          "seconds": 0.28712432323706416,
+          "fps": 7.272827014506885
+        },
+        {
+          "seconds": 0.41652977756918474,
+          "fps": 7.727649542757978
+        },
+        {
+          "seconds": 0.5483179402940044,
+          "fps": 7.587934904958427
+        },
+        {
+          "seconds": 0.6733854070634777,
+          "fps": 7.9956844560002045
+        },
+        {
+          "seconds": 0.8046296451499355,
+          "fps": 7.619382112159811
+        },
+        {
+          "seconds": 0.9468806047704454,
+          "fps": 7.029829553823402
+        },
+        {
+          "seconds": 1.087391676025411,
+          "fps": 7.116876919865208
+        },
+        {
+          "seconds": 1.2319155533951296,
+          "fps": 6.919271875344283
+        },
+        {
+          "seconds": 1.3623677902747282,
+          "fps": 7.665640880676916
+        },
+        {
+          "seconds": 1.49930940847148,
+          "fps": 7.302381943254413
+        },
+        {
+          "seconds": 1.6370547612263033,
+          "fps": 7.259773052234486
+        },
+        {
+          "seconds": 1.7557526944802966,
+          "fps": 8.424746519049926
+        },
+        {
+          "seconds": 1.9070182202182409,
+          "fps": 6.610891643165423
+        },
+        {
+          "seconds": 2.0994711610989123,
+          "fps": 5.1960754427755935
+        },
+        {
+          "seconds": 2.250076266782883,
+          "fps": 6.63988113456391
+        },
+        {
+          "seconds": 2.3753297909787294,
+          "fps": 7.983807293409156
+        },
+        {
+          "seconds": 2.515247489900937,
+          "fps": 7.1470586473551565
+        },
+        {
+          "seconds": 2.6528989758460586,
+          "fps": 7.26472361074749
+        },
+        {
+          "seconds": 2.8046698737826654,
+          "fps": 6.588878458225174
+        },
+        {
+          "seconds": 2.9397567843912915,
+          "fps": 7.402641717799001
+        },
+        {
+          "seconds": 3.070934812853049,
+          "fps": 7.623227850931837
+        },
+        {
+          "seconds": 3.234725691010577,
+          "fps": 6.105346105039128
+        },
+        {
+          "seconds": 3.3963702039926913,
+          "fps": 6.186414753902889
+        },
+        {
+          "seconds": 3.559252585527749,
+          "fps": 6.139399427830492
+        },
+        {
+          "seconds": 3.744792906351095,
+          "fps": 5.389664066346554
+        },
+        {
+          "seconds": 3.9237776362325887,
+          "fps": 5.587068800014967
+        },
+        {
+          "seconds": 4.085417958732127,
+          "fps": 6.186575135067895
+        },
+        {
+          "seconds": 4.260718416332826,
+          "fps": 5.704491669256284
+        },
+        {
+          "seconds": 4.42939874956,
+          "fps": 5.928373396400798
+        },
+        {
+          "seconds": 4.561076283544813,
+          "fps": 7.594309900391443
+        },
+        {
+          "seconds": 4.692224140532024,
+          "fps": 7.624981627397238
+        },
+        {
+          "seconds": 4.837918000636953,
+          "fps": 6.863707223350367
+        },
+        {
+          "seconds": 5.014325583734222,
+          "fps": 5.668690554241142
+        },
+        {
+          "seconds": 5.15316213815183,
+          "fps": 7.202714041664326
+        },
+        {
+          "seconds": 5.305100655391475,
+          "fps": 6.581609575817792
+        },
+        {
+          "seconds": 5.545993060560854,
+          "fps": 4.1512309169600705
+        },
+        {
+          "seconds": 5.705263246115423,
+          "fps": 6.2786390090403
+        },
+        {
+          "seconds": 5.844906887477163,
+          "fps": 7.161085103829025
+        },
+        {
+          "seconds": 5.969729630064198,
+          "fps": 8.011360584412156
+        },
+        {
+          "seconds": 6.102540270537555,
+          "fps": 7.5295171865435595
+        },
+        {
+          "seconds": 6.232979097872911,
+          "fps": 7.666428933993864
+        },
+        {
+          "seconds": 6.368201780116999,
+          "fps": 7.395209024140795
+        },
+        {
+          "seconds": 6.587724400341943,
+          "fps": 4.555339212766778
+        },
+        {
+          "seconds": 6.756125647429559,
+          "fps": 5.938198304907575
+        },
+        {
+          "seconds": 6.908768165741967,
+          "fps": 6.5512545983638315
+        },
+        {
+          "seconds": 7.030479055968086,
+          "fps": 8.216191650082951
+        },
+        {
+          "seconds": 7.17305184465043,
+          "fps": 7.013961143932089
+        },
+        {
+          "seconds": 7.3110796359308745,
+          "fps": 7.244917785927619
+        },
+        {
+          "seconds": 7.460782111667981,
+          "fps": 6.6799162477186345
+        },
+        {
+          "seconds": 7.60783285003101,
+          "fps": 6.800373878649038
+        },
+        {
+          "seconds": 7.773775121943044,
+          "fps": 6.026192051475
+        },
+        {
+          "seconds": 7.907582259172966,
+          "fps": 7.473442902239864
+        },
+        {
+          "seconds": 8.046475804153605,
+          "fps": 7.199758636295083
+        },
+        {
+          "seconds": 8.186510836587942,
+          "fps": 7.141070220902872
+        },
+        {
+          "seconds": 8.335604854255017,
+          "fps": 6.70717722714394
+        },
+        {
+          "seconds": 8.486220017097168,
+          "fps": 6.639437763965502
+        },
+        {
+          "seconds": 8.63037177961414,
+          "fps": 6.9371333554264085
+        },
+        {
+          "seconds": 8.817515379071054,
+          "fps": 5.343490255087422
+        },
+        {
+          "seconds": 8.960780435474948,
+          "fps": 6.98006914666469
+        },
+        {
+          "seconds": 9.100889220402621,
+          "fps": 7.137311200837421
+        },
+        {
+          "seconds": 9.255104845874051,
+          "fps": 6.484427222877362
+        },
+        {
+          "seconds": 9.41459126032954,
+          "fps": 6.270126539706592
+        },
+        {
+          "seconds": 9.571747766472786,
+          "fps": 6.363083683525693
+        },
+        {
+          "seconds": 9.713951792688448,
+          "fps": 7.032149697951902
+        },
+        {
+          "seconds": 9.850605105683972,
+          "fps": 7.3177881902706385
+        },
+        {
+          "seconds": 9.977906937762953,
+          "fps": 7.855346491632292
+        },
+        {
+          "seconds": 10.114499907809385,
+          "fps": 7.321020984169812
+        },
+        {
+          "seconds": 10.261184397995272,
+          "fps": 6.817353346169935
+        },
+        {
+          "seconds": 10.396945976298632,
+          "fps": 7.365854260809429
+        },
+        {
+          "seconds": 10.529708845270623,
+          "fps": 7.532226500852216
+        },
+        {
+          "seconds": 10.673202702023165,
+          "fps": 6.968939455885604
+        },
+        {
+          "seconds": 10.809605424160647,
+          "fps": 7.3312319895793285
+        },
+        {
+          "seconds": 10.955647094319382,
+          "fps": 6.8473607492511555
+        },
+        {
+          "seconds": 11.143337132704204,
+          "fps": 5.327933270223389
+        },
+        {
+          "seconds": 11.295529593187954,
+          "fps": 6.5706277224342
+        },
+        {
+          "seconds": 11.435909083290031,
+          "fps": 7.1235477438537975
+        },
+        {
+          "seconds": 11.576314554384084,
+          "fps": 7.122229584131656
+        },
+        {
+          "seconds": 11.719514239259794,
+          "fps": 6.983255590736409
+        },
+        {
+          "seconds": 11.853712767562314,
+          "fps": 7.451646546717198
+        },
+        {
+          "seconds": 11.977280041569589,
+          "fps": 8.092757633717197
+        },
+        {
+          "seconds": 12.098612112170837,
+          "fps": 8.241844015721535
+        },
+        {
+          "seconds": 12.241686920665785,
+          "fps": 6.9893506097917415
+        },
+        {
+          "seconds": 12.382624583046987,
+          "fps": 7.095335505815665
+        },
+        {
+          "seconds": 12.508685194186963,
+          "fps": 7.9326919880596805
+        },
+        {
+          "seconds": 12.641303072461827,
+          "fps": 7.540461459709055
+        },
+        {
+          "seconds": 12.77601032534907,
+          "fps": 7.42350525726374
+        },
+        {
+          "seconds": 12.90098560150187,
+          "fps": 8.00158263925229
+        },
+        {
+          "seconds": 13.046480832732698,
+          "fps": 6.873077499107149
+        },
+        {
+          "seconds": 13.24967733284165,
+          "fps": 4.921344607135511
+        },
+        {
+          "seconds": 13.420178849796343,
+          "fps": 5.865050457385211
+        },
+        {
+          "seconds": 13.566421663118724,
+          "fps": 6.837942851903274
+        },
+        {
+          "seconds": 13.706292428636083,
+          "fps": 7.149456831105274
+        },
+        {
+          "seconds": 13.847207462411372,
+          "fps": 7.096474898445898
+        },
+        {
+          "seconds": 13.988774535275482,
+          "fps": 7.063789479916004
+        },
+        {
+          "seconds": 14.122544796258737,
+          "fps": 7.475503095005394
+        },
+        {
+          "seconds": 14.37823547159691,
+          "fps": 3.9109756297425227
+        },
+        {
+          "seconds": 14.538761963827756,
+          "fps": 6.22950134960862
+        },
+        {
+          "seconds": 14.672631958296318,
+          "fps": 7.469933826245458
+        },
+        {
+          "seconds": 14.823943579342597,
+          "fps": 6.608877712665225
+        },
+        {
+          "seconds": 14.965843376523242,
+          "fps": 7.047226422226315
+        },
+        {
+          "seconds": 15.086464741279606,
+          "fps": 8.290405286160077
+        },
+        {
+          "seconds": 15.216254881912203,
+          "fps": 7.704745484718649
+        },
+        {
+          "seconds": 15.366198729445685,
+          "fps": 6.669163266446815
+        },
+        {
+          "seconds": 15.535128815434387,
+          "fps": 5.919608660276654
+        },
+        {
+          "seconds": 15.666713320706013,
+          "fps": 7.599678989070429
+        },
+        {
+          "seconds": 15.787325466400713,
+          "fps": 8.29103896825824
+        },
+        {
+          "seconds": 15.920236678455893,
+          "fps": 7.523819733017194
+        },
+        {
+          "seconds": 16.04973683769423,
+          "fps": 7.721998226732419
+        },
+        {
+          "seconds": 16.194451801069413,
+          "fps": 6.910135459920868
+        },
+        {
+          "seconds": 16.364604669873785,
+          "fps": 5.877068115435169
+        },
+        {
+          "seconds": 16.508787441961818,
+          "fps": 6.935641377386145
+        },
+        {
+          "seconds": 16.652423775121946,
+          "fps": 6.962026793632958
+        },
+        {
+          "seconds": 16.787143599456915,
+          "fps": 7.422812529161185
+        },
+        {
+          "seconds": 16.94241857892355,
+          "fps": 6.440187617058223
+        },
+        {
+          "seconds": 17.08478687205619,
+          "fps": 7.024035886054692
+        },
+        {
+          "seconds": 17.207170753784006,
+          "fps": 8.171010641940654
+        },
+        {
+          "seconds": 17.33896394508792,
+          "fps": 7.587645386733328
+        },
+        {
+          "seconds": 17.467439112288172,
+          "fps": 7.783605359635808
+        },
+        {
+          "seconds": 17.633058717041855,
+          "fps": 6.037932535144284
+        },
+        {
+          "seconds": 17.80787475485677,
+          "fps": 5.72029896398149
+        },
+        {
+          "seconds": 17.94010040396252,
+          "fps": 7.562829199652584
+        },
+        {
+          "seconds": 18.07093481285305,
+          "fps": 7.64324926813952
+        },
+        {
+          "seconds": 18.22989574079351,
+          "fps": 6.2908540668217725
+        },
+        {
+          "seconds": 18.374455656313383,
+          "fps": 6.917546931345011
+        },
+        {
+          "seconds": 18.515426004458675,
+          "fps": 7.093690362240908
+        },
+        {
+          "seconds": 18.6443738580935,
+          "fps": 7.755072859389897
+        },
+        {
+          "seconds": 18.783663822725828,
+          "fps": 7.179268101902432
+        },
+        {
+          "seconds": 18.916139224593106,
+          "fps": 7.548571175514213
+        },
+        {
+          "seconds": 19.048693407532813,
+          "fps": 7.5440848249568795
+        },
+        {
+          "seconds": 19.200520457935937,
+          "fps": 6.586441594859714
+        },
+        {
+          "seconds": 19.34433362946077,
+          "fps": 6.9534660100818595
+        },
+        {
+          "seconds": 19.47605725875392,
+          "fps": 7.5916523509576255
+        },
+        {
+          "seconds": 19.612330075931546,
+          "fps": 7.338220642320287
+        },
+        {
+          "seconds": 19.771917061968857,
+          "fps": 6.266175111335209
+        },
+        {
+          "seconds": 19.96856802829414,
+          "fps": 5.085151721786544
+        }
+      ],
+      "minimum_fps": 3.9109756297425227,
+      "maximum_fps": 8.424746519049926,
+      "seconds": 19.96856802829414,
+      "frames": 136,
+      "width": 320,
+      "height": 200,
+      "samples": [
+        {
+          "seconds": 0.1496262089542233,
+          "fps": 6.683321103897917
+        },
+        {
+          "seconds": 0.28712432323706416,
+          "fps": 7.272827014506885
+        },
+        {
+          "seconds": 0.41652977756918474,
+          "fps": 7.727649542757978
+        },
+        {
+          "seconds": 0.5483179402940044,
+          "fps": 7.587934904958427
+        },
+        {
+          "seconds": 0.6733854070634777,
+          "fps": 7.9956844560002045
+        },
+        {
+          "seconds": 0.8046296451499355,
+          "fps": 7.619382112159811
+        },
+        {
+          "seconds": 0.9468806047704454,
+          "fps": 7.029829553823402
+        },
+        {
+          "seconds": 1.087391676025411,
+          "fps": 7.116876919865208
+        },
+        {
+          "seconds": 1.2319155533951296,
+          "fps": 6.919271875344283
+        },
+        {
+          "seconds": 1.3623677902747282,
+          "fps": 7.665640880676916
+        },
+        {
+          "seconds": 1.49930940847148,
+          "fps": 7.302381943254413
+        },
+        {
+          "seconds": 1.6370547612263033,
+          "fps": 7.259773052234486
+        },
+        {
+          "seconds": 1.7557526944802966,
+          "fps": 8.424746519049926
+        },
+        {
+          "seconds": 1.9070182202182409,
+          "fps": 6.610891643165423
+        },
+        {
+          "seconds": 2.0994711610989123,
+          "fps": 5.1960754427755935
+        },
+        {
+          "seconds": 2.250076266782883,
+          "fps": 6.63988113456391
+        },
+        {
+          "seconds": 2.3753297909787294,
+          "fps": 7.983807293409156
+        },
+        {
+          "seconds": 2.515247489900937,
+          "fps": 7.1470586473551565
+        },
+        {
+          "seconds": 2.6528989758460586,
+          "fps": 7.26472361074749
+        },
+        {
+          "seconds": 2.8046698737826654,
+          "fps": 6.588878458225174
+        },
+        {
+          "seconds": 2.9397567843912915,
+          "fps": 7.402641717799001
+        },
+        {
+          "seconds": 3.070934812853049,
+          "fps": 7.623227850931837
+        },
+        {
+          "seconds": 3.234725691010577,
+          "fps": 6.105346105039128
+        },
+        {
+          "seconds": 3.3963702039926913,
+          "fps": 6.186414753902889
+        },
+        {
+          "seconds": 3.559252585527749,
+          "fps": 6.139399427830492
+        },
+        {
+          "seconds": 3.744792906351095,
+          "fps": 5.389664066346554
+        },
+        {
+          "seconds": 3.9237776362325887,
+          "fps": 5.587068800014967
+        },
+        {
+          "seconds": 4.085417958732127,
+          "fps": 6.186575135067895
+        },
+        {
+          "seconds": 4.260718416332826,
+          "fps": 5.704491669256284
+        },
+        {
+          "seconds": 4.42939874956,
+          "fps": 5.928373396400798
+        },
+        {
+          "seconds": 4.561076283544813,
+          "fps": 7.594309900391443
+        },
+        {
+          "seconds": 4.692224140532024,
+          "fps": 7.624981627397238
+        },
+        {
+          "seconds": 4.837918000636953,
+          "fps": 6.863707223350367
+        },
+        {
+          "seconds": 5.014325583734222,
+          "fps": 5.668690554241142
+        },
+        {
+          "seconds": 5.15316213815183,
+          "fps": 7.202714041664326
+        },
+        {
+          "seconds": 5.305100655391475,
+          "fps": 6.581609575817792
+        },
+        {
+          "seconds": 5.545993060560854,
+          "fps": 4.1512309169600705
+        },
+        {
+          "seconds": 5.705263246115423,
+          "fps": 6.2786390090403
+        },
+        {
+          "seconds": 5.844906887477163,
+          "fps": 7.161085103829025
+        },
+        {
+          "seconds": 5.969729630064198,
+          "fps": 8.011360584412156
+        },
+        {
+          "seconds": 6.102540270537555,
+          "fps": 7.5295171865435595
+        },
+        {
+          "seconds": 6.232979097872911,
+          "fps": 7.666428933993864
+        },
+        {
+          "seconds": 6.368201780116999,
+          "fps": 7.395209024140795
+        },
+        {
+          "seconds": 6.587724400341943,
+          "fps": 4.555339212766778
+        },
+        {
+          "seconds": 6.756125647429559,
+          "fps": 5.938198304907575
+        },
+        {
+          "seconds": 6.908768165741967,
+          "fps": 6.5512545983638315
+        },
+        {
+          "seconds": 7.030479055968086,
+          "fps": 8.216191650082951
+        },
+        {
+          "seconds": 7.17305184465043,
+          "fps": 7.013961143932089
+        },
+        {
+          "seconds": 7.3110796359308745,
+          "fps": 7.244917785927619
+        },
+        {
+          "seconds": 7.460782111667981,
+          "fps": 6.6799162477186345
+        },
+        {
+          "seconds": 7.60783285003101,
+          "fps": 6.800373878649038
+        },
+        {
+          "seconds": 7.773775121943044,
+          "fps": 6.026192051475
+        },
+        {
+          "seconds": 7.907582259172966,
+          "fps": 7.473442902239864
+        },
+        {
+          "seconds": 8.046475804153605,
+          "fps": 7.199758636295083
+        },
+        {
+          "seconds": 8.186510836587942,
+          "fps": 7.141070220902872
+        },
+        {
+          "seconds": 8.335604854255017,
+          "fps": 6.70717722714394
+        },
+        {
+          "seconds": 8.486220017097168,
+          "fps": 6.639437763965502
+        },
+        {
+          "seconds": 8.63037177961414,
+          "fps": 6.9371333554264085
+        },
+        {
+          "seconds": 8.817515379071054,
+          "fps": 5.343490255087422
+        },
+        {
+          "seconds": 8.960780435474948,
+          "fps": 6.98006914666469
+        },
+        {
+          "seconds": 9.100889220402621,
+          "fps": 7.137311200837421
+        },
+        {
+          "seconds": 9.255104845874051,
+          "fps": 6.484427222877362
+        },
+        {
+          "seconds": 9.41459126032954,
+          "fps": 6.270126539706592
+        },
+        {
+          "seconds": 9.571747766472786,
+          "fps": 6.363083683525693
+        },
+        {
+          "seconds": 9.713951792688448,
+          "fps": 7.032149697951902
+        },
+        {
+          "seconds": 9.850605105683972,
+          "fps": 7.3177881902706385
+        },
+        {
+          "seconds": 9.977906937762953,
+          "fps": 7.855346491632292
+        },
+        {
+          "seconds": 10.114499907809385,
+          "fps": 7.321020984169812
+        },
+        {
+          "seconds": 10.261184397995272,
+          "fps": 6.817353346169935
+        },
+        {
+          "seconds": 10.396945976298632,
+          "fps": 7.365854260809429
+        },
+        {
+          "seconds": 10.529708845270623,
+          "fps": 7.532226500852216
+        },
+        {
+          "seconds": 10.673202702023165,
+          "fps": 6.968939455885604
+        },
+        {
+          "seconds": 10.809605424160647,
+          "fps": 7.3312319895793285
+        },
+        {
+          "seconds": 10.955647094319382,
+          "fps": 6.8473607492511555
+        },
+        {
+          "seconds": 11.143337132704204,
+          "fps": 5.327933270223389
+        },
+        {
+          "seconds": 11.295529593187954,
+          "fps": 6.5706277224342
+        },
+        {
+          "seconds": 11.435909083290031,
+          "fps": 7.1235477438537975
+        },
+        {
+          "seconds": 11.576314554384084,
+          "fps": 7.122229584131656
+        },
+        {
+          "seconds": 11.719514239259794,
+          "fps": 6.983255590736409
+        },
+        {
+          "seconds": 11.853712767562314,
+          "fps": 7.451646546717198
+        },
+        {
+          "seconds": 11.977280041569589,
+          "fps": 8.092757633717197
+        },
+        {
+          "seconds": 12.098612112170837,
+          "fps": 8.241844015721535
+        },
+        {
+          "seconds": 12.241686920665785,
+          "fps": 6.9893506097917415
+        },
+        {
+          "seconds": 12.382624583046987,
+          "fps": 7.095335505815665
+        },
+        {
+          "seconds": 12.508685194186963,
+          "fps": 7.9326919880596805
+        },
+        {
+          "seconds": 12.641303072461827,
+          "fps": 7.540461459709055
+        },
+        {
+          "seconds": 12.77601032534907,
+          "fps": 7.42350525726374
+        },
+        {
+          "seconds": 12.90098560150187,
+          "fps": 8.00158263925229
+        },
+        {
+          "seconds": 13.046480832732698,
+          "fps": 6.873077499107149
+        },
+        {
+          "seconds": 13.24967733284165,
+          "fps": 4.921344607135511
+        },
+        {
+          "seconds": 13.420178849796343,
+          "fps": 5.865050457385211
+        },
+        {
+          "seconds": 13.566421663118724,
+          "fps": 6.837942851903274
+        },
+        {
+          "seconds": 13.706292428636083,
+          "fps": 7.149456831105274
+        },
+        {
+          "seconds": 13.847207462411372,
+          "fps": 7.096474898445898
+        },
+        {
+          "seconds": 13.988774535275482,
+          "fps": 7.063789479916004
+        },
+        {
+          "seconds": 14.122544796258737,
+          "fps": 7.475503095005394
+        },
+        {
+          "seconds": 14.37823547159691,
+          "fps": 3.9109756297425227
+        },
+        {
+          "seconds": 14.538761963827756,
+          "fps": 6.22950134960862
+        },
+        {
+          "seconds": 14.672631958296318,
+          "fps": 7.469933826245458
+        },
+        {
+          "seconds": 14.823943579342597,
+          "fps": 6.608877712665225
+        },
+        {
+          "seconds": 14.965843376523242,
+          "fps": 7.047226422226315
+        },
+        {
+          "seconds": 15.086464741279606,
+          "fps": 8.290405286160077
+        },
+        {
+          "seconds": 15.216254881912203,
+          "fps": 7.704745484718649
+        },
+        {
+          "seconds": 15.366198729445685,
+          "fps": 6.669163266446815
+        },
+        {
+          "seconds": 15.535128815434387,
+          "fps": 5.919608660276654
+        },
+        {
+          "seconds": 15.666713320706013,
+          "fps": 7.599678989070429
+        },
+        {
+          "seconds": 15.787325466400713,
+          "fps": 8.29103896825824
+        },
+        {
+          "seconds": 15.920236678455893,
+          "fps": 7.523819733017194
+        },
+        {
+          "seconds": 16.04973683769423,
+          "fps": 7.721998226732419
+        },
+        {
+          "seconds": 16.194451801069413,
+          "fps": 6.910135459920868
+        },
+        {
+          "seconds": 16.364604669873785,
+          "fps": 5.877068115435169
+        },
+        {
+          "seconds": 16.508787441961818,
+          "fps": 6.935641377386145
+        },
+        {
+          "seconds": 16.652423775121946,
+          "fps": 6.962026793632958
+        },
+        {
+          "seconds": 16.787143599456915,
+          "fps": 7.422812529161185
+        },
+        {
+          "seconds": 16.94241857892355,
+          "fps": 6.440187617058223
+        },
+        {
+          "seconds": 17.08478687205619,
+          "fps": 7.024035886054692
+        },
+        {
+          "seconds": 17.207170753784006,
+          "fps": 8.171010641940654
+        },
+        {
+          "seconds": 17.33896394508792,
+          "fps": 7.587645386733328
+        },
+        {
+          "seconds": 17.467439112288172,
+          "fps": 7.783605359635808
+        },
+        {
+          "seconds": 17.633058717041855,
+          "fps": 6.037932535144284
+        },
+        {
+          "seconds": 17.80787475485677,
+          "fps": 5.72029896398149
+        },
+        {
+          "seconds": 17.94010040396252,
+          "fps": 7.562829199652584
+        },
+        {
+          "seconds": 18.07093481285305,
+          "fps": 7.64324926813952
+        },
+        {
+          "seconds": 18.22989574079351,
+          "fps": 6.2908540668217725
+        },
+        {
+          "seconds": 18.374455656313383,
+          "fps": 6.917546931345011
+        },
+        {
+          "seconds": 18.515426004458675,
+          "fps": 7.093690362240908
+        },
+        {
+          "seconds": 18.6443738580935,
+          "fps": 7.755072859389897
+        },
+        {
+          "seconds": 18.783663822725828,
+          "fps": 7.179268101902432
+        },
+        {
+          "seconds": 18.916139224593106,
+          "fps": 7.548571175514213
+        },
+        {
+          "seconds": 19.048693407532813,
+          "fps": 7.5440848249568795
+        },
+        {
+          "seconds": 19.200520457935937,
+          "fps": 6.586441594859714
+        },
+        {
+          "seconds": 19.34433362946077,
+          "fps": 6.9534660100818595
+        },
+        {
+          "seconds": 19.47605725875392,
+          "fps": 7.5916523509576255
+        },
+        {
+          "seconds": 19.612330075931546,
+          "fps": 7.338220642320287
+        },
+        {
+          "seconds": 19.771917061968857,
+          "fps": 6.266175111335209
+        },
+        {
+          "seconds": 19.96856802829414,
+          "fps": 5.085151721786544
+        }
+      ],
+      "background": true,
+      "software": false,
+      "gpu": null,
+      "neural_fps": null,
+      "fps_scope": "DOS guest render frames / emulated seconds",
+      "neural_fps_scope": null,
+      "scene_mode": "showcase",
+      "execution_mode": "native",
+      "execution_variant": null,
+      "execution_label": null,
+      "requested_execution_mode": null,
+      "first_ready_render_seconds": null,
+      "startup_in_measurement": false,
+      "captured_api": null,
+      "benchmark_profile": "dos-guest-clock-warmup5-measure20-v2",
+      "addon_sha256": null,
+      "comparison_batch": "runs/latest-x64-backends",
+      "requested_seconds": 20,
+      "warmup_seconds": 5,
+      "vsync": null,
+      "measurement_complete": true,
+      "benchmark_warnings": [],
+      "error": "",
+      "captures": [
+        "runs/latest-x64-backends/dos-vga/native/dos-vga-native-320x200.png"
+      ],
+      "executable_sha256": "13359cf091725f1d5faff65c5f822a71ceaac5b9bdf24aec4cf6a4acc7027351",
+      "expected_sha256": "13359cf091725f1d5faff65c5f822a71ceaac5b9bdf24aec4cf6a4acc7027351",
+      "checks_passed": 0,
+      "checks_total": 0,
+      "reference": false,
+      "controls": {
+        "frozen": true
+      },
+      "processing": {}
+    },
+    {
+      "id": "runs/latest-x64-backends/dos-vga/nvidia",
+      "fixture_id": "dos-vga",
+      "label": "DOS VGA",
+      "group": "DOS / VGA",
+      "api": "vga",
+      "transport": "CPU / VGA",
+      "architecture": "i386",
+      "suite": "working",
+      "mode": "nvidia",
+      "status": "complete",
+      "freshness": "current",
+      "timestamp": "2026-10-18T02:16:57.345257+00:00",
+      "fps": 35.17787630873466,
+      "game_fps": 35.17787630873466,
+      "game_samples": [
+        {
+          "seconds": 0.5041492000018479,
+          "fps": 29.753096900570345
+        },
+        {
+          "seconds": 1.0299508000025526,
+          "fps": 32.33158666686678
+        },
+        {
+          "seconds": 1.533832999994047,
+          "fps": 33.738044329184405
+        },
+        {
+          "seconds": 2.03987349999079,
+          "fps": 37.54640191866517
+        },
+        {
+          "seconds": 2.558485399989877,
+          "fps": 30.85158670679978
+        },
+        {
+          "seconds": 3.061847699995269,
+          "fps": 29.799609545330103
+        },
+        {
+          "seconds": 3.5653755999956047,
+          "fps": 31.77579633618978
+        },
+        {
+          "seconds": 4.09205330000259,
+          "fps": 36.07519361413633
+        },
+        {
+          "seconds": 4.621166999990237,
+          "fps": 34.01915316201458
+        },
+        {
+          "seconds": 5.181305099991732,
+          "fps": 35.70548048766297
+        },
+        {
+          "seconds": 5.690491699991981,
+          "fps": 39.27833136219658
+        },
+        {
+          "seconds": 6.194458099998883,
+          "fps": 35.71666682491823
+        },
+        {
+          "seconds": 6.69820549999713,
+          "fps": 35.73219434991158
+        },
+        {
+          "seconds": 7.234600800002227,
+          "fps": 35.42163773586282
+        },
+        {
+          "seconds": 7.738089499995112,
+          "fps": 33.76441219085991
+        },
+        {
+          "seconds": 8.261496099992655,
+          "fps": 36.30065039319183
+        },
+        {
+          "seconds": 8.790495199995348,
+          "fps": 35.91688530264659
+        },
+        {
+          "seconds": 9.294168699998409,
+          "fps": 35.73743704977655
+        },
+        {
+          "seconds": 9.797421399998711,
+          "fps": 35.767319281126895
+        },
+        {
+          "seconds": 10.309154999995371,
+          "fps": 37.12869352359121
+        },
+        {
+          "seconds": 10.84316599999147,
+          "fps": 35.579791427777344
+        },
+        {
+          "seconds": 11.372281099989777,
+          "fps": 37.79895905458751
+        },
+        {
+          "seconds": 11.916742100002011,
+          "fps": 38.57025571992877
+        },
+        {
+          "seconds": 12.420222399989143,
+          "fps": 37.737325572590656
+        },
+        {
+          "seconds": 12.923872100000153,
+          "fps": 35.73912582417204
+        },
+        {
+          "seconds": 13.436431399997673,
+          "fps": 37.06888159105091
+        },
+        {
+          "seconds": 13.93975330000103,
+          "fps": 33.77560165748127
+        },
+        {
+          "seconds": 14.443202199996449,
+          "fps": 31.78078251863413
+        },
+        {
+          "seconds": 14.946952799989958,
+          "fps": 35.73196736685163
+        },
+        {
+          "seconds": 15.48563870000362,
+          "fps": 37.12738722044294
+        },
+        {
+          "seconds": 15.992185499999323,
+          "fps": 37.50887381020106
+        },
+        {
+          "seconds": 16.49518139999418,
+          "fps": 35.785579962349644
+        },
+        {
+          "seconds": 16.998135399990133,
+          "fps": 35.78856118083335
+        },
+        {
+          "seconds": 17.501835199989728,
+          "fps": 33.750261564554286
+        },
+        {
+          "seconds": 18.030380900003365,
+          "fps": 35.94769572339679
+        },
+        {
+          "seconds": 18.55885539999872,
+          "fps": 35.95253886453749
+        },
+        {
+          "seconds": 19.06298909999896,
+          "fps": 35.70481402054947
+        },
+        {
+          "seconds": 19.566107999999076,
+          "fps": 35.77683128182183
+        },
+        {
+          "seconds": 20.06943209999008,
+          "fps": 31.788662613782932
+        }
+      ],
+      "minimum_fps": 29.753096900570345,
+      "maximum_fps": 39.27833136219658,
+      "seconds": 20.06943209999008,
+      "frames": 706,
+      "width": 320,
+      "height": 200,
+      "samples": [
+        {
+          "seconds": 0.5041492000018479,
+          "fps": 29.753096900570345
+        },
+        {
+          "seconds": 1.0299508000025526,
+          "fps": 32.33158666686678
+        },
+        {
+          "seconds": 1.533832999994047,
+          "fps": 33.738044329184405
+        },
+        {
+          "seconds": 2.03987349999079,
+          "fps": 37.54640191866517
+        },
+        {
+          "seconds": 2.558485399989877,
+          "fps": 30.85158670679978
+        },
+        {
+          "seconds": 3.061847699995269,
+          "fps": 29.799609545330103
+        },
+        {
+          "seconds": 3.5653755999956047,
+          "fps": 31.77579633618978
+        },
+        {
+          "seconds": 4.09205330000259,
+          "fps": 36.07519361413633
+        },
+        {
+          "seconds": 4.621166999990237,
+          "fps": 34.01915316201458
+        },
+        {
+          "seconds": 5.181305099991732,
+          "fps": 35.70548048766297
+        },
+        {
+          "seconds": 5.690491699991981,
+          "fps": 39.27833136219658
+        },
+        {
+          "seconds": 6.194458099998883,
+          "fps": 35.71666682491823
+        },
+        {
+          "seconds": 6.69820549999713,
+          "fps": 35.73219434991158
+        },
+        {
+          "seconds": 7.234600800002227,
+          "fps": 35.42163773586282
+        },
+        {
+          "seconds": 7.738089499995112,
+          "fps": 33.76441219085991
+        },
+        {
+          "seconds": 8.261496099992655,
+          "fps": 36.30065039319183
+        },
+        {
+          "seconds": 8.790495199995348,
+          "fps": 35.91688530264659
+        },
+        {
+          "seconds": 9.294168699998409,
+          "fps": 35.73743704977655
+        },
+        {
+          "seconds": 9.797421399998711,
+          "fps": 35.767319281126895
+        },
+        {
+          "seconds": 10.309154999995371,
+          "fps": 37.12869352359121
+        },
+        {
+          "seconds": 10.84316599999147,
+          "fps": 35.579791427777344
+        },
+        {
+          "seconds": 11.372281099989777,
+          "fps": 37.79895905458751
+        },
+        {
+          "seconds": 11.916742100002011,
+          "fps": 38.57025571992877
+        },
+        {
+          "seconds": 12.420222399989143,
+          "fps": 37.737325572590656
+        },
+        {
+          "seconds": 12.923872100000153,
+          "fps": 35.73912582417204
+        },
+        {
+          "seconds": 13.436431399997673,
+          "fps": 37.06888159105091
+        },
+        {
+          "seconds": 13.93975330000103,
+          "fps": 33.77560165748127
+        },
+        {
+          "seconds": 14.443202199996449,
+          "fps": 31.78078251863413
+        },
+        {
+          "seconds": 14.946952799989958,
+          "fps": 35.73196736685163
+        },
+        {
+          "seconds": 15.48563870000362,
+          "fps": 37.12738722044294
+        },
+        {
+          "seconds": 15.992185499999323,
+          "fps": 37.50887381020106
+        },
+        {
+          "seconds": 16.49518139999418,
+          "fps": 35.785579962349644
+        },
+        {
+          "seconds": 16.998135399990133,
+          "fps": 35.78856118083335
+        },
+        {
+          "seconds": 17.501835199989728,
+          "fps": 33.750261564554286
+        },
+        {
+          "seconds": 18.030380900003365,
+          "fps": 35.94769572339679
+        },
+        {
+          "seconds": 18.55885539999872,
+          "fps": 35.95253886453749
+        },
+        {
+          "seconds": 19.06298909999896,
+          "fps": 35.70481402054947
+        },
+        {
+          "seconds": 19.566107999999076,
+          "fps": 35.77683128182183
+        },
+        {
+          "seconds": 20.06943209999008,
+          "fps": 31.788662613782932
+        }
+      ],
+      "background": false,
+      "software": false,
+      "gpu": null,
+      "neural_fps": 35.17787630873466,
+      "fps_scope": "DOSBox enhanced presentations / host wall seconds",
+      "neural_fps_scope": "Completed enhanced images / host wall seconds",
+      "scene_mode": "showcase",
+      "execution_mode": "in_process",
+      "execution_variant": null,
+      "execution_label": null,
+      "requested_execution_mode": null,
+      "first_ready_render_seconds": null,
+      "startup_in_measurement": false,
+      "captured_api": "DOSBox Enhanced / D3D12",
+      "benchmark_profile": "dos-host-clock-warmup5-measure20-v2",
+      "addon_sha256": null,
+      "comparison_batch": "runs/latest-x64-backends",
+      "requested_seconds": 20,
+      "warmup_seconds": 5,
+      "vsync": true,
+      "measurement_complete": true,
+      "benchmark_warnings": [],
+      "error": "",
+      "captures": [
+        "runs/latest-x64-backends/dos-vga/nvidia/dos-vga-nvidia-320x200.png"
+      ],
+      "executable_sha256": "13359cf091725f1d5faff65c5f822a71ceaac5b9bdf24aec4cf6a4acc7027351",
+      "expected_sha256": "13359cf091725f1d5faff65c5f822a71ceaac5b9bdf24aec4cf6a4acc7027351",
+      "checks_passed": 0,
+      "checks_total": 0,
+      "reference": false,
+      "controls": {
+        "frozen": true
+      },
+      "processing": {
+        "execution_mode": "in_process",
+        "api": "DOSBox Enhanced / D3D12"
+      }
+    },
+    {
+      "id": "runs/latest-x64-backends/dos-vga/phoenix",
+      "fixture_id": "dos-vga",
+      "label": "DOS VGA",
+      "group": "DOS / VGA",
+      "api": "vga",
+      "transport": "CPU / VGA",
+      "architecture": "i386",
+      "suite": "working",
+      "mode": "phoenix",
+      "status": "complete",
+      "freshness": "current",
+      "timestamp": "2026-10-18T02:16:57.347257+00:00",
+      "fps": 34.77429115200616,
+      "game_fps": 34.77429115200616,
+      "game_samples": [
+        {
+          "seconds": 0.5040914999990491,
+          "fps": 27.772735703788715
+        },
+        {
+          "seconds": 1.0083215000049677,
+          "fps": 35.69799496219725
+        },
+        {
+          "seconds": 1.511843999993289,
+          "fps": 35.74815425411475
+        },
+        {
+          "seconds": 2.0467241000005743,
+          "fps": 35.5219795983085
+        },
+        {
+          "seconds": 2.5669318000000203,
+          "fps": 40.368491277661526
+        },
+        {
+          "seconds": 3.0706104999990202,
+          "fps": 33.75167542330806
+        },
+        {
+          "seconds": 3.5740131000056863,
+          "fps": 29.79722393130542
+        },
+        {
+          "seconds": 4.077587699997821,
+          "fps": 37.73025883413652
+        },
+        {
+          "seconds": 4.580902400004561,
+          "fps": 33.77608482282028
+        },
+        {
+          "seconds": 5.127020100000664,
+          "fps": 34.7910349731122
+        },
+        {
+          "seconds": 5.65551470000355,
+          "fps": 35.95117149710937
+        },
+        {
+          "seconds": 6.184707899999921,
+          "fps": 35.90371153697799
+        },
+        {
+          "seconds": 6.689423699994222,
+          "fps": 37.644947909723726
+        },
+        {
+          "seconds": 7.194009600003483,
+          "fps": 33.69099295023504
+        },
+        {
+          "seconds": 7.69762659999833,
+          "fps": 35.741446377275146
+        },
+        {
+          "seconds": 8.201089900001534,
+          "fps": 33.76611562330719
+        },
+        {
+          "seconds": 8.7359998000029,
+          "fps": 37.38947437680421
+        },
+        {
+          "seconds": 9.23934780000127,
+          "fps": 27.813759069362316
+        },
+        {
+          "seconds": 9.777759999997215,
+          "fps": 37.146260801947996
+        },
+        {
+          "seconds": 10.291362300005858,
+          "fps": 31.152508467603756
+        },
+        {
+          "seconds": 10.810697099994286,
+          "fps": 32.734182266196676
+        },
+        {
+          "seconds": 11.313843399999314,
+          "fps": 27.824908977488448
+        },
+        {
+          "seconds": 11.817429400005494,
+          "fps": 33.75788842380719
+        },
+        {
+          "seconds": 12.344460299995262,
+          "fps": 39.8458610309333
+        },
+        {
+          "seconds": 12.847650700001395,
+          "fps": 33.78442831936538
+        },
+        {
+          "seconds": 13.362341100000776,
+          "fps": 34.97248054368538
+        },
+        {
+          "seconds": 13.865185600006953,
+          "fps": 33.8076681753329
+        },
+        {
+          "seconds": 14.368441900005564,
+          "fps": 31.79294526475705
+        },
+        {
+          "seconds": 14.871747700002743,
+          "fps": 33.77668208889166
+        },
+        {
+          "seconds": 15.392522099995404,
+          "fps": 36.48412825259416
+        },
+        {
+          "seconds": 15.904666100002942,
+          "fps": 39.051516760336206
+        },
+        {
+          "seconds": 16.408645300005446,
+          "fps": 33.731550825739475
+        },
+        {
+          "seconds": 16.947948700006236,
+          "fps": 37.084876527703514
+        },
+        {
+          "seconds": 17.45124450000003,
+          "fps": 33.77735319907227
+        },
+        {
+          "seconds": 17.95468070000061,
+          "fps": 37.74063128550979
+        },
+        {
+          "seconds": 18.48822790000122,
+          "fps": 33.73647167481968
+        },
+        {
+          "seconds": 18.991594199993415,
+          "fps": 35.75924729223852
+        },
+        {
+          "seconds": 19.514595600005123,
+          "fps": 38.240815415699224
+        },
+        {
+          "seconds": 20.04354300000705,
+          "fps": 35.92039586531825
+        }
+      ],
+      "minimum_fps": 27.772735703788715,
+      "maximum_fps": 40.368491277661526,
+      "seconds": 20.04354300000705,
+      "frames": 697,
+      "width": 320,
+      "height": 200,
+      "samples": [
+        {
+          "seconds": 0.5040914999990491,
+          "fps": 27.772735703788715
+        },
+        {
+          "seconds": 1.0083215000049677,
+          "fps": 35.69799496219725
+        },
+        {
+          "seconds": 1.511843999993289,
+          "fps": 35.74815425411475
+        },
+        {
+          "seconds": 2.0467241000005743,
+          "fps": 35.5219795983085
+        },
+        {
+          "seconds": 2.5669318000000203,
+          "fps": 40.368491277661526
+        },
+        {
+          "seconds": 3.0706104999990202,
+          "fps": 33.75167542330806
+        },
+        {
+          "seconds": 3.5740131000056863,
+          "fps": 29.79722393130542
+        },
+        {
+          "seconds": 4.077587699997821,
+          "fps": 37.73025883413652
+        },
+        {
+          "seconds": 4.580902400004561,
+          "fps": 33.77608482282028
+        },
+        {
+          "seconds": 5.127020100000664,
+          "fps": 34.7910349731122
+        },
+        {
+          "seconds": 5.65551470000355,
+          "fps": 35.95117149710937
+        },
+        {
+          "seconds": 6.184707899999921,
+          "fps": 35.90371153697799
+        },
+        {
+          "seconds": 6.689423699994222,
+          "fps": 37.644947909723726
+        },
+        {
+          "seconds": 7.194009600003483,
+          "fps": 33.69099295023504
+        },
+        {
+          "seconds": 7.69762659999833,
+          "fps": 35.741446377275146
+        },
+        {
+          "seconds": 8.201089900001534,
+          "fps": 33.76611562330719
+        },
+        {
+          "seconds": 8.7359998000029,
+          "fps": 37.38947437680421
+        },
+        {
+          "seconds": 9.23934780000127,
+          "fps": 27.813759069362316
+        },
+        {
+          "seconds": 9.777759999997215,
+          "fps": 37.146260801947996
+        },
+        {
+          "seconds": 10.291362300005858,
+          "fps": 31.152508467603756
+        },
+        {
+          "seconds": 10.810697099994286,
+          "fps": 32.734182266196676
+        },
+        {
+          "seconds": 11.313843399999314,
+          "fps": 27.824908977488448
+        },
+        {
+          "seconds": 11.817429400005494,
+          "fps": 33.75788842380719
+        },
+        {
+          "seconds": 12.344460299995262,
+          "fps": 39.8458610309333
+        },
+        {
+          "seconds": 12.847650700001395,
+          "fps": 33.78442831936538
+        },
+        {
+          "seconds": 13.362341100000776,
+          "fps": 34.97248054368538
+        },
+        {
+          "seconds": 13.865185600006953,
+          "fps": 33.8076681753329
+        },
+        {
+          "seconds": 14.368441900005564,
+          "fps": 31.79294526475705
+        },
+        {
+          "seconds": 14.871747700002743,
+          "fps": 33.77668208889166
+        },
+        {
+          "seconds": 15.392522099995404,
+          "fps": 36.48412825259416
+        },
+        {
+          "seconds": 15.904666100002942,
+          "fps": 39.051516760336206
+        },
+        {
+          "seconds": 16.408645300005446,
+          "fps": 33.731550825739475
+        },
+        {
+          "seconds": 16.947948700006236,
+          "fps": 37.084876527703514
+        },
+        {
+          "seconds": 17.45124450000003,
+          "fps": 33.77735319907227
+        },
+        {
+          "seconds": 17.95468070000061,
+          "fps": 37.74063128550979
+        },
+        {
+          "seconds": 18.48822790000122,
+          "fps": 33.73647167481968
+        },
+        {
+          "seconds": 18.991594199993415,
+          "fps": 35.75924729223852
+        },
+        {
+          "seconds": 19.514595600005123,
+          "fps": 38.240815415699224
+        },
+        {
+          "seconds": 20.04354300000705,
+          "fps": 35.92039586531825
+        }
+      ],
+      "background": false,
+      "software": false,
+      "gpu": null,
+      "neural_fps": 34.77429115200616,
+      "fps_scope": "DOSBox enhanced presentations / host wall seconds",
+      "neural_fps_scope": "Completed enhanced images / host wall seconds",
+      "scene_mode": "showcase",
+      "execution_mode": "in_process",
+      "execution_variant": null,
+      "execution_label": null,
+      "requested_execution_mode": null,
+      "first_ready_render_seconds": null,
+      "startup_in_measurement": false,
+      "captured_api": "DOSBox Enhanced / D3D12",
+      "benchmark_profile": "dos-host-clock-warmup5-measure20-v2",
+      "addon_sha256": null,
+      "comparison_batch": "runs/latest-x64-backends",
+      "requested_seconds": 20,
+      "warmup_seconds": 5,
+      "vsync": true,
+      "measurement_complete": true,
+      "benchmark_warnings": [],
+      "error": "",
+      "captures": [
+        "runs/latest-x64-backends/dos-vga/phoenix/dos-vga-phoenix-320x200.png"
+      ],
+      "executable_sha256": "13359cf091725f1d5faff65c5f822a71ceaac5b9bdf24aec4cf6a4acc7027351",
+      "expected_sha256": "13359cf091725f1d5faff65c5f822a71ceaac5b9bdf24aec4cf6a4acc7027351",
+      "checks_passed": 0,
+      "checks_total": 0,
+      "reference": false,
+      "controls": {
+        "frozen": true
+      },
+      "processing": {
+        "execution_mode": "in_process",
+        "api": "DOSBox Enhanced / D3D12"
+      }
+    }
+  ]
+}

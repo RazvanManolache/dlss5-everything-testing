@@ -22,6 +22,7 @@ import numpy as np
 from PIL import Image
 import psutil
 from processing_fps import completed_fps, processed_metrics
+from benchmark_errors import failure_reason
 
 from storage_policy import latest_output
 
@@ -146,9 +147,10 @@ def compact(snapshot):
     info = snapshot.get('in_process') or snapshot.get('helper') or {}
     return {key: snapshot.get(key) for key in (
         'enabled', 'phase', 'status', 'api', 'execution_mode', 'fallback_reason', 'helper_pid',
+        'inference_pid', 'processing_roundtrip_ms',
         'delivered', 'presented', 'selection_revision', 'presented_revision',
         'applied_settings')} | {'nvidia': info.get('nvidia'), 'error': info.get('error'),
-                              'gpu_timing': info.get('gpu_timing')}
+                              'gpu_timing': info.get('gpu_timing'), 'details': info}
 
 
 def ready(snapshot, backend):
@@ -159,6 +161,38 @@ def ready(snapshot, backend):
             and snapshot.get('presented_revision') == snapshot.get('selection_revision')
             and snapshot.get('applied_settings', {}).get('Backend') == backend
             and (backend != 1 or nv.get('ready') and nv.get('evaluates', 0) > 0))
+
+
+def verified_execution(samples, measurement, backend, expected, fixture_pid):
+    live = [s for s in samples if ready(s, backend) and
+            measurement.get('start_render_seconds', 0) <= s['seconds'] <= measurement.get('end_render_seconds', 0)]
+    if not live:
+        return False
+    for sample in live:
+        if sample.get('execution_mode') != expected:
+            return False
+        if expected == 'helper':
+            if not sample.get('helper_pid') or sample.get('inference_pid') != sample['helper_pid'] or sample['helper_pid'] == fixture_pid:
+                return False
+        elif sample.get('inference_pid') != fixture_pid or sample.get('helper_pid') != 0:
+            return False
+    return True
+
+
+def render_clock_tick(runtime, pid, previous):
+    if runtime.get('pid')!=pid:return previous
+    tick=runtime.get('benchmark',{}).get('render_start_tick_ms')
+    if not isinstance(tick,int) or isinstance(tick,bool) or tick<=0:return previous
+    if previous and tick!=previous:raise ValueError('Fixture render clock changed during measurement')
+    return tick
+
+
+def readiness_deadline(reference_fps):
+    window=reference_fps.get('measurement') or {}
+    frame=window.get('maximum_frame_seconds',reference_fps.get('maximum_frame_seconds',0))
+    if not isinstance(frame,(int,float)) or isinstance(frame,bool) or not np.isfinite(frame) or frame<0:
+        frame=0
+    return min(45,max(20,WARMUP_SECONDS+3*frame))
 
 
 def close_fixture(process):
@@ -213,8 +247,13 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
                   timing_scope='20 measured seconds after 5s warmup; capture excluded',
                   source_suite='clean' if backend == 'native' else 'working',
                   capture_source='fixture_readback' if number == 0 else 'phoenix_presented_output')
+    if game.get('execution_variant'):
+        result.update(execution_variant=game['execution_variant'],
+                      execution_label=game.get('execution_label'),
+                      requested_execution_mode=game.get('expected_execution_mode'))
     if number:
         result['addon_sha256'] = game.get('addon_sha256')
+        result['execution_runtime_sha256'] = game.get('execution_runtime_sha256')
     output.mkdir(parents=True, exist_ok=True)
     # A retry replaces this runner's own current case, not named historic output.
     for path in output.iterdir():
@@ -223,6 +262,7 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
             path.unlink()
     write(output / 'result.json', result)
     captures, snapshots, pending = [], [], None
+    ready_until=readiness_deadline(read(reference_folder/'fps.json')) if number else 20
     times = (WARMUP_SECONDS + seconds,)
     command = fixture_command(exe, backend, output, (width,height))
     environment = environment.copy()
@@ -235,8 +275,9 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
         with (output / 'process.log').open('w', encoding='utf-8') as log:
             process = subprocess.Popen(command, cwd=folder, env=environment,
                                        stdout=log, stderr=subprocess.STDOUT)
+            result['fixture_pid'] = process.pid
             mail = Mailbox(folder, process)
-            next_poll, next_capture = 0, 0
+            next_poll, next_capture, render_tick = 0, 0, 0
             while process.poll() is None and time.monotonic() - started < seconds + 45:
                 if (ROOT / 'runs/latest-x64-backends/STOP').exists():
                     result['error'] = 'Benchmark stopped by request'
@@ -245,7 +286,8 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
                 if runtime.get('pid') != process.pid:
                     runtime = {}
                 benchmark = runtime.get('benchmark', {})
-                tick = benchmark.get('render_start_tick_ms', 0)
+                render_tick=render_clock_tick(runtime,process.pid,render_tick)
+                tick = render_tick
                 elapsed = (mail.kernel.GetTickCount64() - tick) / 1000 if tick else 0
                 measurement = read(output / 'measurement.json')
                 if not number and measurement.get('complete') and len(read(output / 'captures.json').get('captures') or []) == 1:
@@ -288,8 +330,8 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
                     if elapsed >= 12 and not mail.mail:
                         result['error'] = 'ReShade/Phoenix control endpoint did not load'
                         break
-                    if elapsed >= 20 and 'first_ready_render_seconds' not in result:
-                        result['error'] = 'No enhanced presentation within 20 render seconds'
+                    if elapsed >= ready_until and 'first_ready_render_seconds' not in result:
+                        result['error'] = f'No enhanced presentation within {ready_until:g} render seconds'
                         break
                     if now - started >= 25 and not mail.mail:
                         result['error'] = 'ReShade/Phoenix did not initialize within 25 startup seconds'
@@ -354,6 +396,11 @@ def _run_case(game, backend, folder, output, seconds, environment, reference_fol
         result['execution_mode'] = (result.get('processing') or {}).get('execution_mode') if number else 'native'
         result['elapsed_seconds'] = fps.get('elapsed_seconds')
         result['measurement'] = measurement
+        expected = game.get('expected_execution_mode')
+        if number and expected:
+            if result['execution_mode'] != expected or not verified_execution(snapshots, measurement, number, expected, process.pid):
+                result['passed']=False
+                result['error']=result.get('error') or 'Requested execution route was not used consistently: '+expected
         if number and 'neural_fps' in result:
             fps = processed_metrics(fps, output_rate)
             write(output / 'fps.json', fps)
@@ -407,7 +454,8 @@ def failure_record(result):
     """Failures carry identity and diagnostics, never images or timing samples."""
     fields = ('id', 'backend', 'executable', 'executable_sha256', 'requested_seconds',
               'source_suite', 'capture_source', 'exit_code', 'error', 'profile',
-              'width', 'height', 'warmup_seconds', 'vsync', 'addon_sha256', 'forced_shutdown')
+              'width', 'height', 'warmup_seconds', 'vsync', 'addon_sha256', 'forced_shutdown',
+              'execution_variant', 'execution_label', 'requested_execution_mode', 'fixture_pid', 'execution_runtime_sha256')
     failure = {key:result[key] for key in fields if key in result}
     failure.update(passed=False, state='error')
     processing = result.get('processing') or {}
@@ -418,6 +466,7 @@ def failure_record(result):
     if result.get('counter_diagnostics'):
         failure['diagnostics']['counter_samples'] = result['counter_diagnostics']
     failure['diagnostics']['reshade_messages'] = result.get('reshade_messages', [])
+    failure['error']=failure_reason(failure)
     return failure
 
 
@@ -431,6 +480,9 @@ def run_case(game, backend, folder, output, seconds, environment):
             raise RuntimeError('Unexpected directory or link in benchmark case')
         path.unlink()
     write(output / 'result.json', dict(id=game['id'], backend=backend, passed=None, state='running',
+                                       execution_variant=game.get('execution_variant'),
+                                       execution_label=game.get('execution_label'),
+                                       requested_execution_mode=game.get('expected_execution_mode'),
                                        capture_source='pending', requested_seconds=seconds,
                                        profile=profile_for(game), width=width, height=height,
                                        warmup_seconds=WARMUP_SECONDS, vsync=False))
@@ -452,12 +504,15 @@ def run_case(game, backend, folder, output, seconds, environment):
             records = read(staged / 'captures.json').get('captures') or []
             for record in records:
                 original = staged / record['png']
-                name = f"{game['id']}-{backend}-{width}x{height}.png"
+                variant = '-'+game['execution_variant'] if game.get('execution_variant') else ''
+                name = f"{game['id']}-{backend}{variant}-{width}x{height}.png"
                 shutil.copyfile(original, output / name)
                 record.pop('ppm', None)
                 record.update(png=name, backend=backend, fixture_id=game['id'],
                               executable_sha256=result['executable_sha256'], source_suite=result['source_suite'],
-                              profile=profile_for(game), after_measurement=True)
+                              profile=profile_for(game), after_measurement=True,
+                              execution_variant=game.get('execution_variant'),
+                              execution_label=game.get('execution_label'))
             write(output / 'captures.json', dict(captures=records))
             for name in ('fps.json', 'fps.csv', 'status.json', 'processing.json'):
                 path = staged / name
@@ -470,7 +525,7 @@ def run_case(game, backend, folder, output, seconds, environment):
                                               if 'ERROR' in line or 'WARN' in line][-8:]
             result = failure_record(result)
         write(output / 'result.json', result)
-    emit({key: result[key] for key in ('id', 'backend', 'passed', 'average_fps', 'neural_fps', 'error') if key in result})
+    emit({key: result[key] for key in ('id', 'backend', 'execution_variant', 'passed', 'average_fps', 'neural_fps', 'error') if key in result})
     return result
 
 

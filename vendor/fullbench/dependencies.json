@@ -1,7 +1,6 @@
 {
   "dgvoodoo": {
     "version": "2.87.4",
-    "source": "E:/Games/Modding/DLSS5-Everything-v0.3.0-win-x64/Payload/.download-cache/dgVoodoo2.zip",
     "upstream": "https://github.com/dege-diosg/dgVoodoo2"
   },
   "dxvk": {

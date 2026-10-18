@@ -1,0 +1,454 @@
+fixture_id,architecture,mode,execution_variant,execution_mode,status,fps,game_fps,neural_fps,fps_scope,width,height,warmup_seconds,requested_seconds,vsync,startup_in_measurement,error
+d3d11on12-x64,x64,native,baseline,native,complete,1926.4674619645673,1926.4674619645673,,,1920,1080,5,20,False,False,
+d3d11on12-x64,x64,nvidia,auto,in_process,complete,187.78593280387534,187.83061400232882,187.78593280387534,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+d3d11on12-x64,x64,phoenix,auto,in_process,complete,187.15965119765687,187.1650909030702,187.15965119765687,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+d3d11on12-x86,x86,native,baseline,native,complete,1916.8753777357729,1916.8753777357729,,,1920,1080,5,20,False,False,
+d3d11on12-x86,x86,nvidia,helper,helper,complete,45.20073107905458,1224.214926242363,45.20073107905458,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+d3d11on12-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.371965087014567,1493.3305568361498,6.371965087014567,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+d3d11on12-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+d3d11on12-x86,x86,phoenix,helper,helper,complete,54.20778358908717,1114.6336873359858,54.20778358908717,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+d3d11on12-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.449991443412705,1484.4717727692407,6.449991443412705,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+d3d11on12-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.399991768169411,1465.9698303408916,6.399991768169411,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw1_2d-x64,x64,native,baseline,native,complete,2.224787484591493,2.224787484591493,,,1920,1080,5,20,False,False,
+ddraw1_2d-x64,x64,nvidia,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,"Install failed: [Error] This executable/API combination is not supported.
+"
+ddraw1_2d-x64,x64,phoenix,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,"Install failed: [Error] This executable/API combination is not supported.
+"
+ddraw1_2d-x86,x86,native,baseline,native,complete,1.3319336190922917,1.3319336190922917,,,1920,1080,5,20,False,False,
+ddraw1_2d-x86,x86,nvidia,helper,helper,complete,0.8355311389176612,1.1798873917439798,0.8355311389176612,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+ddraw1_2d-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.5882249422082314,1.177507418149546,0.5882249422082314,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw1_2d-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+ddraw1_2d-x86,x86,phoenix,helper,helper,complete,1.023822794285016,1.1698267122530588,1.023822794285016,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+ddraw1_2d-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.5935255884387033,1.1870511768774066,0.5935255884387033,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw1_2d-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.5906118197795918,1.1818098370768284,0.5906118197795918,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw2_2d-x64,x64,native,baseline,native,complete,2.234564522107093,2.234564522107093,,,1920,1080,5,20,False,False,
+ddraw2_2d-x64,x64,nvidia,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,"Install failed: [Error] This executable/API combination is not supported.
+"
+ddraw2_2d-x64,x64,phoenix,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,"Install failed: [Error] This executable/API combination is not supported.
+"
+ddraw2_2d-x86,x86,native,baseline,native,complete,1.3582098983688882,1.3582098983688882,,,1920,1080,5,20,False,False,
+ddraw2_2d-x86,x86,nvidia,helper,helper,complete,0.8964758675169304,1.1946442009842524,0.8964758675169304,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+ddraw2_2d-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.5992356330036096,1.1984712660072192,0.5992356330036096,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw2_2d-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+ddraw2_2d-x86,x86,phoenix,helper,helper,complete,1.0153480682401277,1.2084497864026333,1.0153480682401277,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+ddraw2_2d-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.5983166987912043,1.1966333975824086,0.5983166987912043,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw2_2d-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.601994783752999,1.156765262107826,0.601994783752999,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw4_2d-x64,x64,native,baseline,native,complete,2.143126201315686,2.143126201315686,,,1920,1080,5,20,False,False,
+ddraw4_2d-x64,x64,nvidia,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,"Install failed: [Error] This executable/API combination is not supported.
+"
+ddraw4_2d-x64,x64,phoenix,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,"Install failed: [Error] This executable/API combination is not supported.
+"
+ddraw4_2d-x86,x86,native,baseline,native,complete,1.3388927266898987,1.3388927266898987,,,1920,1080,5,20,False,False,
+ddraw4_2d-x86,x86,nvidia,helper,helper,complete,0.9472187785447598,1.1970779148536732,0.9472187785447598,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+ddraw4_2d-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.5969620694818581,1.145100128003275,0.5969620694818581,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw4_2d-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+ddraw4_2d-x86,x86,phoenix,helper,helper,complete,1.0958143079018303,1.1952212722852553,1.0958143079018303,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+ddraw4_2d-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.576254942562653,1.152509885125306,0.576254942562653,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw4_2d-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.5489025914592699,1.1469329636233156,0.5489025914592699,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw7_2d-x64,x64,native,baseline,native,complete,2.2042600931489944,2.2042600931489944,,,1920,1080,5,20,False,False,
+ddraw7_2d-x64,x64,nvidia,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,"Install failed: [Error] This executable/API combination is not supported.
+"
+ddraw7_2d-x64,x64,phoenix,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,"Install failed: [Error] This executable/API combination is not supported.
+"
+ddraw7_2d-x86,x86,native,baseline,native,complete,1.340982382933343,1.340982382933343,,,1920,1080,5,20,False,False,
+ddraw7_2d-x86,x86,nvidia,helper,helper,complete,1.0109631307100286,1.2038316999945466,1.0109631307100286,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+ddraw7_2d-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.5768409732623822,1.1543602826068289,0.5768409732623822,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw7_2d-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+ddraw7_2d-x86,x86,phoenix,helper,helper,complete,0.9987702861499289,1.1978601964487727,0.9987702861499289,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+ddraw7_2d-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.5981844096434226,1.1476129192234985,0.5981844096434226,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+ddraw7_2d-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.5774443192958639,1.1550336228121914,0.5774443192958639,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw1_2d-x86,x86,native,baseline,native,complete,1.3362968702477172,1.3362968702477172,,,1920,1080,5,20,False,False,
+dgvoodoo_ddraw1_2d-x86,x86,nvidia,helper,helper,complete,0.969060181347904,1.211417456403436,0.969060181347904,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_ddraw1_2d-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.5771308321792173,1.1536963563581915,0.5771308321792173,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw1_2d-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_ddraw1_2d-x86,x86,phoenix,helper,helper,complete,1.0077741696938889,1.2003813659614913,1.0077741696938889,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_ddraw1_2d-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.5747392634698335,1.149877930635789,0.5747392634698335,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw1_2d-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.5777078235653539,1.1554156471307078,0.5777078235653539,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw2_2d-x86,x86,native,baseline,native,complete,1.234203722761272,1.234203722761272,,,1920,1080,5,20,False,False,
+dgvoodoo_ddraw2_2d-x86,x86,nvidia,helper,helper,complete,0.9493112663636872,1.1987946599212356,0.9493112663636872,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_ddraw2_2d-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.5773447197785948,1.155140777872955,0.5773447197785948,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw2_2d-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_ddraw2_2d-x86,x86,phoenix,helper,helper,complete,1.060000792634061,1.2049290214630197,1.060000792634061,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_ddraw2_2d-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.5759915187922652,1.1533648125676936,0.5759915187922652,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw2_2d-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.5859131565671424,1.1718263131342848,0.5859131565671424,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw4_2d-x86,x86,native,baseline,native,complete,1.237060691543449,1.237060691543449,,,1920,1080,5,20,False,False,
+dgvoodoo_ddraw4_2d-x86,x86,nvidia,helper,helper,complete,0.9832561107730134,1.2285237101832762,0.9832561107730134,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_ddraw4_2d-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.5982941019996698,1.2461975086966517,0.5982941019996698,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw4_2d-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_ddraw4_2d-x86,x86,phoenix,helper,helper,complete,1.1800012621983107,1.3277178147629474,1.1800012621983107,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_ddraw4_2d-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.625477530944672,1.2513299712471324,0.625477530944672,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw4_2d-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.6266081506556483,1.2532163013112967,0.6266081506556483,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw7_2d-x86,x86,native,baseline,native,complete,1.2387571638565544,1.2387571638565544,,,1920,1080,5,20,False,False,
+dgvoodoo_ddraw7_2d-x86,x86,nvidia,helper,helper,complete,1.111251724456302,1.3052549088872611,1.111251724456302,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_ddraw7_2d-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.5992500574064432,1.2479967592818872,0.5992500574064432,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw7_2d-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_ddraw7_2d-x86,x86,phoenix,helper,helper,complete,1.1917959905148665,1.3404556874144715,1.1917959905148665,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_ddraw7_2d-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.5988187519109704,1.2467517628272005,0.5988187519109704,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_ddraw7_2d-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.6266303763875284,1.252749272712796,0.6266303763875284,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx2-x86,x86,native,baseline,native,complete,2.084551751764232,2.084551751764232,,,1920,1080,5,20,False,False,
+dgvoodoo_dx2-x86,x86,nvidia,helper,helper,complete,1.7697620772330507,2.261026471906237,1.7697620772330507,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx2-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0593738042907663,2.119236223913551,1.0593738042907663,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx2-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_dx2-x86,x86,phoenix,helper,helper,complete,2.084585120839009,2.2838792837532136,2.084585120839009,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx2-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0333526869919438,2.1153352607153164,1.0333526869919438,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx2-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0905598894163853,2.1342046447142375,1.0905598894163853,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx3-x86,x86,native,baseline,native,complete,2.163748450276642,2.163748450276642,,,1920,1080,5,20,False,False,
+dgvoodoo_dx3-x86,x86,nvidia,helper,helper,complete,1.8338538684829668,2.279229201944345,1.8338538684829668,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx3-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0801037662889479,2.1135453894710454,1.0801037662889479,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx3-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_dx3-x86,x86,phoenix,helper,helper,complete,1.9851524288071678,2.2811441762959466,1.9851524288071678,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx3-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.056475014670772,2.1160034943583286,1.056475014670772,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx3-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0929339804596065,2.13865189600269,1.0929339804596065,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx5-x86,x86,native,baseline,native,complete,2.1349193672482287,2.1349193672482287,,,1920,1080,5,20,False,False,
+dgvoodoo_dx5-x86,x86,nvidia,helper,helper,complete,1.8479200190794238,2.196615685196895,1.8479200190794238,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx5-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0803143177419563,2.129610227889937,1.0803143177419563,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx5-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_dx5-x86,x86,phoenix,helper,helper,complete,2.139826066353592,2.288698532524812,2.139826066353592,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx5-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.076208424902215,2.132940856342718,1.076208424902215,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx5-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0674648743753667,2.1359060424270315,1.0674648743753667,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx6-x86,x86,native,baseline,native,complete,2.1754769469924127,2.1754769469924127,,,1920,1080,5,20,False,False,
+dgvoodoo_dx6-x86,x86,nvidia,helper,helper,complete,1.8969423657411073,2.296437330090471,1.8969423657411073,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx6-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0747819299427377,2.1492226903853386,1.0747819299427377,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx6-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_dx6-x86,x86,phoenix,helper,helper,complete,2.2283830431350404,2.3278339692133754,2.2283830431350404,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx6-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0924603534290063,2.14643896117366,1.0924603534290063,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx6-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0945571503861327,2.1393617030274408,1.0945571503861327,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx7-x86,x86,native,baseline,native,complete,2.1324104816187432,2.1324104816187432,,,1920,1080,5,20,False,False,
+dgvoodoo_dx7-x86,x86,nvidia,helper,helper,complete,1.834493276435338,2.2795592830908955,1.834493276435338,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx7-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0920426800577978,2.1356497577308984,1.0920426800577978,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx7-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_dx7-x86,x86,phoenix,helper,helper,complete,2.0630529011389833,2.3082569164008624,2.0630529011389833,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx7-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0972994544966208,2.1448954063204058,1.0972994544966208,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx7-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0937160933938042,2.139513836181247,1.0937160933938042,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx8-x86,x86,native,baseline,native,complete,2.2777607751738853,2.2777607751738853,,,1920,1080,5,20,False,False,
+dgvoodoo_dx8-x86,x86,nvidia,helper,helper,complete,2.08307627060297,2.4300597799665176,2.08307627060297,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx8-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.131443371020918,2.2158026098432195,1.131443371020918,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx8-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_dx8-x86,x86,phoenix,helper,helper,complete,2.069294780743455,2.3655108634386193,2.069294780743455,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx8-x86,x86,phoenix,x64-library,in_process_x64_library,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,[DLSS5 Phoenix reconstructed NR] Native x86 processing: bad allocation
+dgvoodoo_dx8-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0752945839282082,2.199841308336553,1.0752945839282082,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx9-x64,x64,native,baseline,native,complete,1534.4959642756141,1534.4959642756141,,,1920,1080,5,20,False,False,
+dgvoodoo_dx9-x64,x64,nvidia,auto,helper,complete,11.925351533323838,1385.4160507144068,11.925351533323838,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx9-x64,x64,phoenix,auto,helper,complete,13.088069945983824,1364.9418785958226,13.088069945983824,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx9-x86,x86,native,baseline,native,complete,1533.7457820866032,1533.7457820866032,,,1920,1080,5,20,False,False,
+dgvoodoo_dx9-x86,x86,nvidia,helper,helper,complete,11.437643094617911,1400.118742349077,11.437643094617911,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx9-x86,x86,nvidia,x64-library,not_started,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,[DLSS5 Phoenix reconstructed NR] Native x86 processing: bad allocation
+dgvoodoo_dx9-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dgvoodoo_dx9-x86,x86,phoenix,helper,helper,complete,12.759441049774617,1374.3062970597534,12.759441049774617,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dgvoodoo_dx9-x86,x86,phoenix,x64-library,in_process_x64_library,complete,4.988976342551655,1440.5807178270918,4.988976342551655,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dgvoodoo_dx9-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,4.909358686817491,1442.3926510094432,4.909358686817491,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dos-vga,i386,native,,native,complete,6.810703692287649,6.810703692287649,,DOS guest render frames / emulated seconds,320,200,5,20,,False,
+dos-vga,i386,nvidia,,in_process,complete,35.17787630873466,35.17787630873466,35.17787630873466,DOSBox enhanced presentations / host wall seconds,320,200,5,20,True,False,
+dos-vga,i386,phoenix,,in_process,complete,34.77429115200616,34.77429115200616,34.77429115200616,DOSBox enhanced presentations / host wall seconds,320,200,5,20,True,False,
+dx10-x64,x64,native,baseline,native,complete,2461.0734819332324,2461.0734819332324,,,1920,1080,5,20,False,False,
+dx10-x64,x64,nvidia,auto,helper,complete,16.40333762067755,2154.388470665278,16.40333762067755,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx10-x64,x64,phoenix,auto,helper,complete,17.77523928144782,2136.9660436095674,17.77523928144782,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx10-x86,x86,native,baseline,native,complete,2432.0536085774165,2432.0536085774165,,,1920,1080,5,20,False,False,
+dx10-x86,x86,nvidia,helper,helper,complete,17.07269034118176,2181.7946327852032,17.07269034118176,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx10-x86,x86,nvidia,x64-library,in_process_x64_library,complete,5.3000022294928995,2342.6925385242644,5.3000022294928995,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx10-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx10-x86,x86,phoenix,helper,helper,complete,18.20316339869307,2154.2705080367446,18.20316339869307,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx10-x86,x86,phoenix,x64-library,in_process_x64_library,complete,5.3500393682431335,2294.8704535429106,5.3500393682431335,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx10-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,5.400004949959162,2310.6309372947676,5.400004949959162,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx10_1-x64,x64,native,baseline,native,complete,2418.560202591866,2418.560202591866,,,1920,1080,5,20,False,False,
+dx10_1-x64,x64,nvidia,auto,helper,complete,16.800571383188636,2133.9969697243027,16.800571383188636,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx10_1-x64,x64,phoenix,auto,helper,complete,17.469623560119224,2121.879035835126,17.469623560119224,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx10_1-x86,x86,native,baseline,native,complete,2441.091175455401,2441.091175455401,,,1920,1080,5,20,False,False,
+dx10_1-x86,x86,nvidia,helper,helper,complete,16.622158809407686,2167.3170784535782,16.622158809407686,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx10_1-x86,x86,nvidia,x64-library,in_process_x64_library,complete,5.325207498666867,2256.599597828004,5.325207498666867,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx10_1-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx10_1-x86,x86,phoenix,helper,helper,complete,18.519345438797117,2135.4471583600666,18.519345438797117,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx10_1-x86,x86,phoenix,x64-library,in_process_x64_library,complete,5.200010519861665,2300.3197507952773,5.200010519861665,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx10_1-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,5.241687367056687,2294.0101071642366,5.241687367056687,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx11-x64,x64,native,baseline,native,complete,2437.52456443117,2437.52456443117,,,1920,1080,5,20,False,False,
+dx11-x64,x64,nvidia,auto,helper,complete,17.269474246639227,2115.289180295843,17.269474246639227,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx11-x64,x64,phoenix,auto,helper,complete,16.319492002373117,2135.913112780542,16.319492002373117,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx11-x86,x86,native,baseline,native,complete,2432.184567788918,2432.184567788918,,,1920,1080,5,20,False,False,
+dx11-x86,x86,nvidia,helper,helper,complete,17.219446964656385,2124.341332687363,17.219446964656385,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx11-x86,x86,nvidia,x64-library,in_process_x64_library,complete,5.382812696313636,2298.3827966047675,5.382812696313636,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx11-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx11-x86,x86,phoenix,helper,helper,complete,18.05699324203312,2106.233445005122,18.05699324203312,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx11-x86,x86,phoenix,x64-library,in_process_x64_library,complete,5.396928236869542,2313.725995092801,5.396928236869542,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx11-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,5.301560775872141,2309.422437043214,5.301560775872141,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx12-x64,x64,native,baseline,native,complete,1536.8725591404566,1536.8725591404566,,,1920,1080,5,20,False,False,
+dx12-x64,x64,nvidia,auto,in_process,complete,174.34036416519302,174.36892135530223,174.34036416519302,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx12-x64,x64,phoenix,auto,in_process,complete,174.4726146362923,174.497857166314,174.4726146362923,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx12-x86,x86,native,baseline,native,complete,1522.5126223151221,1522.5126223151221,,,1920,1080,5,20,False,False,
+dx12-x86,x86,nvidia,helper,helper,complete,54.75767305331512,689.7419766644363,54.75767305331512,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx12-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.549275050924661,975.4863090496526,6.549275050924661,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx12-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx12-x86,x86,phoenix,helper,helper,complete,58.15223083480942,656.2198171695093,58.15223083480942,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx12-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.649687057657494,979.5299441243941,6.649687057657494,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx12-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.575162440406718,1000.9347907958539,6.575162440406718,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx2-x86,x86,native,baseline,native,complete,2.022212125958266,2.022212125958266,,,1920,1080,5,20,False,False,
+dx2-x86,x86,nvidia,helper,helper,complete,1.7842343927739703,2.1802282728732085,1.7842343927739703,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx2-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0783209035970065,2.10883443416289,1.0783209035970065,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx2-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx2-x86,x86,phoenix,helper,helper,complete,1.9319357034838913,2.2279036515835937,1.9319357034838913,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx2-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.074826881911695,2.103101869348944,1.074826881911695,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx2-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.074560436336903,2.101238994595843,1.074560436336903,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx3-x86,x86,native,baseline,native,complete,2.0220687398618526,2.0220687398618526,,,1920,1080,5,20,False,False,
+dx3-x86,x86,nvidia,helper,helper,complete,1.8236576143279264,2.2660809044579158,1.8236576143279264,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx3-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0867466723201877,2.1259591542829672,1.0867466723201877,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx3-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx3-x86,x86,phoenix,helper,helper,complete,2.0971619789886042,2.2960443174487914,2.0971619789886042,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx3-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0745874176642267,2.103650335272452,1.0745874176642267,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx3-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0499166515248004,2.0999204865107783,1.0499166515248004,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx5-x86,x86,native,baseline,native,complete,2.1307839827699455,2.1307839827699455,,,1920,1080,5,20,False,False,
+dx5-x86,x86,nvidia,helper,helper,complete,1.9886724796898574,2.2866250612585612,1.9886724796898574,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx5-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0771455690034468,2.106170806661313,1.0771455690034468,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx5-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx5-x86,x86,phoenix,helper,helper,complete,2.1577330785016673,2.3074658474802874,2.1577330785016673,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx5-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0457815455542447,2.092092788858016,1.0457815455542447,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx5-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.047867301877172,2.095734603754344,1.047867301877172,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx6-x86,x86,native,baseline,native,complete,2.133695292741183,2.133695292741183,,,1920,1080,5,20,False,False,
+dx6-x86,x86,nvidia,helper,helper,complete,1.859848991625961,2.251373165107011,1.859848991625961,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx6-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0458024359732683,2.09206098421527,1.0458024359732683,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx6-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx6-x86,x86,phoenix,helper,helper,complete,2.0606686602778193,2.257554653901314,2.0606686602778193,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx6-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0507473808643484,2.0985394794784673,1.0507473808643484,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx6-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.017801881391171,2.0837874460201067,1.017801881391171,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx7-x86,x86,native,baseline,native,complete,2.1363985545107504,2.1363985545107504,,,1920,1080,5,20,False,False,
+dx7-x86,x86,nvidia,helper,helper,complete,1.8830278747308646,2.2777828364913746,1.8830278747308646,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx7-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.093360331682088,2.1377929670011966,1.093360331682088,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx7-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx7-x86,x86,phoenix,helper,helper,complete,2.16351829964982,2.310078925468459,2.16351829964982,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx7-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0811947554054835,2.114154021735283,1.0811947554054835,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx7-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0690207319911504,2.1411566376781943,1.0690207319911504,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx8-x86,x86,native,baseline,native,complete,2.252634275819681,2.252634275819681,,,1920,1080,5,20,False,False,
+dx8-x86,x86,nvidia,helper,helper,complete,0.992105292372785,2.381052701694684,0.992105292372785,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx8-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.1111898551436072,2.222054706730109,1.1111898551436072,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx8-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx8-x86,x86,phoenix,helper,helper,complete,1.0785166123693197,2.4021506366407577,1.0785166123693197,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx8-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0880151140731327,2.2233174997883647,1.0880151140731327,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx8-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0944298727020623,2.2416558619684364,1.0944298727020623,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx9-x64,x64,native,baseline,native,complete,1901.792478410748,1901.792478410748,,,1920,1080,5,20,False,False,
+dx9-x64,x64,nvidia,auto,helper,complete,17.375128176006893,1689.5220806476173,17.375128176006893,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx9-x64,x64,phoenix,auto,helper,complete,18.75184849917072,1647.7340721980881,18.75184849917072,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx9-x86,x86,native,baseline,native,complete,1901.6171305478983,1901.6171305478983,,,1920,1080,5,20,False,False,
+dx9-x86,x86,nvidia,helper,helper,complete,17.594808362526823,1704.989974658949,17.594808362526823,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx9-x86,x86,nvidia,x64-library,in_process_x64_library,complete,5.584116829978975,1875.0607718759384,5.584116829978975,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx9-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx9-x86,x86,phoenix,helper,helper,complete,18.766649118586454,1675.5440033194088,18.766649118586454,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx9-x86,x86,phoenix,x64-library,in_process_x64_library,complete,5.75000729853692,1894.344694606641,5.75000729853692,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx9-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,5.600001229996217,1874.8942347002283,5.600001229996217,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx9ex-x64,x64,native,baseline,native,complete,1891.8540657832827,1891.8540657832827,,,1920,1080,5,20,False,False,
+dx9ex-x64,x64,nvidia,auto,helper,complete,17.050607547926617,1704.2436917884231,17.050607547926617,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx9ex-x64,x64,phoenix,auto,helper,complete,18.784051331481145,1671.0018584364586,18.784051331481145,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx9ex-x86,x86,native,baseline,native,complete,1919.0152946083972,1919.0152946083972,,,1920,1080,5,20,False,False,
+dx9ex-x86,x86,nvidia,helper,helper,complete,16.400211189593495,1688.0807643196906,16.400211189593495,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx9ex-x86,x86,nvidia,x64-library,in_process_x64_library,complete,5.550003109478514,1894.2869104774484,5.550003109478514,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx9ex-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dx9ex-x86,x86,phoenix,helper,helper,complete,18.402498078437738,1652.7960362094177,18.402498078437738,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dx9ex-x86,x86,phoenix,x64-library,in_process_x64_library,complete,5.5500254892219125,1880.7294812413597,5.5500254892219125,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dx9ex-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,5.500027031038567,1886.1980227039026,5.500027031038567,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx10-x64,x64,native,baseline,native,complete,989.7884590665673,989.7884590665673,,,1920,1080,5,20,False,False,
+dxvk_dx10-x64,x64,nvidia,auto,helper,complete,42.803272125439584,681.8798777248085,42.803272125439584,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx10-x64,x64,phoenix,auto,helper,complete,46.821876005434895,646.3048006737649,46.821876005434895,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx10-x86,x86,native,baseline,native,complete,962.0388644001445,962.0388644001445,,,1920,1080,5,20,False,False,
+dxvk_dx10-x86,x86,nvidia,helper,helper,complete,39.55194836491497,686.4559295293242,39.55194836491497,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx10-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.2938522659297895,859.5311118038181,6.2938522659297895,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx10-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dxvk_dx10-x86,x86,phoenix,helper,helper,complete,44.58125661216204,641.4475304270078,44.58125661216204,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx10-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.4499960872840205,881.2923371631283,6.4499960872840205,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx10-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.374900745005226,860.6102139898073,6.374900745005226,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx10_1-x64,x64,native,baseline,native,complete,977.2301866579655,977.2301866579655,,,1920,1080,5,20,False,False,
+dxvk_dx10_1-x64,x64,nvidia,auto,helper,complete,37.7208789894909,682.8045234434869,37.7208789894909,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx10_1-x64,x64,phoenix,auto,helper,complete,46.35679774630076,655.6520685555283,46.35679774630076,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx10_1-x86,x86,native,baseline,native,complete,960.7152893565956,960.7152893565956,,,1920,1080,5,20,False,False,
+dxvk_dx10_1-x86,x86,nvidia,helper,helper,complete,38.51472353893553,691.7679632372398,38.51472353893553,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx10_1-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.3641495056056145,870.481750350104,6.3641495056056145,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx10_1-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dxvk_dx10_1-x86,x86,phoenix,helper,helper,complete,44.753798821244736,641.1175113701114,44.753798821244736,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx10_1-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.549985947859031,887.0773351740862,6.549985947859031,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx10_1-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.449997147018089,890.5443539487961,6.449997147018089,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx11-x64,x64,native,baseline,native,complete,959.7928447443423,959.7928447443423,,,1920,1080,5,20,False,False,
+dxvk_dx11-x64,x64,nvidia,auto,helper,complete,43.73358517930114,679.2481150864807,43.73358517930114,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx11-x64,x64,phoenix,auto,helper,complete,47.54884839149923,667.9797870176294,47.54884839149923,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx11-x86,x86,native,baseline,native,complete,965.339820491593,965.339820491593,,,1920,1080,5,20,False,False,
+dxvk_dx11-x86,x86,nvidia,helper,helper,complete,40.51053094729481,697.9968380743235,40.51053094729481,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx11-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.307316626416373,896.5138839381855,6.307316626416373,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx11-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dxvk_dx11-x86,x86,phoenix,helper,helper,complete,46.88963533183141,653.6305778963216,46.88963533183141,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx11-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.513187026413681,899.7103542632395,6.513187026413681,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx11-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.403202222316864,903.0792201471445,6.403202222316864,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx8-x64,x64,native,baseline,native,complete,3.7193863078053324,3.7193863078053324,,,1920,1080,5,20,False,False,
+dxvk_dx8-x64,x64,nvidia,auto,helper,complete,0.1358715992628019,1.0423377471230981,0.1358715992628019,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx8-x64,x64,phoenix,auto,helper,complete,0.19820968264999803,0.6936089312454945,0.19820968264999803,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx8-x86,x86,native,baseline,native,complete,2.274207001693053,2.274207001693053,,,1920,1080,5,20,False,False,
+dxvk_dx8-x86,x86,nvidia,helper,helper,complete,0.14223400832029298,0.8061461760486962,0.14223400832029298,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx8-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.14747731646637538,0.3440711534033324,0.14747731646637538,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx8-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dxvk_dx8-x86,x86,phoenix,helper,helper,complete,0.11516450987276361,0.5374343794062302,0.11516450987276361,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx8-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.18295116066304265,0.3661051186186305,0.18295116066304265,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx8-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.14201911443782367,0.28403822887564734,0.14201911443782367,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx9-x64,x64,native,baseline,native,complete,558.6867510729111,558.6867510729111,,,1920,1080,5,20,False,False,
+dxvk_dx9-x64,x64,nvidia,auto,helper,complete,0.2256771024710379,90.235348549878,0.2256771024710379,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx9-x64,x64,phoenix,auto,helper,complete,0.28528942897914367,44.848413077188496,0.28528942897914367,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx9-x86,x86,native,baseline,native,complete,549.8704582096326,549.8704582096326,,,1920,1080,5,20,False,False,
+dxvk_dx9-x86,x86,nvidia,helper,helper,complete,0.19800097172985986,134.24425258319863,0.19800097172985986,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx9-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.31976513079658325,24.70626624162999,0.31976513079658325,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx9-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+dxvk_dx9-x86,x86,phoenix,helper,helper,complete,0.2721524593869167,65.3007439147875,0.2721524593869167,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+dxvk_dx9-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.31720238274247486,23.57732205665688,0.31720238274247486,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+dxvk_dx9-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.3225355503256223,24.83452671911713,0.3225355503256223,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+glcore33-x64,x64,native,baseline,native,complete,1044.160008671668,1044.160008671668,,,1920,1080,5,20,False,False,
+glcore33-x64,x64,nvidia,auto,helper,complete,47.024260934226945,621.8831904973608,47.024260934226945,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+glcore33-x64,x64,phoenix,auto,helper,complete,49.67922076165683,601.8662804416383,49.67922076165683,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+glcore33-x86,x86,native,baseline,native,complete,1000.8464970372603,1000.8464970372603,,,1920,1080,5,20,False,False,
+glcore33-x86,x86,nvidia,helper,helper,complete,44.55858686514216,602.8943930821443,44.55858686514216,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+glcore33-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.423469849072415,852.9172351844105,6.423469849072415,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+glcore33-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+glcore33-x86,x86,phoenix,helper,helper,complete,49.950053042172854,582.1689703938781,49.950053042172854,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+glcore33-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.501011123896126,839.414492766956,6.501011123896126,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+glcore33-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.44262645505036,844.0594809246182,6.44262645505036,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+glcore46-x64,x64,native,baseline,native,complete,1032.8994267408182,1032.8994267408182,,,1920,1080,5,20,False,False,
+glcore46-x64,x64,nvidia,auto,helper,complete,47.576200877210155,617.5121125885759,47.576200877210155,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+glcore46-x64,x64,phoenix,auto,helper,complete,50.00233294211799,586.9455010627344,50.00233294211799,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+glcore46-x86,x86,native,baseline,native,complete,995.0666304405481,995.0666304405481,,,1920,1080,5,20,False,False,
+glcore46-x86,x86,nvidia,helper,helper,complete,46.52817186619513,588.7947302871639,46.52817186619513,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+glcore46-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.4041765640541275,850.1242284840134,6.4041765640541275,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+glcore46-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+glcore46-x86,x86,phoenix,helper,helper,complete,51.02450573108574,560.7422449347525,51.02450573108574,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+glcore46-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.4499906244453395,856.7821489439268,6.4499906244453395,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+glcore46-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.401039557493921,862.041840773977,6.401039557493921,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles2_angle_d3d11-x64,x64,native,baseline,native,complete,2432.6325458614833,2432.6325458614833,,,1920,1080,5,20,False,False,
+gles2_angle_d3d11-x64,x64,nvidia,auto,helper,complete,17.15023046154814,2161.838726011044,17.15023046154814,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles2_angle_d3d11-x64,x64,phoenix,auto,helper,complete,18.750217667379783,2133.5365693872955,18.750217667379783,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles2_angle_d3d11-x86,x86,native,baseline,native,complete,2140.8405910056026,2140.8405910056026,,,1920,1080,5,20,False,False,
+gles2_angle_d3d11-x86,x86,nvidia,helper,helper,complete,37.25032017926299,1717.4326367560423,37.25032017926299,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles2_angle_d3d11-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.099959013028937,1514.3380904151184,6.099959013028937,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles2_angle_d3d11-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+gles2_angle_d3d11-x86,x86,phoenix,helper,helper,complete,40.394915029712564,1769.8945310258991,40.394915029712564,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles2_angle_d3d11-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.199995421104834,1512.815364092239,6.199995421104834,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles2_angle_d3d11-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.049999061517616,1482.9721646124704,6.049999061517616,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles2_angle_vulkan-x64,x64,native,baseline,native,complete,1585.1972417567993,1585.1972417567993,,,1920,1080,5,20,False,False,
+gles2_angle_vulkan-x64,x64,nvidia,auto,in_process,complete,179.1182970474967,179.1688264158919,179.1182970474967,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles2_angle_vulkan-x64,x64,phoenix,auto,in_process,complete,176.26057277924994,176.21129342728577,176.26057277924994,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles2_angle_vulkan-x86,x86,native,baseline,native,complete,1581.118654322678,1581.118654322678,,,1920,1080,5,20,False,False,
+gles2_angle_vulkan-x86,x86,nvidia,helper,helper,complete,0.24940231740207558,241.38852065663804,0.24940231740207558,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles2_angle_vulkan-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.32393761247619607,69.02415049475803,0.32393761247619607,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles2_angle_vulkan-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+gles2_angle_vulkan-x86,x86,phoenix,helper,helper,complete,0.23000813032739081,79.58281309327722,0.23000813032739081,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles2_angle_vulkan-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.3232353814891449,65.31404555562823,0.3232353814891449,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles2_angle_vulkan-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.33358213000154513,72.07536680855948,0.33358213000154513,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles3_angle_d3d11-x64,x64,native,baseline,native,complete,2410.348035566351,2410.348035566351,,,1920,1080,5,20,False,False,
+gles3_angle_d3d11-x64,x64,nvidia,auto,helper,complete,17.600212551446308,2150.394398222593,17.600212551446308,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles3_angle_d3d11-x64,x64,phoenix,auto,helper,complete,18.250522298419536,2144.5165246942765,18.250522298419536,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles3_angle_d3d11-x86,x86,native,baseline,native,complete,2120.743203018034,2120.743203018034,,,1920,1080,5,20,False,False,
+gles3_angle_d3d11-x86,x86,nvidia,helper,helper,complete,38.16344720035771,1745.7123013428522,38.16344720035771,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles3_angle_d3d11-x86,x86,nvidia,x64-library,in_process_x64_library,complete,6.049999103266083,1486.6733365137097,6.049999103266083,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles3_angle_d3d11-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+gles3_angle_d3d11-x86,x86,phoenix,helper,helper,complete,40.668652179054554,1774.29617639174,40.668652179054554,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles3_angle_d3d11-x86,x86,phoenix,x64-library,in_process_x64_library,complete,6.08332005796532,1498.2445089338748,6.08332005796532,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles3_angle_d3d11-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,6.09999984200025,1503.2476248687526,6.09999984200025,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles3_angle_vulkan-x64,x64,native,baseline,native,complete,1602.3030845656838,1602.3030845656838,,,1920,1080,5,20,False,False,
+gles3_angle_vulkan-x64,x64,nvidia,auto,in_process,complete,176.7723134999868,176.7885149341273,176.7723134999868,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles3_angle_vulkan-x64,x64,phoenix,auto,in_process,complete,178.35008103636423,178.32861215790084,178.35008103636423,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles3_angle_vulkan-x86,x86,native,baseline,native,complete,1600.9707536310593,1600.9707536310593,,,1920,1080,5,20,False,False,
+gles3_angle_vulkan-x86,x86,nvidia,helper,helper,complete,0.24059914844401406,276.08126925930924,0.24059914844401406,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles3_angle_vulkan-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.32068871424637746,70.25630011570244,0.32068871424637746,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles3_angle_vulkan-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+gles3_angle_vulkan-x86,x86,phoenix,helper,helper,complete,0.24504602444176618,117.32116503355687,0.24504602444176618,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+gles3_angle_vulkan-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.3168298364859219,64.61839828882879,0.3168298364859219,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+gles3_angle_vulkan-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.32323667092226693,67.6983729379513,0.32323667092226693,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+glide1-x64,x64,native,baseline,native,complete,3.342892208869813,3.342892208869813,,,856,480,5,20,False,False,
+glide1-x64,x64,nvidia,auto,helper,complete,3.261554392487319,3.705823031869999,3.261554392487319,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide1-x64,x64,phoenix,auto,helper,complete,3.3303900117473444,3.6259104661180426,3.3303900117473444,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide1-x86,x86,native,baseline,native,complete,2.0333655145662295,2.0333655145662295,,,856,480,5,20,False,False,
+glide1-x86,x86,nvidia,helper,helper,complete,1.7911603044567923,2.1383274265436296,1.7911603044567923,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide1-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0426984105373553,2.0853968210747107,1.0426984105373553,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+glide1-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+glide1-x86,x86,phoenix,helper,helper,complete,2.0302858100130807,2.1793233428858687,2.0302858100130807,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide1-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0462269688831514,2.092561289887064,1.0462269688831514,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+glide1-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0584328777487175,2.1175911567344645,1.0584328777487175,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+glide2-x64,x64,native,baseline,native,complete,3.2557596472339037,3.2557596472339037,,,856,480,5,20,False,False,
+glide2-x64,x64,nvidia,auto,helper,complete,3.2739369580085063,3.7211326621749623,3.2739369580085063,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide2-x64,x64,phoenix,auto,helper,complete,3.609616102417561,3.8059767239512627,3.609616102417561,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide2-x86,x86,native,baseline,native,complete,2.023991246958595,2.023991246958595,,,856,480,5,20,False,False,
+glide2-x86,x86,nvidia,helper,helper,complete,1.8854115603391368,2.233428718276155,1.8854115603391368,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide2-x86,x86,nvidia,x64-library,in_process_x64_library,complete,1.0310382161150626,2.107961679099915,1.0310382161150626,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+glide2-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+glide2-x86,x86,phoenix,helper,helper,complete,2.0239957193093403,2.2215197283170234,2.0239957193093403,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide2-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0292801838313017,2.107307932689703,1.0292801838313017,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+glide2-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,1.0604059091964468,2.0716056817356874,1.0604059091964468,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+glide3-x64,x64,native,baseline,native,complete,3.2444399383887843,3.2444399383887843,,,856,480,5,20,False,False,
+glide3-x64,x64,nvidia,auto,helper,complete,3.096485617300666,3.6477343739416725,3.096485617300666,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide3-x64,x64,phoenix,auto,helper,complete,3.615018903629852,3.714780371609689,3.615018903629852,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide3-x86,x86,native,baseline,native,complete,1.9439950963471384,1.9439950963471384,,,856,480,5,20,False,False,
+glide3-x86,x86,nvidia,helper,helper,complete,1.8300707875139213,2.1753868788366315,1.8300707875139213,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide3-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.9960878153010144,2.04198002136708,0.9960878153010144,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+glide3-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+glide3-x86,x86,phoenix,helper,helper,complete,2.1113608346674133,2.20870249791393,2.1113608346674133,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,True,
+glide3-x86,x86,phoenix,x64-library,in_process_x64_library,complete,1.0251524676837405,2.0481149457256786,1.0251524676837405,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+glide3-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.9986501246265422,2.0472327554844116,0.9986501246265422,Fresh completed enhanced outputs / host wall seconds,856,480,5,20,False,False,
+opengl-x64,x64,native,baseline,native,complete,128.7452074596523,128.7452074596523,,,1920,1080,5,20,False,False,
+opengl-x64,x64,nvidia,auto,helper,complete,17.993420128248964,112.58890774080938,17.993420128248964,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+opengl-x64,x64,phoenix,auto,helper,complete,21.17079984258224,108.92215568473155,21.17079984258224,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+opengl-x86,x86,native,baseline,native,complete,131.097742473384,131.097742473384,,,1920,1080,5,20,False,False,
+opengl-x86,x86,nvidia,helper,helper,complete,19.58629800477129,108.67155304755875,19.58629800477129,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+opengl-x86,x86,nvidia,x64-library,in_process_x64_library,complete,5.180369566418937,119.30926423791126,5.180369566418937,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+opengl-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+opengl-x86,x86,phoenix,helper,helper,complete,22.03336525566693,106.21506427213492,22.03336525566693,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+opengl-x86,x86,phoenix,x64-library,in_process_x64_library,complete,5.266688243680892,120.96083771918003,5.266688243680892,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+opengl-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,5.123909995943645,118.02397866330422,5.123909995943645,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+vulkan-x64,x64,native,baseline,native,complete,140.09493136538322,140.09493136538322,,,1920,1080,5,20,False,False,
+vulkan-x64,x64,nvidia,auto,helper,complete,0.23755087461135038,16.348809298396695,0.23755087461135038,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+vulkan-x64,x64,phoenix,auto,helper,complete,0.2280856345642755,8.890836497125468,0.2280856345642755,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+vulkan-x86,x86,native,baseline,native,complete,140.01068919879364,140.01068919879364,,,1920,1080,5,20,False,False,
+vulkan-x86,x86,nvidia,helper,helper,complete,0.21592844406153275,22.972929580698956,0.21592844406153275,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+vulkan-x86,x86,nvidia,x64-library,in_process_x64_library,complete,0.32160260943270946,7.674030562235689,0.32160260943270946,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+vulkan-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+vulkan-x86,x86,phoenix,helper,helper,complete,0.24109594930616085,10.665002115603441,0.24109594930616085,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,True,
+vulkan-x86,x86,phoenix,x64-library,in_process_x64_library,complete,0.3229974524089692,7.294304648480303,0.3229974524089692,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+vulkan-x86,x86,phoenix,x86-driver,in_process_x86_driver,complete,0.32627961840476194,7.645506969348123,0.32627961840476194,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,
+warp_d3d11on12-x64,x64,native,baseline,native,complete,0.1363712359606949,0.1363712359606949,,,1920,1080,5,20,False,False,
+warp_d3d11on12-x64,x64,nvidia,auto,helper,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 27.0217 render seconds
+warp_d3d11on12-x64,x64,phoenix,auto,helper,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 27.0217 render seconds
+warp_d3d11on12-x86,x86,native,baseline,native,complete,0.09531631452912111,0.09531631452912111,,,1920,1080,5,20,False,False,
+warp_d3d11on12-x86,x86,nvidia,helper,helper,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 36.5025 render seconds
+warp_d3d11on12-x86,x86,nvidia,x64-library,in_process_x64_library,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,[DLSS5 Phoenix reconstructed NR] Native x86 processing: Native model D3D12 failure 2147942414 at line 40
+warp_d3d11on12-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+warp_d3d11on12-x86,x86,phoenix,helper,helper,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 36.5025 render seconds
+warp_d3d11on12-x86,x86,phoenix,x64-library,in_process_x64_library,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,[DLSS5 Phoenix reconstructed NR] Native x86 processing: Native model D3D12 failure 2147942414 at line 40
+warp_d3d11on12-x86,x86,phoenix,x86-driver,in_process_x86_driver,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,[DLSS5 Phoenix reconstructed NR] Native x86 processing: Driver D3D12 failure 2289696772 at line 124
+warp_dx10-x64,x64,native,baseline,native,complete,3.4698986809908843,3.4698986809908843,,,1920,1080,5,20,False,False,
+warp_dx10-x64,x64,nvidia,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10-x64,x64,phoenix,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10-x86,x86,native,baseline,native,complete,3.320294717684657,3.320294717684657,,,1920,1080,5,20,False,False,
+warp_dx10-x86,x86,nvidia,helper,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10-x86,x86,nvidia,x64-library,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+warp_dx10-x86,x86,phoenix,helper,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10-x86,x86,phoenix,x64-library,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10-x86,x86,phoenix,x86-driver,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10_1-x64,x64,native,baseline,native,complete,3.4682371557974045,3.4682371557974045,,,1920,1080,5,20,False,False,
+warp_dx10_1-x64,x64,nvidia,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10_1-x64,x64,phoenix,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10_1-x86,x86,native,baseline,native,complete,3.2601524605358545,3.2601524605358545,,,1920,1080,5,20,False,False,
+warp_dx10_1-x86,x86,nvidia,helper,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10_1-x86,x86,nvidia,x64-library,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10_1-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+warp_dx10_1-x86,x86,phoenix,helper,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10_1-x86,x86,phoenix,x64-library,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx10_1-x86,x86,phoenix,x86-driver,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx11-x64,x64,native,baseline,native,complete,3.4438563153070265,3.4438563153070265,,,1920,1080,5,20,False,False,
+warp_dx11-x64,x64,nvidia,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx11-x64,x64,phoenix,auto,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx11-x86,x86,native,baseline,native,complete,3.302543620575318,3.302543620575318,,,1920,1080,5,20,False,False,
+warp_dx11-x86,x86,nvidia,helper,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx11-x86,x86,nvidia,x64-library,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx11-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+warp_dx11-x86,x86,phoenix,helper,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx11-x86,x86,phoenix,x64-library,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx11-x86,x86,phoenix,x86-driver,,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,ReShade/Phoenix control endpoint did not load
+warp_dx12-x64,x64,native,baseline,native,complete,0.14076465019006112,0.14076465019006112,,,1920,1080,5,20,False,False,
+warp_dx12-x64,x64,nvidia,auto,helper,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 26.3358 render seconds
+warp_dx12-x64,x64,phoenix,auto,helper,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 26.3358 render seconds
+warp_dx12-x86,x86,native,baseline,native,complete,0.09083223238990662,0.09083223238990662,,,1920,1080,5,20,False,False,
+warp_dx12-x86,x86,nvidia,helper,helper,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 38.1143 render seconds
+warp_dx12-x86,x86,nvidia,x64-library,in_process_x64_library,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,[DLSS5 Phoenix reconstructed NR] Native x86 processing: bad allocation
+warp_dx12-x86,x86,nvidia,x86-driver,,not_applicable,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,NVIDIA has no x86 graph host. This route is Phoenix-only; no helper fallback is scored.
+warp_dx12-x86,x86,phoenix,helper,helper,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 38.1143 render seconds
+warp_dx12-x86,x86,phoenix,x64-library,in_process_x64_library,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,[DLSS5 Phoenix reconstructed NR] Native x86 processing: phoenix D3D12 failure
+warp_dx12-x86,x86,phoenix,x86-driver,in_process_x86_driver,failed,,,,Fresh completed enhanced outputs / host wall seconds,1920,1080,5,20,False,False,No enhanced presentation within 38.1143 render seconds

@@ -9,6 +9,41 @@ from run_backends import compact, ready, failure_record
 
 
 class BackendEvidenceTests(unittest.TestCase):
+    def test_failure_reason_uses_the_observed_error_not_a_transport_label(self):
+        from benchmark_errors import failure_reason
+        row=dict(error='Experimental renderer',diagnostics=dict(phase=5,status='Experimental renderer',
+            reshade_messages=['01:00:00 | ERROR | Native x86 processing: bad allocation']))
+        self.assertEqual(failure_reason(row),'Native x86 processing: bad allocation')
+        row['error']='Requested route was not used'
+        self.assertEqual(failure_reason(row),'Requested route was not used')
+        blocked=dict(error='No enhanced presentation within 20 render seconds',
+            diagnostics=dict(execution_mode='not_started',status='Unsupported input layout',fallback_reason='Unsupported input layout'))
+        self.assertIn('Unsupported input layout',failure_reason(blocked))
+
+    def test_software_readiness_grace_is_frame_aware_and_bounded(self):
+        self.assertEqual(run_backends.readiness_deadline({}),20)
+        self.assertEqual(run_backends.readiness_deadline(dict(measurement=dict(maximum_frame_seconds=11))),38)
+        self.assertEqual(run_backends.readiness_deadline(dict(maximum_frame_seconds=100)),45)
+        self.assertEqual(run_backends.readiness_deadline(dict(maximum_frame_seconds=float('nan'))),20)
+
+    def test_transient_status_read_cannot_reset_the_processing_clock(self):
+        self.assertEqual(run_backends.render_clock_tick({},7,123),123)
+        self.assertEqual(run_backends.render_clock_tick(dict(pid=9,benchmark=dict(render_start_tick_ms=9)),7,123),123)
+        self.assertEqual(run_backends.render_clock_tick(dict(pid=7,benchmark=dict(render_start_tick_ms=123)),7,0),123)
+        with self.assertRaises(ValueError):
+            run_backends.render_clock_tick(dict(pid=7,benchmark=dict(render_start_tick_ms=124)),7,123)
+
+    def test_requested_execution_never_scores_silent_fallback_or_wrong_pid(self):
+        snapshot=self.snapshot() | dict(seconds=10,execution_mode='in_process_x64_library',inference_pid=777,helper_pid=0)
+        window=dict(start_render_seconds=5,end_render_seconds=25)
+        self.assertTrue(run_backends.verified_execution([snapshot],window,1,'in_process_x64_library',777))
+        for changed in (dict(execution_mode='helper',helper_pid=888,inference_pid=888),
+                        dict(inference_pid=888),dict(helper_pid=888)):
+            self.assertFalse(run_backends.verified_execution([snapshot|changed],window,1,'in_process_x64_library',777))
+        helper=snapshot|dict(execution_mode='helper',helper_pid=888,inference_pid=888)
+        self.assertTrue(run_backends.verified_execution([helper],window,1,'helper',777))
+        self.assertFalse(run_backends.verified_execution([helper|dict(inference_pid=777)],window,1,'helper',777))
+
     def test_background_cleanup_preserves_baselines_and_inprocess_results(self):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary)

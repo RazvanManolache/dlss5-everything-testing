@@ -11,18 +11,9 @@
 /fixture-baseline.json
 /suite-role.json
 
-# Local dashboard is intentionally excluded from the GitHub source upload.
-/dashboard/
-/Dashboard.cmd
-/tools/dashboard.py
-/tools/test_dashboard.py
-/tools/check_performance_ui.py
-/tools/check_background_ui.py
-/tools/test_performance.py
-/tests/dashboard-performance.cjs
-
-# No README files in this initial source upload.
-[rR][eE][aA][dD][mM][eE]*
+# The local index may contain machine paths. Publish only the sanitized snapshot.
+/dashboard/data.js
+/dashboard/preview-*
 
 # Downloaded runtime bundles and toolchains. Keep SDK headers, dependency
 # manifests and standalone license files elsewhere in vendor/ tracked.
@@ -95,3 +86,7 @@ __pycache__/
 [Bb]in/
 [Oo]bj/
 *.cache
+
+# Public, privacy-filtered result snapshot and screenshot attributions.
+!/docs/dashboard/images/*.webp
+!/docs/dashboard-preview.png

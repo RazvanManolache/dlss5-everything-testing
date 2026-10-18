@@ -20,7 +20,11 @@ progress invalidate the measurement. Failed runs keep neither images nor FPS.
 `fps.json` stores fresh-output samples as its primary series, including the
 nested `measurement` object. Raw fixture metrics use explicit `game_` names:
 `game_fps`, `game_samples`, `game_measurement`, and the corresponding frame and
-timing fields.
+timing fields. The dashboard defaults to output FPS, offers
+an explicitly labelled game-loop metric, tags processing location on captures
+and tables, and provides a global location filter. The performance route
+selector is synchronized with that same filter. Native references can remain hidden comparison
+inputs without appearing as background-process results.
 
 `--rerun-background` creates one current plan from observed helper-backed runs,
 including failures, removes only their owned result files, and queues those

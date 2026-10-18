@@ -28,11 +28,10 @@ Hidden-window presentation is not equivalent to visible-game FPS or latency.
 - **phoenix:** backend 3, current-selection enhanced presentation must be observed.
   Images use the same presented-output capture API.
 
-Game FPS comes from the fixture render loop. Enhanced output FPS counts fresh
-delivered frames over the full measured window, using bounded interpolation at
-the window boundaries. It never shortens the interval to the first and last ready
-observations. Game-loop metrics are kept separately. See `processing-fps.md`;
-the full timing samples, readiness and GPU interval rows stay in local output.
+Game FPS comes from the fixture render loop. Neural FPS is the change in delivered
+frames divided by elapsed render time between first/last ready observations inside
+the measured window. It is not the same as game-loop FPS. The full timing samples, readiness and
+GPU interval rows are saved locally in each case's `processing.json`.
 
 A central pixel comparison against the frozen original must show a measurable
 change. This checks delivery, not subjective quality or temporal gameplay.
@@ -46,7 +45,7 @@ runs once with NVIDIA and once with Phoenix. Baseline files are not installed in
 or restored. Captures are named with fixture, backend and resolution, and their
 manifest records include source set and build hash.
 
-All runtime images and FPS are staged in local output. Only successful
+All runtime images and FPS are staged outside the dashboard. Only successful
 modes publish them. Failed modes publish a failure tag/reason only. A missing
 ReShade/Phoenix endpoint or failed processing can close a test early.
 
@@ -58,8 +57,10 @@ cases from the same build and benchmark profile, and retry failures. Capped or
 Without it, only this runner's own default output is
 replaced. Runtime evidence is local; do not publish logs or machine paths.
 
-The summary records whether enhancement ran in process or in the private
-background helper. Unsupported routes retain failure records only.
+The dashboard indexes these files on refresh, filters by native/nvidia/phoenix,
+and exposes separate game/neurally delivered FPS columns and chart metrics.
+The Execution column and summary record whether enhancement ran in process or
+in the private background helper. Unsupported routes retain failure records only.
 
 ReShade 6.8 upgrades requested OpenGL versions below 4.3 to a 4.3 compatibility
 context. The GL 3.3 fixture records this adjustment and permits it only when the
@@ -77,3 +78,55 @@ Source resolution remains 320x200. Each successful mode retains one screenshot;
 the enhanced renderer must advance its provider-specific inference counter and
 presentation count and produce changed pixels. DOS guest/emulator FPS is not
 published as comparable Windows game FPS. Failed modes retain failure records only.
+
+## Verified sweep: 2026-10-17
+
+The current run attempted all 82 Windows fixtures and the DOS fixture in native,
+NVIDIA and Phoenix modes: 249 cases, 221 passed, 28 failed, none pending. All 83
+clean baselines passed. Both enhanced modes passed on 68 Windows fixtures and DOS.
+The runtime evidence and per-fixture route table are in
+`runs/latest-x64-backends/compatibility.md`; the dashboard contains 249 result
+sets and exactly 221 images. Successful enhancement used the background helper
+in 128 cases and in-process execution in 10 cases (including both DOS modes).
+
+Failures are retained explicitly:
+
+- Eight installation rejections: four native x64 DirectDraw fixtures, both backends.
+- Twelve stock ReShade exclusions: WARP DX10, DX10.1 and DX11, both architectures/backends.
+- Eight readiness timeouts: software DX12 and D3D11-on-12, both architectures/backends.
+  These timeouts do not establish that a longer-startup implementation is impossible.
+
+The installer used its real inspection/deployment CLI with the fresh local payload;
+internet downloads and the graphical installation workflow were not revalidated.
+Component hashes matched the payload for every passing Windows enhancement.
+The 45 CPU-side runner/dashboard regression tests passed. These frozen-scene,
+hidden-window checks establish changed output delivery, not real-game temporal
+quality or playable performance; some bridge paths remain very slow.
+
+## Dashboard performance comparisons
+
+The Performance view compares Native, NVIDIA DLSS5 and Phoenix with grouped bars
+for all fixtures, or averages grouped by API, technology, architecture, transport
+and observed execution route. Run-type checkboxes, processing-route and existing
+catalogue filters also apply to the per-fixture comparison CSV export.
+
+Game-loop FPS and delivered processed-frame FPS remain separate metrics. Relative
+views show game FPS loss/retention against native, or either kind of FPS against
+NVIDIA at 100%. Hidden reference series remain available for these calculations.
+Failed runs stay visible without FPS; DOS contributes route evidence, not timing.
+
+Matched averages require current successful results with the same executable,
+profile, batch, resolution, requested timing, synchronization and scene/camera
+state. Recorded NVIDIA/Phoenix addon hashes must agree. Grouped means use the same
+matched fixture set for every displayed backend. The latest failure never revives
+an older passing run.
+
+Mean FPS loss averages per-fixture percentages equally. Drop in mean FPS is
+`100 * (1 - mean(enhanced FPS) / mean(native FPS))`, which weights fast baselines
+more strongly. Normalized retention and the overall Phoenix/NVIDIA ratio use
+geometric means of positive per-fixture ratios. These are descriptive statistics
+of the selected workloads, not quality scores or visible-gameplay guarantees.
+
+`python tools/check_performance_ui.py --screenshots` checks the local, read-only
+page headlessly using installed Chrome; it never launches benchmark fixtures.
+The current desktop/mobile previews replace `dashboard/preview-performance-*.png`.

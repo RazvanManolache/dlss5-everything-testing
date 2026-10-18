@@ -221,7 +221,10 @@ def main():
             emit(result)
     from dashboard import export_snapshot
     export_snapshot()
-    from summarize_backends import summarize
+    if (ROOT/'runs/latest-x64-backends/execution-sweep.json').is_file():
+        from summarize_execution_sweep import summarize
+    else:
+        from summarize_backends import summarize
     summarize()
 
 

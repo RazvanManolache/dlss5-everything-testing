@@ -3,11 +3,11 @@ import argparse,hashlib,json,re,shutil,struct,subprocess,time,sys
 from variants import VARIANTS,import_dlls
 from dependencies import prepare
 from asset_paths import point_assets
-from build_dependencies import dependency
+from build_dependencies import dependency,visual_studio_build
 from pe_exports import exports
 
 ROOT=Path(__file__).resolve().parents[1]
-VS=Path('E:/IDE/Microsoft Visual Studio/2022/Community/VC/Auxiliary/Build')
+VS=visual_studio_build()
 DEPS=dependency('vulkan_dependencies')
 MATRIX=[('dx2',2,['x86'],'ddraw.lib dxguid.lib'),('dx3',3,['x86'],'ddraw.lib dxguid.lib'),('dx5',5,['x86'],'ddraw.lib dxguid.lib'),('dx6',6,['x86'],'ddraw.lib dxguid.lib'),('dx7',7,['x86'],'ddraw.lib dxguid.lib'),('dx8',8,['x86'],'d3d8.lib'),('dx9',9,['x86','x64'],'d3d9.lib d3dcompiler.lib'),('dx10',10,['x86','x64'],'d3d10.lib dxgi.lib d3dcompiler.lib'),('dx11',11,['x86','x64'],'d3d11.lib dxgi.lib d3dcompiler.lib'),('dx12',12,['x86','x64'],'d3d12.lib dxgi.lib d3dcompiler.lib'),('opengl',20,['x86','x64'],'opengl32.lib gdi32.lib'),('vulkan',30,['x86','x64'],'vulkan-1.lib')]
 def digest(path):
