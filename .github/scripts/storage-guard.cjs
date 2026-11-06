@@ -35,11 +35,19 @@ module.exports = async ({github, context, core}) => {
       total -= c.size_in_bytes;
     }
     const artifacts = await github.paginate(github.rest.actions.listArtifactsForRepo, {...repo, per_page: 100});
+    const deleted = new Set();
     for (const a of artifacts) {
-      if (Date.now() - Date.parse(a.created_at) > 2 * 86400000)
+      let disposable = Date.now() - Date.parse(a.created_at) > 2 * 86400000;
+      if (a.name === 'github-pages') {
+        const run = (await github.rest.actions.getWorkflowRun({...repo, run_id: a.workflow_run.id})).data;
+        disposable = run.status === 'completed';
+      }
+      if (disposable) {
         await remove(() => github.rest.actions.deleteArtifact({...repo, artifact_id: a.id}));
+        deleted.add(a.id);
+      }
     }
-    const retained = artifacts.filter(a => Date.now() - Date.parse(a.created_at) <= 2 * 86400000);
+    const retained = artifacts.filter(a => !deleted.has(a.id));
     if (retained.reduce((n,a) => n+a.size_in_bytes,0) > 100 * 1024 * 1024)
       throw new Error('Temporary Actions storage exceeds 100 MiB; use the rolling CI release for build downloads.');
     await core.summary.addRaw(`Storage policy checked. Cache: ${(total / 1024 ** 3).toFixed(2)} GiB; Git: ${(metadata.size / 1024).toFixed(1)} MiB.\n`).write();

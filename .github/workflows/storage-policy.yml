@@ -5,6 +5,12 @@ on:
   workflow_dispatch:
   schedule:
   - cron: 37 4 * * *
+  workflow_run:
+    workflows:
+    - pages-build-deployment
+    - pages build and deployment
+    types:
+    - completed
 permissions:
   contents: write
   actions: write
